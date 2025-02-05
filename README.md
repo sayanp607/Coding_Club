@@ -3,7 +3,7 @@
 Welcome to the Coding Club website repository! This project is aimed at creating a platform for coding enthusiasts in our college to collaborate, share knowledge, and participate in events.
 
 ## ✨ About the Project
-Samnwadh is a web-based chat application that allows users to **connect, share, and collaborate** in real time. Whether you're looking to spread knowledge, discuss trending topics, or just make new friends, this platform is for you!
+The Coding Club Website is designed to serve as an online hub for students interested in programming, development, and technology. It allows club members to collaborate, learn, and participate in events through an interactive and well-structured website.
 
 
 
