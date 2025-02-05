@@ -1,3 +1,5 @@
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 # Coding Club Website
 
 Welcome to the Coding Club website repository! This project is aimed at creating a platform for coding enthusiasts in our college to collaborate, share knowledge, and participate in events.
