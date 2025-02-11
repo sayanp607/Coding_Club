@@ -26,3 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 behavior: "smooth"
             });
         });
+
+// footer
+// script.js
+document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    alert(`Subscribed with ${email}`);
+    document.getElementById('emailInput').value = ''; // Clear input field
+});
+
+// Share functionality
+const currentURL = encodeURIComponent(window.location.href);
+
+document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=${currentURL}`;
+document.getElementById('twitterShare').href = `https://twitter.com/intent/tweet?url=${currentURL}&text=Check%20this%20out!`;
+document.getElementById('linkedinShare').href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentURL}`;
+document.getElementById('whatsappShare').href = `https://api.whatsapp.com/send?text=Check%20this%20out:%20${currentURL}`;
