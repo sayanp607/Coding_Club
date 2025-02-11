@@ -229,6 +229,21 @@ footer {
     min-width: 300px; /* Ensure readability */
     max-width: 33.33%; /* Prevent stretching */
 }
+@media(max-width:414px){
+    .feature-box{
+        width: fit-content;
+        min-width: 200px;
+    }
+}
+@media(max-width:316px){
+    #home{
+        padding: 5px 20px;
+    }
+    .feature-box{
+        width: fit-content;
+        min-width: 50px;
+    }
+}
 #home h2 {
     color: #007bff;
     font-size: 2em;
