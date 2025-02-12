@@ -133,7 +133,13 @@ body {
     cursor: pointer;
     transition: 0.3s;
     z-index: 1000;
+
+    /* Centering the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .toggle-btn:hover {
     background: #0056b3;
 }
@@ -451,5 +457,3 @@ footer {
         margin: 0 8px;
     }
 }
-
-
