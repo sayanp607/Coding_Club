@@ -133,7 +133,13 @@ body {
     cursor: pointer;
     transition: 0.3s;
     z-index: 1000;
+
+    /* Centering the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 /* Toggle theme style */
 #toggleTheme {
     background: transparent;
@@ -160,6 +166,19 @@ body {
     transform: scale(0.9);
     opacity: 0.7;
 }
+
+=======
+
+.toggle-btn:hover {
+    background: #0056b3;
+}
+
+#charCount {
+    font-size: 15px;
+    color: #717070;
+    margin-top: 5px;
+}
+
 
 /* Header */
 
@@ -493,4 +512,4 @@ footer {
         font-size: 1.2rem;
         margin: 0 8px;
     }
-}
+

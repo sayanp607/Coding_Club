@@ -45,3 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const messageInput = document.getElementById("message");
+  const charCount = document.getElementById("charCount");
+  const maxLength = messageInput.getAttribute("maxlength");
+
+  messageInput.addEventListener("input", function () {
+      let currentLength = messageInput.value.length;
+      charCount.textContent = `${currentLength} / ${maxLength}`;
+
+      // *Change color if limit is close*
+      if (currentLength > maxLength * 0.9) {
+          charCount.style.color = "red";  // Alert user when near limit
+      } else {
+          charCount.style.color = "#555"; // Normal state
+      }
+  });
+});
