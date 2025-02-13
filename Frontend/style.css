@@ -137,6 +137,13 @@ body {
 .toggle-btn:hover {
     background: #0056b3;
 }
+
+#charCount {
+    font-size: 15px;
+    color: #717070;
+    margin-top: 5px;
+}
+
 /* Header */
 header {
     background: linear-gradient(135deg, #03a9f7, #77c6f1);
