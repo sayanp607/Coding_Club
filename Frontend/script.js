@@ -112,10 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
           greetingText = "Good Night!";
       }
 
-      greetingContainer.textContent = greetingText;
-      setTimeout(() => {
-          greetingContainer.style.opacity = "1";
-      }, 300);
+      alert(greetingText);
   }
 
   getGreeting();
