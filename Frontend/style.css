@@ -1,3 +1,12 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease-in-out;
+}
+
 /* Dark Mode Styles */
 .dark-mode {
     background-color: #121212;
@@ -104,15 +113,8 @@
 .dark-mode #home h2{
     color: #ffcc00;
 }
+
 /* General Styles */
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
-    transition: all 0.3s ease-in-out;
-}
 .dark-mode {
     background-color: #121212;
     color: #fff;
@@ -121,7 +123,7 @@ body {
 /* Toggle Button */
 .toggle-btn {
     position: fixed;
-    top: 20px;
+    top: 100px;
     right: 20px;
     background: #4285cd;
     color: white;
@@ -265,14 +267,74 @@ button:hover {
 }
 
 /* Footer */
-footer {
-    background: linear-gradient(135deg, #333, #555);
+/* styles.css */
+
+
+.footer {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #77c6f1;
     color: white;
-    padding: 20px;
+    padding: 5px 20px;
     text-align: center;
-    font-size: 14px;
-    margin-top: 30px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.newsletter {
+    margin: 20px;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-right: 5px;
+}
+.sec-nav{
+    padding: 3px;
+    color: white;
+}
+.sec-nav a{
+    color:white;
+    text-decoration: none;
+}
+.sec-nav a:hover{
+    text-decoration: underline;
+}
+.quick-contact {
+    text-align: left;
+    margin: 20px;
+    color: white;
+}
+
+.social-sharing a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+.social-sharing a:hover {
+    text-decoration: underline;
+}
+.social-icon{
+    padding: 5px 5px;
+    color: white;
+}
+.privacy {
+    margin: 10px 0;
+    color: white;
+}
+.privacy a{
+    text-decoration:none;
+    color:white;
+}
+.privacy a:hover{
+    text-decoration: underline;
+}
+.copyright {
+    margin-top: 10px;
 }
 
 /* Cards for additional content */
