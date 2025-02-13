@@ -6,16 +6,19 @@
     <title>Coding Club</title>
 
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
- 
 <body>
     <button id="toggleTheme" class="toggle-btn">🌙</button>
 
+    <div class="overlay" id="overlay">
+      <div class="card">
+          <button class="close-btn" onclick="closeCard()">X</button>
+          <h1 id="greeting"></h1>
+      </div>
+    </div>
 
     <!-- scroll button -->
     <button id="scrollToTop" class="scroll-btn">
@@ -23,7 +26,7 @@
     </button>
 
     <header>
-      <h1>Welcome to Our Coding Club</h1>
+      <h1 style="font-size: 40px; font-weight: bolder; color: white;">Welcome to Our Coding Club</h1>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -139,7 +142,7 @@
     </footer>
 
     <script src="script.js"></script>
-
-</body>
+    <script src="card.js"></script>
+</body> 
 </html>
 
