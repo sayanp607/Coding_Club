@@ -1,4 +1,3 @@
-//script.js
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const toggleTheme = document.getElementById("toggleTheme");
@@ -94,27 +93,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const greetingContainer = document.getElementById("greeting");
-
-  function getGreeting() {
-      let hours = new Date().getHours();
-      let greetingText = "";
-
-      if (hours >= 5 && hours < 12) {
-          greetingText = "Good Morning!";
-      } else if (hours >= 12 && hours < 17) {
-          greetingText = "Good Afternoon!";
-      } else if (hours >= 17 && hours < 21) {
-          greetingText = "Good Evening!";
-      } else {
-          greetingText = "Good Night!";
-      }
-
-      alert(greetingText);
-  }
-
-  getGreeting();
-});
-
