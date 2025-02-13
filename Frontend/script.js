@@ -1,4 +1,3 @@
-//script.js
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const toggleTheme = document.getElementById("toggleTheme");
