@@ -113,11 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       alert(greetingText);
-
-      greetingContainer.textContent = greetingText;
-      setTimeout(() => {
-          greetingContainer.style.opacity = "1";
-      }, 300);
   }
 
   getGreeting();
