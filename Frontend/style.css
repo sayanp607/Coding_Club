@@ -104,6 +104,14 @@
 .dark-mode #home h2{
     color: #ffcc00;
 }
+
+#greeting {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a6969;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 /* General Styles */
 body {
     font-family: 'Poppins', Arial, sans-serif;
