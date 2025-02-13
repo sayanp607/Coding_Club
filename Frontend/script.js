@@ -112,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
           greetingText = "Good Night!";
       }
 
+      alert(greetingText);
+
       greetingContainer.textContent = greetingText;
       setTimeout(() => {
           greetingContainer.style.opacity = "1";
