@@ -204,5 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
       message.style.color = "red";
       message.innerText = "User not found!";
   }
-}
+
+  getGreeting();
+});
 
