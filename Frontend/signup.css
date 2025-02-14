@@ -138,6 +138,7 @@ body {
 /* Responsive Design */
 @media (max-width: 480px) {
     .signup-wrapper {
+        margin-top: 180px;
         width: 90%;
         padding: 20px;
     }
