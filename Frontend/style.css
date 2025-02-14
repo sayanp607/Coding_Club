@@ -64,6 +64,29 @@ body {
     box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
 }
 
+/* Dark mode for contributors page */
+.dark-mode .banner {
+    background: #161b22;
+    padding: 30px 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: none;
+}
+
+.dark-mode #search {
+    margin-top: 15px;
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    border: 3px solid #58a6ff;
+    border-radius: 10px;
+    background: #0d1117;
+    color: #e6edf3;
+    text-align: center;
+}
+
 /* Dark mode for footer */
 .dark-mode footer {
     background: #222;
