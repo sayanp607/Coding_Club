@@ -118,3 +118,21 @@ document.addEventListener("DOMContentLoaded", function () {
   getGreeting();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "Coding Club";
+  let index = 0;
+
+  function typeEffect() {
+      document.getElementById("typingText").textContent = text.slice(0, index);
+      index++;
+
+      if (index <= text.length) {
+          setTimeout(typeEffect, 100); 
+      }
+       else{
+         document.getElementById("typingText").style.borderRight = "none"; 
+       }
+  }
+  typeEffect();
+});
+
