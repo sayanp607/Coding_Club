@@ -1,0 +1,89 @@
+*   [33m25bb37c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mui-improvements[m[33m, [m[1;31morigin/ui-improvements[m[33m)[m Merge branch 'main' into ui-improvements
+[31m|[m[32m\[m  
+[31m|[m * [33m763f429[m updating the navbar
+[31m|[m *   [33mb4111a4[m Merge pull request #35 from Daks29/feedback
+[31m|[m [33m|[m[34m\[m  
+[31m|[m [33m|[m *   [33me73f323[m Merge branch 'main' into feedback
+[31m|[m [33m|[m [35m|[m[33m\[m  
+[31m|[m [33m|[m [35m|[m[33m/[m  
+[31m|[m [33m|[m[33m/[m[35m|[m   
+[31m|[m * [35m|[m   [33m2c5940a[m Merge pull request #29 from sayanp607/header
+[31m|[m [1;31m|[m[1;32m\[m [35m\[m  
+[31m|[m [1;31m|[m * [35m\[m   [33m1f65ad6[m Merge branch 'ak-0283:main' into header
+[31m|[m [1;31m|[m [1;33m|[m[1;31m\[m [35m\[m  
+[31m|[m [1;31m|[m [1;33m|[m[1;31m/[m [35m/[m  
+[31m|[m [1;31m|[m[1;31m/[m[1;33m|[m [35m|[m   
+[31m|[m * [1;33m|[m [35m|[m   [33mf7b134e[m Merge pull request #32 from sayanp607/auth
+[31m|[m [1;35m|[m[1;36m\[m [1;33m\[m [35m\[m  
+[31m|[m [1;35m|[m * [1;33m\[m [35m\[m   [33m5b7fc74[m Merge branch 'main' into auth
+[31m|[m [1;35m|[m [31m|[m[1;35m\[m [1;33m\[m [35m\[m  
+[31m|[m [1;35m|[m [31m|[m[1;35m/[m [1;33m/[m [35m/[m  
+[31m|[m [1;35m|[m[1;35m/[m[31m|[m [1;33m|[m [35m|[m   
+[31m|[m [1;35m|[m * [1;33m|[m [35m|[m [33m54d9342[m registration pages done
+[31m|[m [1;35m|[m [32m|[m * [35m|[m [33mc0fdb60[m Merge branch 'main' into header
+[31m|[m [1;35m|[m [32m|[m[32m/[m[1;35m|[m [35m|[m 
+[31m|[m [1;35m|[m [32m|[m[1;35m/[m [35m/[m  
+[31m|[m [1;35m|[m[1;35m/[m[32m|[m [35m|[m   
+[31m|[m * [32m|[m [35m|[m [33m65c22ca[m updating the greeting card in the website page
+[31m|[m [34m|[m * [35m|[m [33mb144c25[m header fixed with toggle button implementation
+[31m|[m [34m|[m[34m/[m [35m/[m  
+[31m|[m * [35m|[m   [33mdcb4296[m Merge branch 'main' of https://github.com/ak-0283/Coding_Club
+[31m|[m [35m|[m[36m\[m [35m\[m  
+[31m|[m [35m|[m * [35m\[m   [33maa37f9c[m Merge pull request #23 from Shragupt/ui-improvements
+[31m|[m [35m|[m [1;31m|[m[1;32m\[m [35m\[m  
+[31m|[m * [1;31m|[m [1;32m|[m [35m|[m [33ma54e4d1[m updating the whatsapp to instagram on footer
+[31m|[m [1;31m|[m[1;31m/[m [1;32m/[m [35m/[m  
+[31m|[m * [1;32m|[m [35m|[m   [33m7d195e1[m Merge pull request #21 from Shragupt/ui-improvements
+[31m|[m [1;33m|[m[1;34m\[m [1;32m\[m [35m\[m  
+[31m|[m [1;33m|[m [1;34m|[m [1;32m|[m * [33mf563e62[m Feedback form added
+* [1;33m|[m [1;34m|[m [1;32m|[m [1;34m|[m [33m61285c1[m Added typing effect on Navbar title (Coding Club)
+[1;32m|[m [1;33m|[m[1;32m_[m[1;34m|[m[1;32m/[m [1;34m/[m  
+[1;32m|[m[1;32m/[m[1;33m|[m [1;34m|[m [1;34m|[m   
+* [1;33m|[m [1;34m|[m [1;34m|[m [33me876603[m Removed navbar Good Morning section
+* [1;33m|[m [1;34m|[m [1;34m|[m [33m7f38e64[m Added greeting alert feature on page load
+[1;34m|[m [1;33m|[m[1;34m/[m [1;34m/[m  
+[1;34m|[m[1;34m/[m[1;33m|[m [1;34m|[m   
+* [1;33m|[m [1;34m|[m [33mbc25d2a[m Merge branch 'main' into ui-improvements
+[1;35m|[m[1;33m\[m[1;33m|[m [1;34m|[m 
+[1;35m|[m * [1;34m|[m [33m3bf1baa[m updating the earth icon of the footer section
+[1;35m|[m * [1;34m|[m   [33m05247ff[m Merge pull request #9 from Daks29/footer
+[1;35m|[m [1;34m|[m[32m\[m [1;34m\[m  
+[1;35m|[m [1;34m|[m [32m|[m[1;34m/[m  
+[1;35m|[m [1;34m|[m[1;34m/[m[32m|[m   
+[1;35m|[m [1;34m|[m *   [33mdabd959[m Merge branch 'main' into footer
+[1;35m|[m [1;34m|[m [33m|[m[1;34m\[m  
+[1;35m|[m [1;34m|[m [33m|[m[1;34m/[m  
+[1;35m|[m [1;34m|[m[1;34m/[m[33m|[m   
+[1;35m|[m * [33m|[m [33m2064570[m Update README.md
+[1;35m|[m * [33m|[m [33maba3206[m updating the toggle icon in center
+[1;35m|[m * [33m|[m   [33mfe247c5[m Merge pull request #17 from Shragupt/ui-improvements
+[1;35m|[m [35m|[m[36m\[m [33m\[m  
+[1;35m|[m * [36m\[m [33m\[m   [33m23f1600[m Merge pull request #12 from Shragupt/ui-improvements
+[1;35m|[m [1;31m|[m[1;32m\[m [36m\[m [33m\[m  
+[1;35m|[m * [1;32m\[m [36m\[m [33m\[m   [33m91defc6[m Merge pull request #6 from ankita14-p/featoverflow
+[1;35m|[m [1;33m|[m[1;34m\[m [1;32m\[m [36m\[m [33m\[m  
+[1;35m|[m [1;33m|[m * [1;32m|[m [36m|[m [33m|[m [33mc1cad86[m Fixed the feature box overflowing issue in mobile devices
+[1;35m|[m [1;33m|[m[1;33m/[m [1;32m/[m [36m/[m [33m/[m  
+[1;35m|[m [1;33m|[m [1;32m|[m [36m|[m * [33m7abe848[m enhanced footer
+[1;35m|[m [1;33m|[m [1;32m|[m[1;33m_[m[36m|[m[1;33m/[m  
+[1;35m|[m [1;33m|[m[1;33m/[m[1;32m|[m [36m|[m   
+* [1;33m|[m [1;32m|[m [36m|[m [33m646d4fd[m Added greeting feature
+[36m|[m [1;33m|[m[36m_[m[1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;33m|[m [1;32m|[m   
+* [1;33m|[m [1;32m|[m [33m636c4cf[m Added real-time character limit indication
+[1;32m|[m [1;33m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;33m|[m   
+* [1;33m|[m [33m0fa2c1c[m Added dark mode toggle button with emoji support
+* [1;33m|[m [33md457999[m Added dark mode toggle button with emoji support
+[1;33m|[m[1;33m/[m  
+* [33m28de2d4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Update README.md
+* [33m8f34302[m updating the homepage
+* [33m6d5462e[m updating the scroll button to the homepage
+*   [33m50eec3f[m Merge branch 'main' of https://github.com/ak-0283/Coding_Club
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33m8bf8037[m Update README.md
+[1;35m|[m * [33me699e88[m Update README.md
+[1;35m|[m * [33m6391c3b[m Create README.md
+* [1;36m|[m [33m4a7d825[m updating folder
+[1;36m|[m[1;36m/[m  
+* [33mbe4bf77[m updating the website
