@@ -37,7 +37,7 @@
     border: 3px solid #58a6ff;
     border-radius: 10px;
     background: #e6edf3;
-    color:#0d1117;
+    color: #0d1117;
     text-align: center;
 }
 
@@ -49,10 +49,15 @@
     max-width: 90%;
     margin: 30px auto;
     padding: 10px;
+    transition: margin-top 0.3s ease; /* Smooth transition for shifting */
+}
+
+/* Shifted class to push the team-container down */
+.team-container.shifted {
+    margin-top: 300px; /* Adjust this value as needed */
 }
 
 /* Contributor Card */
-
 .card:hover {
     transform: translateY(-5px);
 }
