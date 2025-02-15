@@ -47,11 +47,12 @@ body {
     box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.5);
 }
 
+
 /* Dark mode for buttons */
-.dark-mode button {
+.dark-mode button:not(#toggleTheme) {
     background: linear-gradient(135deg, #444, #666);
 }
-.dark-mode button:hover {
+.dark-mode button:hover:not(#toggleTheme) {
     background: linear-gradient(135deg, #555, #777);
 }
 
@@ -62,6 +63,29 @@ body {
 }
 .dark-mode .card:hover {
     box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode for contributors page */
+.dark-mode .banner {
+    background: #161b22;
+    padding: 30px 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: none;
+}
+
+.dark-mode #search {
+    margin-top: 15px;
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    border: 3px solid #58a6ff;
+    border-radius: 10px;
+    background: #0d1117;
+    color: #e6edf3;
+    text-align: center;
 }
 
 /* Dark mode for footer */
@@ -125,13 +149,12 @@ body {
     position: fixed;
     top: 100px;
     right: 20px;
-    background: #4285cd;
     color: white;
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
     transition: 0.3s;
     z-index: 1000;
@@ -141,6 +164,35 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Toggle theme style */
+#toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Click animation (subtle scaling effect) */
+#toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* Dark mode effect */
+.dark-mode #toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Click animation in dark mode */
+.dark-mode #toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+=======
 
 .toggle-btn:hover {
     background: #0056b3;
@@ -152,7 +204,9 @@ body {
     margin-top: 5px;
 }
 
+
 /* Header */
+
 header {
     background: linear-gradient(135deg, #03a9f7, #77c6f1);
     color: #fff;
@@ -160,8 +214,33 @@ header {
     box-shadow: 0px 4px 15px rgba(30, 29, 29, 0.3);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: bold;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem; 
+    width: 15%;
+    position: absolute;
+    z-index: 0;
+    
+}
+
+.logo-container img {
+    width: 250px; 
+    height: auto;
+}
+
+header h1{
+    font-size: 2.2rem;
+    padding: 0 0 40px 0 ;
+    text-align: center;
+    white-space: normal;
+    margin: 0 0 0 30px;
 }
 
 #typingText {
@@ -536,4 +615,4 @@ footer {
         font-size: 1.2rem;
         margin: 0 8px;
     }
-}
+

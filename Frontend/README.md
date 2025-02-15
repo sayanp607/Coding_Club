@@ -109,3 +109,4 @@ We welcome contributions! Follow these steps:
 This project is open-source and available under the [MIT License](LICENSE).
 
 Happy coding! 🚀
+
