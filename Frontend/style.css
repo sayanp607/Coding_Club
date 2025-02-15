@@ -169,13 +169,15 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-right: 3px solid #fff;
+    color: white;
+    border-right: 3px solid white;
     padding-right: 5px;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     animation: blink 0.8s infinite;
 }
+
 @keyframes blink {
     50% { border-color: transparent; }
 }
