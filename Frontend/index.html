@@ -9,32 +9,29 @@
     <link rel="stylesheet" href="toggle.css" />
     <link rel="stylesheet" href="event.css">
     <link rel="stylesheet" href="project.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="card.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-      /* Button Styling */
-      .navigate-btn {
-          display: inline-block;
-          padding: 12px 20px;
-          background: #03a9f7;
-          color: white;
-          text-decoration: none;
-          font-size: 18px;
-          font-weight: bold;
-          border-radius: 5px;
-          transition: background 0.3s, transform 0.2s;
-      }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-      .navigate-btn:hover {
-          background: #0288d1;
-          transform: scale(1.05);
-      }
+    <style>
+      .btn {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #00c8ff;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #054e9b;
+            transform: scale(1.05);
+        }
     </style>
   </head>
 <body>
@@ -59,17 +56,16 @@
       <h1 id="typingText"></h1>
       <nav>
         <ul>
-         <li><a href="./index.html">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-                <li><a href="event.html">Events</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="contributor.html">Contributors</a></li>
-                <li><a href="./feedback.html">Feedback</a></li>
-                <button id="toggleTheme" class="toggle-btn">🌙</button>
-            </ul>
-        </nav>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="#projects">Projects</a></li>
+             <li><a href="login.html">Login</a></li>
+            <li><a href="contributor.html">Contributors</a></li>
+            <li><a href="./feedback.html">Feedback</a></li>
+            <button id="toggleTheme" class="toggle-btn">🌙</button>
+        </ul>
+      </nav>
 
          <!-- <nav>
         <div class="hamburger" id="hamburger">
@@ -151,8 +147,8 @@
                 <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
                 <button class="register-btn">Register</button>
             </div>
-            <a href="event.html" class="navigate-btn">More Event</a>
             </div>
+            <a href="event.html" class="btn" target="_blank">More Events</a>
         </section>
     </section>
 
@@ -195,6 +191,7 @@
               <a href="#" class="view-demo">View Demo</a>
           </div>
         </div>
+        <a href="#" class="btn" target="_blank">More Projects</a>
       </section>
     </section>
 
