@@ -220,7 +220,22 @@ function login() {
 
   if (storedUserData) {
       let userData = JSON.parse(storedUserData); // Parse JSON data
+      if (userData.password === password) {
+          localStorage.setItem("loggedInUser", username);
+          message.style.color = "green";
+          message.innerText = "Login successful! Redirecting...";
+          setTimeout(() => window.location.href = "index.html", 2000);
+      } else {
+          message.style.color = "red";
+          message.innerText = "Invalid credentials!";
+      }
+  } else {
+      message.style.color = "red";
+      message.innerText = "User not found!";
+  }
 
+  getGreeting();
+}
 document.addEventListener("DOMContentLoaded", function () {
   const text = "Coding Club";
   let index = 0;
@@ -238,19 +253,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   typeEffect();
 });
-
-      if (userData.password === password) {
-          localStorage.setItem("loggedInUser", username);
-          message.style.color = "green";
-          message.innerText = "Login successful! Redirecting...";
-          setTimeout(() => window.location.href = "index.html", 2000);
-      } else {
-          message.style.color = "red";
-          message.innerText = "Invalid credentials!";
-      }
-  } else {
-      message.style.color = "red";
-      message.innerText = "User not found!";
-  }
-}
 

@@ -173,3 +173,6 @@ body {
 .scroll-btn:hover {
     background: #0056b3;
 }
+.main{
+    width: 95%;
+}
