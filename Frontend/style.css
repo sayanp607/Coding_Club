@@ -415,72 +415,7 @@ button:hover {
 /* styles.css */
 
 
-.footer {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #77c6f1;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-}
-.wrapper{
-    display: flex;
-    justify-content: space-between;
-}
-.newsletter {
-    margin: 20px;
-}
 
-.newsletter input {
-    padding: 10px;
-    margin-right: 5px;
-}
-.sec-nav{
-    padding: 3px;
-    color: white;
-}
-.sec-nav a{
-    color:white;
-    text-decoration: none;
-}
-.sec-nav a:hover{
-    text-decoration: underline;
-}
-.quick-contact {
-    text-align: left;
-    margin: 20px;
-    color: white;
-}
-
-.social-sharing a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-}
-
-.social-sharing a:hover {
-    text-decoration: underline;
-}
-.social-icon{
-    padding: 5px 5px;
-    color: white;
-}
-.privacy {
-    margin: 10px 0;
-    color: white;
-}
-.privacy a{
-    text-decoration:none;
-    color:white;
-}
-.privacy a:hover{
-    text-decoration: underline;
-}
-.copyright {
-    margin-top: 10px;
-}
 
 /* Cards for additional content */
 .card {
@@ -663,44 +598,88 @@ button:hover {
 }
 
 /* Footer Styling */
-footer {
-    background: #629ef7;
-    color: #fff;
+.footer {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #03a9f7, #77c6f1);
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding: 5px 20px;
     text-align: center;
-    padding: 20px 0;
-    font-size: 1rem;
-    margin-top: 20px;
+    width: 100%;
 }
-
-/* Footer Container */
-.footer-container {
+.wrapper{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+}
+@media(max-width:600px){
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.newsletter {
+    margin: 20px;
 }
 
-/* Social Icons Container */
-.social-icons {
+.newsletter input {
+    padding: 10px;
+    margin-right: 5px;
+}
+.newsletter button{
+    background: linear-gradient(135deg,#333,#444);
+}
+.sec-nav{
+    padding: 3px;
+    color: white;
+}
+.sec-nav a{
+    color:white;
+    text-decoration: none;
+}
+.sec-nav a:hover{
+    text-decoration: underline;
+}
+.quick-contact {
+    text-align: left;
+    margin: 20px;
+    color: white;
+}
+.social-sharing{
+    margin-right: 40px;
+}
+
+.social-sharing a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+.social-sharing a:hover {
+    text-decoration: underline;
+}
+.social-icon{
+    padding: 5px 5px;
+    color: white;
+}
+.privacy {
+    margin: 10px 0;
+    color: white;
+}
+.privacy a{
+    text-decoration:none;
+    color:white;
+}
+.privacy a:hover{
+    text-decoration: underline;
+}
+.copyright {
     margin-top: 10px;
 }
 
-/* Social Icon Links */
-.social-icons .icon {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
 
-/* Hover Effects */
-.social-icons .icon:hover {
-    color: black; /* Change icon color */
-    background: #007bff; /* Background color on hover */
-    transform: translateY(-3px); /* Slight lift effect */
-    text-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Glowing effect */
-}
 
 /* Responsive for Small Screens */
 @media (max-width: 600px) {
