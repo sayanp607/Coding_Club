@@ -17,9 +17,9 @@ The Coding Club Website is designed to serve as an online hub for students inter
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Lady%20Beetle.png" width="20" height="20"> Issues</b></td>
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Check%20Mark%20Button.png" width="20" height="20"> Open PRs</b></td>
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Cross%20Mark.png" width="20" height="20"> Closed PRs</b></td>
-            <td><b>Code size in bytes</b></td>
-            <td><b></b>Commit activity</td>
-            <td><b>Repo size</b></td>
+            <td><b>🗂️ Code size in bytes</b></td>
+            <td><b>📦 Commit activity</b></td>
+            <td><b>⚙️ Repo size</b></td>
         </tr>
      </thead>
     <tbody>
