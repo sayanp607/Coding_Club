@@ -112,6 +112,11 @@ body {
 .add-event-btn:hover {
     background-color: #218838;
 }
+.dark-mode .hackathon-card{
+    background: #1e1e1e;
+    border: 1px solid black;
+    box-shadow: (4px 8px 15px rgba(255,255,255,0.1));
+}
 
 /* Event Form */
 .event-form {

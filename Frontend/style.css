@@ -34,6 +34,31 @@ body {
     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
 }
 
+.dark-mode #events{
+    background: #1e1e1e;
+    column-rule: #ffffff;
+    box-shadow: (0 4px 15px rgba(255,255,255,0.1));
+}
+.dark-mode #projects{
+    background: #1e1e1e;
+    column-rule: #ffffff;
+    box-shadow: (0 4px 15px rgba(255,255,255,0.1));
+}
+.dark-mode #about{
+    background: #1e1e1e;
+    column-rule: #ffffff;
+    box-shadow: (0 4px 15px rgba(255,255,255,0.1));
+}
+.dark-mode #contact{
+    background: #1e1e1e;
+    column-rule: #ffffff;
+    box-shadow: (0 4px 15px rgba(255,255,255,0.1));
+}
+.dark-mode .project-card{
+    background: #1e1e1e;
+    box-shadow: (0 4px 15px rgba(255,255,255,0.1));
+     border: 1px solid black;
+}
 /* Dark mode for form elements */
 .dark-mode form input,
 .dark-mode form textarea {
