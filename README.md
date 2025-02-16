@@ -17,18 +17,28 @@ The Coding Club Website is designed to serve as an online hub for students inter
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Lady%20Beetle.png" width="20" height="20"> Issues</b></td>
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Check%20Mark%20Button.png" width="20" height="20"> Open PRs</b></td>
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Cross%20Mark.png" width="20" height="20"> Closed PRs</b></td>
+            <td><b><img src="">Code size in bytes</b></td>
+            <td><b><img src=""></b>Commit activity</td>
+            <td><b><img src="">Repo size</b></td>
         </tr>
      </thead>
     <tbody>
          <tr>
             <td><img alt="Stars" src="https://img.shields.io/github/stars/ak-0283/Coding_Club?style=flat&logo=github"/></td>
-             <td><img alt="Forks" src="https://img.shields.io/github/forks/ak-0283/Coding_Club?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/ak-0283/Coding_Club?style=flat&logo=github"/></td>
             <td><img alt="Issues" src="https://img.shields.io/github/issues/ak-0283/Coding_Club?style=flat&logo=github"/></td>
             <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/ak-0283/Coding_Club?style=flat&logo=github"/></td>
-           <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/ak-0283/Coding_Club?style=flat&color=critical&logo=github"/></td>
+            <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/ak-0283/Coding_Club?style=flat&color=critical&logo=github"/></td>
+            <td><b><img src="https://img.shields.io/github/languages/code-size/ak-0283/Coding_Club?logo=github"></b></td>
+            <td><b><img src="https://img.shields.io/github/commit-activity/m/ak-0283/Coding_Club?color=bluevoilet&logo=github)"></b></td>
+            <td><b><img src="https://img.shields.io/github/repo-size/ak-0283/Coding_Club?logo=github"></b></td>
         </tr>
     </tbody>
 </table>
+
+<!-- [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/GDSC-IIIT-Kalyani/Portfolio_demo?logo=github)](https://GDSC-IIIT-Kalyani/Portfolio_demo/) 
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/GDSC-IIIT-Kalyani/Portfolio_demo?color=bluevoilet&logo=github)](https://github.com/GDSC-IIIT-Kalyani/Portfolio_demo/commits/) 
+[![GitHub repo size](https://img.shields.io/github/repo-size/GDSC-IIIT-Kalyani/Portfolio_demo?logo=github)](https://github.com/GDSC-IIIT-Kalyani/Portfolio_demo) -->
 
 ## 🚀 Features
 - Responsive website layout
