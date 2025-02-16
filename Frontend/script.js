@@ -206,3 +206,18 @@ document.addEventListener("DOMContentLoaded", function () {
   typeEffect();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("overlay");
+
+  // Check if greeting has already been shown in this session
+  if (!sessionStorage.getItem("greetingShown")) {
+    overlay.style.display = "flex"; // Show greeting card
+    sessionStorage.setItem("greetingShown", "true"); // Mark as shown
+  } else {
+    overlay.style.display = "none"; // Hide greeting card
+  }
+
+  document.querySelector(".close-btn").addEventListener("click", function () {
+    overlay.style.display = "none";
+  });
+});
