@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+    #eventSearch {
+        width: 90%; 
+        padding: 10px;
+        font-size: 16px;
+        margin: 10px auto;
+        display: block;
+        border: 2px solid #2fa5f4;
+        border-radius: 5px;
+    }
+
       .btn {
             margin-top: 20px;
             display: inline-block;
@@ -119,49 +129,69 @@
 
     <section id="events">
       <h2>Events</h2>
+      <!-- Search Bar -->
+      <input type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
+  
       <!-- Demo Hackathons Section -->
-        <section class="demo-hackathons">
+      <section class="demo-hackathons">
           <h2>🔥 Upcoming Hackathons/Events</h2>
-            <div class="hackathon-container">
+          <div class="hackathon-container">
               <div class="hackathon-card">
                   <h3>Beginner's Hackathon 2025</h3>
                   <p class="event-date">📅 March 5, 2025</p>
                   <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
                   <a href="beginlogin.html">
-                    <button class="register-btn">Register</button>
+                      <button class="register-btn">Register</button>
                   </a>
               </div>
-
+  
               <div class="hackathon-card">
                   <h3>AI Challenge Hackathon</h3>
                   <p class="event-date">📅 March 15, 2025</p>
                   <p class="event-desc">Build AI-powered applications in this fun and interactive challenge.</p>
                   <a href="ailogin.html">
-                    <button class="register-btn">Register</button>
+                      <button class="register-btn">Register</button>
                   </a>
               </div>
-
+  
               <div class="hackathon-card">
                   <h3>Full Stack Coding Challenge</h3>
                   <p class="event-date">📅 March 25, 2025</p>
                   <p class="event-desc">Showcase your full-stack development skills in this exciting challenge.</p>
                   <a href="stacklogin.html">
-                    <button class="register-btn">Register</button>
+                      <button class="register-btn">Register</button>
                   </a>
               </div>
-
+  
               <div class="hackathon-card">
-                <h3>Beginner's Hackathon 2025</h3>
-                <p class="event-date">📅 March 5, 2025</p>
-                <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
-                <a href="beginlogin.html">
-                  <button class="register-btn">Register</button>
-                </a>
-            </div>
-            </div>
-            <a href="event.html" class="btn" target="_blank">More Events</a>
-        </section>
-    </section>
+                  <h3>Beginner's Hackathon 2025</h3>
+                  <p class="event-date">📅 March 5, 2025</p>
+                  <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
+                  <a href="beginlogin.html">
+                      <button class="register-btn">Register</button>
+                  </a>
+              </div>
+          </div>
+          <a href="event.html" class="btn" target="_blank">More Events</a>
+      </section>
+  </section>
+  
+  <script>
+      function filterEvents() {
+          let input = document.getElementById("eventSearch").value.toLowerCase();
+          let cards = document.querySelectorAll(".hackathon-card");
+  
+          cards.forEach(card => {
+              let eventName = card.querySelector("h3").innerText.toLowerCase();
+              if (eventName.includes(input)) {
+                  card.style.display = "block";
+              } else {
+                  card.style.display = "none";
+              }
+          });
+      }
+  </script>
+  
 
     <section id="projects">
       <h2>Projects</h2>
