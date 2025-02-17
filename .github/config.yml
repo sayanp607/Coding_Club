@@ -1,5 +1,5 @@
-Blank_issue_enabled: false
+blank_issues_enabled: false
 contact_links:
   - name: "🐞 Bug Report"
-    url: https://github.com/your-repo/issues/new?template=bug_report.yml
+    url: https://github.com/ak-0283/Coding_Club/issues/new?template=bug_report.yml
     about: "Report a bug to help us improve."
