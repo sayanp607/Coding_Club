@@ -1,0 +1,72 @@
+name: "🐞 Bug Report"
+description: "Report a bug to help us improve."
+title: "[Bug]: <Short issue title here>"
+labels: ["bug"]
+assignees:
+  - your-github-username
+
+body:
+  - type: markdown
+    attributes:
+      value: "### 🚀 Thanks for taking the time to report this issue! Please fill in all required fields before submitting."
+
+  - type: input
+    id: bug-summary
+    attributes:
+      label: "🔹 Bug Summary"
+      description: "Provide a short and clear title for the bug."
+      placeholder: "Example: Clicking 'Submit' button does not work"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "📌 Description"
+      description: "Describe the issue in detail. Explain what happened and what you expected to happen."
+      placeholder: "Example: When I click the 'Submit' button on the login page, nothing happens."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "🛠 Steps to Reproduce"
+      description: "Provide step-by-step instructions to reproduce the issue."
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See the error message
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "✅ Expected Behavior"
+      description: "Explain what should have happened instead."
+      placeholder: "Example: The 'Submit' button should redirect the user to the dashboard."
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: "❌ Actual Behavior"
+      description: "Explain what actually happened."
+      placeholder: "Example: Clicking the 'Submit' button does nothing."
+
+  - type: textarea
+    id: logs-or-errors
+    attributes:
+      label: "📜 Logs & Errors (Optional)"
+      description: "If there are any error messages, paste them here."
+      render: shell
+
+  - type: markdown
+    attributes:
+      value: "### 📷 Attach Screenshots or Videos Below (Drag & Drop in the GitHub issue after submission)"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "📌 Additional Context (Optional)"
+      description: "Any other information you think is useful."

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community Support
+    url: https://github.com/your-repo/discussions
+    about: "Ask and discuss questions with the community."
