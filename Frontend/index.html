@@ -64,7 +64,7 @@
             <li><a href="#projects">Projects</a></li>
              <li><a href="login.html">Login</a></li>
             <li><a href="contributor.html">Contributors</a></li>
-            <li><a href="./feedback.html">Feedback</a></li>
+            <li><a href="#feedback">Feedback</a></li>
             <button id="toggleTheme" class="toggle-btn">🌙</button>
         </ul>
       </nav>
@@ -81,7 +81,7 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="contributor.html">Contributors</a></li>
-            <li><a href="./feedback.html">Feedback</a></li>
+            <li><a href="#feedback">Feedback</a></li>
             <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
         </ul>        
     </nav>
@@ -220,7 +220,32 @@
 
     </section>
 
-    
+    <section id="feedback" class="bg-blue-200 flex items-center justify-center min-h-screen flex-col">
+      <div class="feedback-form bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+          <h2 class="text-2xl font-bold text-center mb-4">We value your opinion.</h2>
+          <p class="text-center mb-4">How would you rate your overall experience?</p>
+  
+          <div class="flex justify-center mb-4" id="stars">
+              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="1"></i>
+              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="2"></i>
+              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="3"></i>
+              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="4"></i>
+              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="5"></i>
+          </div>
+  
+          <p class="text-center mb-4">Kindly take a moment to tell us what you think.</p>
+  
+          <form>
+              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Your Name" required>
+              <input type="email" class="w-full p-2 border rounded mb-4" placeholder="Your Email" required>
+              <input type="tel" class="w-full p-2 border rounded mb-4" placeholder="Your Phone Number" required>
+              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Subject" required>
+              <textarea class="w-full p-2 border rounded mb-4" rows="4" placeholder="Your feedback..." required></textarea>
+              <button class="bg-blue-600 text-white py-2 px-4 rounded w-full">Share my feedback</button>
+          </form>
+      </div>
+  </section>
+      
     
     <footer>
        
@@ -248,7 +273,7 @@
               <li class="sec-nav"><a href="event.html">Events</a></li>
               <li class="sec-nav"><a href="#projects">Projects</a></li>
               <li class="sec-nav"><a href="#contact">Contact</a></li>
-              <li class="sec-nav"><a href="feedback.html">Feedback</a></li>
+              <li class="sec-nav"><a href="#feedback">Feedback</a></li>
             </ul>
           </div>
           <div class="quick-contact">
