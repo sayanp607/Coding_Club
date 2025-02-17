@@ -3,7 +3,3 @@ contact_links:
   - name: "🐞 Bug Report"
     url: https://github.com/your-repo/issues/new?template=bug_report.yml
     about: "Report a bug to help us improve."
-
-  - name: "📌 Blank Issue"
-    url: https://github.com/your-repo/issues/new
-    about: "Create a new issue from scratch."
