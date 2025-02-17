@@ -1,0 +1,29 @@
+name: "📌 Custom Blank Issue"
+description: "Create a new issue with a proper title, detailed description, and attachments."
+title: "[New Issue] <Enter a meaningful title here>"
+labels: ["custom-issue"]
+body:
+  - type: input
+    id: issue_title
+    attributes:
+      label: "📝 Issue Title"
+      description: "Enter a clear and concise title for the issue."
+      placeholder: "Write a short and meaningful title here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: "📌 Issue Description"
+      description: "Provide a **detailed** description of the issue. Explain what is happening and what should happen instead."
+      placeholder: "Write a detailed issue description here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: "📎 Attach Images/Videos"
+      description: "Attach screenshots, GIFs, or videos to help explain the issue."
+      placeholder: "Drag and drop files here or paste image links."
