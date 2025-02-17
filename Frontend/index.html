@@ -189,10 +189,23 @@
       <!-- Search Bar -->
       <input type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
   
+      <!-- Add Event Button -->
+      <button onclick="toggleEventForm()">Add Event</button>
+  
+      <!-- Add Event Form (Hidden by Default) -->
+      <div class="add-event-form" id="eventForm" style="display: none;">
+          <h3>Add a New Event</h3>
+          <input type="text" id="eventName" placeholder="Event Name">
+          <input type="date" id="eventDate">
+          <input type="text" id="eventDesc" placeholder="Event Description">
+          <button onclick="addEvent()">Submit</button>
+          <button onclick="toggleEventForm()">Cancel</button>
+      </div>
+  
       <!-- Demo Hackathons Section -->
       <section class="demo-hackathons">
           <h2>🔥 Upcoming Hackathons/Events</h2>
-          <div class="hackathon-container">
+          <div class="hackathon-container" id="hackathonContainer">
               <div class="hackathon-card">
                   <h3>Beginner's Hackathon 2025</h3>
                   <p class="event-date">📅 March 5, 2025</p>
@@ -219,19 +232,83 @@
                       <button class="register-btn">Register</button>
                   </a>
               </div>
-  
-              <div class="hackathon-card">
-                  <h3>Beginner's Hackathon 2025</h3>
-                  <p class="event-date">📅 March 5, 2025</p>
-                  <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
-                  <a href="beginlogin.html">
-                      <button class="register-btn">Register</button>
-                  </a>
-              </div>
           </div>
           <a href="event.html" class="btn" target="_blank">More Events</a>
       </section>
   </section>
+  
+  <script>
+      function toggleEventForm() {
+          let form = document.getElementById("eventForm");
+          form.style.display = form.style.display === "none" ? "block" : "none";
+      }
+  
+      function addEvent() {
+          let name = document.getElementById("eventName").value;
+          let date = document.getElementById("eventDate").value;
+          let desc = document.getElementById("eventDesc").value;
+  
+          if (name === "" || date === "" || desc === "") {
+              alert("Please fill in all event details.");
+              return;
+          }
+  
+          let container = document.getElementById("hackathonContainer");
+  
+          let card = document.createElement("div");
+          card.classList.add("hackathon-card");
+  
+          card.innerHTML = `
+              <h3>${name}</h3>
+              <p class="event-date">📅 ${date}</p>
+              <p class="event-desc">${desc}</p>
+              <button class="register-btn">Register</button>
+          `;
+  
+          container.appendChild(card);
+  
+          // Clear input fields
+          document.getElementById("eventName").value = "";
+          document.getElementById("eventDate").value = "";
+          document.getElementById("eventDesc").value = "";
+  
+          // Hide the form after adding the event
+          toggleEventForm();
+      }
+  </script>
+  
+  <script>
+      function addEvent() {
+          let name = document.getElementById("eventName").value;
+          let date = document.getElementById("eventDate").value;
+          let desc = document.getElementById("eventDesc").value;
+  
+          if (name === "" || date === "" || desc === "") {
+              alert("Please fill in all event details.");
+              return;
+          }
+  
+          let container = document.getElementById("hackathonContainer");
+  
+          let card = document.createElement("div");
+          card.classList.add("hackathon-card");
+  
+          card.innerHTML = `
+              <h3>${name}</h3>
+              <p class="event-date">📅 ${date}</p>
+              <p class="event-desc">${desc}</p>
+              <button class="register-btn">Register</button>
+          `;
+  
+          container.appendChild(card);
+  
+          // Clear input fields
+          document.getElementById("eventName").value = "";
+          document.getElementById("eventDate").value = "";
+          document.getElementById("eventDesc").value = "";
+      }
+  </script>
+  
   
   <script>
       function filterEvents() {
