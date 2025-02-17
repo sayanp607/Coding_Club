@@ -1,5 +1,8 @@
-blank_issues_enabled: false
+blank_issues_enabled: true  # Enables the "Blank Issue" option
 contact_links:
-  - name: Community Support
-    url: https://github.com/your-repo/discussions
-    about: "Ask and discuss questions with the community."
+  - name: 📖 Read Contribution Guidelines
+    url: https://github.com/your-repo-name/CONTRIBUTING.md
+    about: Please read our contributing guidelines before submitting an issue.
+  - name: ❓ Need Help? Ask a Question
+    url: https://github.com/your-repo-name/discussions
+    about: If you have questions, please ask in Discussions instead of opening an issue.

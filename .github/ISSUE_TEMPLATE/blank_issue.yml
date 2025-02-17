@@ -1,58 +1,69 @@
-name: "📄 Blank Issue"
-description: "Create a new issue when no other template applies."
-title: "[Custom Issue]: "  # Placeholder for users to enter their own title
-labels: [ "needs-triage", "custom-issue" ]
-assignees:
-  - your-github-username  # Optional, auto-assigns issues to a user
-
+name: "Blank Issue"
+description: "Use this template to create a custom issue with a proper title, description, and attachments."
+title: "[Custom Issue] <Enter a meaningful title here>"
+labels: ["custom-issue", "needs-triage"]
 body:
   - type: markdown
     attributes:
-      value: "## 🚀 Describe Your Issue\n*Please provide a clear and concise description of your issue.*"
+      value: "## 📝 Describe the Issue\nProvide a clear and concise description of your issue."
 
   - type: textarea
     id: issue_description
     attributes:
-      label: "📝 Issue Description"
-      description: "Provide details about the issue, including expected vs. actual behavior."
-      placeholder: "I encountered an issue while..."
-    validations:
-      required: true
-
-  - type: input
-    id: steps_to_reproduce
-    attributes:
-      label: "⚡ Steps to Reproduce"
-      description: "List the steps to reproduce this issue."
-      placeholder: "1. Go to...\n2. Click on...\n3. See the error"
-
-  - type: dropdown
-    id: severity
-    attributes:
-      label: "📌 Severity Level"
-      description: "How severe is this issue?"
-      options:
-        - "❗ Critical - Blocks the app"
-        - "⚠️ High - Major problem"
-        - "🟡 Medium - Minor issue"
-        - "🟢 Low - Cosmetic issue"
+      label: "📌 Issue Description"
+      description: "Explain the issue in detail. If applicable, include code snippets or logs."
+      placeholder: "Write a detailed issue description here..."
     validations:
       required: true
 
   - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: "🔄 Steps to Reproduce (Optional)"
+      description: "List the steps to reproduce the issue."
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. See the error...
+  
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "✅ Expected Behavior"
+      description: "Describe what you expected to happen."
+      placeholder: "The expected outcome should be..."
+  
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: "❌ Actual Behavior"
+      description: "Describe what actually happened."
+      placeholder: "The actual outcome was..."
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "📊 Priority Level"
+      description: "How urgent is this issue?"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+  
+  - type: textarea
     id: additional_context
     attributes:
-      label: "💡 Additional Context (Logs, Screenshots, Videos)"
-      description: "Upload any relevant logs, screenshots, or video links."
-      placeholder: "Attach images/videos or add links here."
-
+      label: "📎 Additional Context (Screenshots/Videos)"
+      description: "Attach any relevant images or videos here."
+      placeholder: "Drag and drop images/videos or provide links."
+  
   - type: checkboxes
-    id: confirmation
+    id: checklist
     attributes:
-      label: "✅ Confirmation"
-      description: "Before submitting, please confirm the following:"
+      label: "✔️ Checklist"
+      description: "Before submitting, please confirm:"
       options:
-        - label: "I have searched for similar issues before submitting."
+        - label: "I have searched for duplicate issues."
           required: true
-        - label: "I have provided all necessary details and screenshots if applicable."
+        - label: "I have read the contributing guidelines."
           required: true
