@@ -1,8 +1,9 @@
-blank_issues_enabled: true  # Enables the "Blank Issue" option
+blank_issues_enabled: true
 contact_links:
-  - name: 📖 Read Contribution Guidelines
-    url: https://github.com/your-repo-name/CONTRIBUTING.md
-    about: Please read our contributing guidelines before submitting an issue.
-  - name: ❓ Need Help? Ask a Question
-    url: https://github.com/your-repo-name/discussions
-    about: If you have questions, please ask in Discussions instead of opening an issue.
+  - name: "🐞 Bug Report"
+    url: https://github.com/your-repo/issues/new?template=bug_report.yml
+    about: "Report a bug to help us improve."
+
+  - name: "📌 Blank Issue"
+    url: https://github.com/your-repo/issues/new
+    about: "Create a new issue from scratch."
