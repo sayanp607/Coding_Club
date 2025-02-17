@@ -1,4 +1,4 @@
-blank_issue_enabled: false
+Blank_issue_enabled: false
 contact_links:
   - name: "🐞 Bug Report"
     url: https://github.com/your-repo/issues/new?template=bug_report.yml
