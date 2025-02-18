@@ -6,13 +6,12 @@
     <title>Terms & Conditions - Coding Club</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="toggle.css" />
-    <link rel="stylesheet" href="event.css" />
-    <link rel="stylesheet" href="project.css" />
-    <link rel="stylesheet" href="card.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="card.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      
+      
 
     <link
       rel="stylesheet"
@@ -71,12 +70,56 @@
         background-color: #e55b00;
       }
     </style>
-  </head>
-  <body>
-    <!-- scroll button -->
-    <button id="scrollToTop" class="scroll-btn">
-      <i class="fas fa-arrow-up fa-xl"></i>
-    </button>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="card">
+            <button class="close-btn" onclick="closeCard()">X</button>
+            <h1 id="greeting"></h1>
+        </div>
+      </div>
+      <!-- scroll button -->
+      <button id="scrollToTop" class="scroll-btn">
+        <i class="fas fa-arrow-up fa-xl"></i>
+      </button>
+      <header>
+        <div class="logo-container">
+          <img src="codingclub.png" alt="Logo">
+        </div>
+        <h1 id="typingText"></h1>
+        <nav>
+          <nav id="navbar">
+          <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="#projects">Projects</a></li>
+               <li><a href="login.html">Login</a></li>
+              <li><a href="contributor.html">Contributors</a></li>
+              <li><a href="review.html">Reviews</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <button id="toggleTheme" class="toggle-btn">🌙</button>
+          </ul>
+        </nav>
+    
+           <nav>
+          <div class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="navLinks">
+              <span id="closeMenu"><i class="fas fa-times"></i></span>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="contributor.html">Contributors</a></li>
+              <li><a href="review.html">Reviews</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+          </ul>        
+      </nav>
+    </header>
     <div class="container">
       <a href="index.html" class="back-button">⬅ Back to Home</a>
 
@@ -203,6 +246,33 @@
       <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
     </footer>
     <script src="script.js"></script>
+    <script src="toggle.js"></script>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <script src="./lib/wow/customcursor.js"></script>
     <script src="event.js"></script>
-  </body>
+    <script src="card.js"></script>
+</body>
 </html>
