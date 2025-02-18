@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    background-color: #099fea68;
+}
+::-webkit-scrollbar:hover {
+    background-color: #57bff3;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #003B6C, #0569DD);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #0569DD, #003B6C);
+}
+  
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
