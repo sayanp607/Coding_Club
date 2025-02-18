@@ -25,7 +25,7 @@
             background-color: #f9f9f9;
         }
         .container {
-          color: black;
+          /* color: black; */
           max-width: 800px;
         margin: auto;
         background: #fff;
@@ -57,6 +57,37 @@
         .back-button:hover {
             background-color: #e55b00;
         }
+        @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .back-button {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 10px;
+        }
+
+        h1, h2 {
+            font-size: 20px;
+        }
+
+        .back-button {
+            top: 5px;
+            left: 5px;
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+    }
     </style>
 </head>
 <body>
