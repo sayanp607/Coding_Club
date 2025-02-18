@@ -590,8 +590,14 @@
     AOS.init({duration: 600, once: false });
     </script>
    <script src="feedback.js"></script>
-  <script>
-    window.localStorage.setItem("home","home")
+   <script>
+    // Store the URL with the section ID in localStorage
+    window.localStorage.setItem("home", "http://127.0.0.1:5501/Frontend/index.html#home");
+    window.localStorage.setItem("about", "http://127.0.0.1:5501/Frontend/index.html#about");
+    // window.localStorage.setItem("project", "http://127.0.0.1:5501/Frontend/index.html#project");
+    window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#contact");
+    window.localStorage.setItem("faq", "http://127.0.0.1:5501/Frontend/index.html#faq");
+    window.localStorage.setItem("feedback", "http://127.0.0.1:5501/Frontend/index.html#feedback");
   </script>
 </body> 
 </html>
