@@ -398,30 +398,30 @@
     </section>
 
     <section id="feedback" class="bg-blue-200 flex items-center justify-center min-h-screen flex-col">
-      <div data-aos="fade-up" class="feedback-form bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-          <h2 data-aos="fade-up" class="text-2xl font-bold text-center mb-4">We value your opinion.</h2>
-          <p data-aos="fade-up" class="text-center mb-4">How would you rate your overall experience?</p>
-  
-          <div data-aos="fade-up" class="flex justify-center mb-4" id="stars">
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="1"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="2"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="3"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="4"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="5"></i>
-          </div>
-  
-          <p data-aos="fade-up" class="text-center mb-4">Kindly take a moment to tell us what you think.</p>
-  
-          <form data-aos="fade-up">
-              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Your Name" required>
-              <input type="email" class="w-full p-2 border rounded mb-4" placeholder="Your Email" required>
-              <input type="tel" class="w-full p-2 border rounded mb-4" placeholder="Your Phone Number" required>
-              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Subject" required>
-              <textarea class="w-full p-2 border rounded mb-4" rows="4" placeholder="Your feedback..." required></textarea>
-              <button data-aos="fade-up" class="bg-blue-600 text-white py-2 px-4 rounded w-full">Share my feedback</button>
-          </form>
-      </div>
-  </section>
+        <div data-aos="fade-up" class="feedback-form bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 data-aos="fade-up" class="text-2xl font-bold text-center mb-4">We value your opinion.</h2>
+            <p data-aos="fade-up" class="text-center mb-4">How would you rate your overall experience?</p>
+    
+            <div data-aos="fade-up" class="flex justify-center mb-4" id="stars">
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="1"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="2"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="3"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="4"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="5"></i>
+            </div>
+    
+            <p data-aos="fade-up" class="text-center mb-4">Kindly take a moment to tell us what you think.</p>
+            <form id="feedback-form" data-aos="fade-up">
+                <input type="text" id="name" name="name" class="w-full p-2 border rounded mb-4" placeholder="Your Name" >
+                <input type="email" id="email" name="email" class="w-full p-2 border rounded mb-4" placeholder="Your Email" >
+                <input type="tel" id="phone" name="phone" class="w-full p-2 border rounded mb-4" placeholder="Your Phone Number" >
+                <input type="text" id="subject" name="subject" class="w-full p-2 border rounded mb-4" placeholder="Subject" >
+                <textarea  id="feedback" name="feedback" class="w-full p-2 border rounded mb-4" rows="4" placeholder="Your feedback..." ></textarea>
+                <button type="submit" data-aos="fade-up" class="bg-blue-600 text-white py-2 px-4 rounded w-full">Share my feedback</button>
+            </form>
+        </div>
+    </section>
+    
   <section id="faq" class="container">
     <h1 data-aos="fade-up">Frequently Asked Questions</h1>
     <input data-aos="fade-up" type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
@@ -589,6 +589,8 @@
     <script>
     AOS.init({duration: 600, once: false });
     </script>
+   <script src="feedback.js"></script>
+  
 </body> 
 </html>
 
