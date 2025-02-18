@@ -18,6 +18,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            color: #1f618d;
+        }
+        .answer {
+            display: none;
+            padding-top: 10px;
+            color: #555;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
     #eventSearch {
         width: 90%; 
         padding: 10px;
@@ -283,7 +338,83 @@
           </form>
       </div>
   </section>
-      
+  <section id="faq" class="container">
+    <h1>Frequently Asked Questions</h1>
+    <input type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
+
+    <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">💻 What is the coding club about?</p>
+      <p class="answer">Our coding club is a community for programmers of all levels to collaborate, learn, and work on projects together.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🚀 Who can join the coding club?</p>
+      <p class="answer">Anyone interested in coding, whether a beginner or an experienced developer, is welcome to join!</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">📚 Do I need prior coding experience to join?</p>
+      <p class="answer">No, beginners are welcome! We provide mentorship and learning resources to help you get started.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🎉 What types of events does the club organize?</p>
+      <p class="answer">We host hackathons, coding competitions, guest lectures, and hands-on workshops on various programming topics.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">📝 How can I register for an event?</p>
+      <p class="answer">You can register for upcoming events on our website under the “Events” section. Some events may require prior registration.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">💡 Can I suggest or start a project?</p>
+      <p class="answer">Absolutely! If you have an idea, you can propose it to the club, and if approved, members can collaborate with you to bring it to life.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🔧 What kind of projects does the club work on?</p>
+      <p class="answer">We work on a variety of projects, including web development, app development, AI, game development, and open-source contributions.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🖥️ How can I join a project?</p>
+      <p class="answer">Visit the “Projects” section of our website to see ongoing projects. You can join a project by contacting the project lead.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🎓 What programming languages do we focus on?</p>
+      <p class="answer">We cover various languages, including Python, JavaScript, Java, C++, and more based on member interests.</p>
+  </section>
+  
+  <section class="faq-item">
+      <p class="question" onclick="toggleAnswer(this)">🛠️ How can I get help with coding problems?</p>
+      <p class="answer">You can ask questions in our Discord group, attend help sessions, or connect with mentors during club meetings.</p>
+  </section>
+  
+  
+  
+
+
+</section>
+
+<script>
+    function toggleAnswer(element) {
+        let answer = element.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+
+    function searchFAQ() {
+        let input = document.querySelector('.search-box').value.toLowerCase();
+        let questions = document.querySelectorAll('.faq-item');
+
+        questions.forEach(item => {
+            let text = item.textContent.toLowerCase();
+            item.style.display = text.includes(input) ? "block" : "none";
+        });
+    }
+</script>
+
     
     <footer>
        
@@ -311,6 +442,7 @@
               <li class="sec-nav"><a href="event.html">Events</a></li>
               <li class="sec-nav"><a href="#projects">Projects</a></li>
               <li class="sec-nav"><a href="#contact">Contact</a></li>
+              <li class="sec-nav"><a href="#faq">FAQ</a></li>
               <li class="sec-nav"><a href="#feedback">Feedback</a></li>
             </ul>
           </div>
