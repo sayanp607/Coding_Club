@@ -268,3 +268,38 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.style.display = "none";
   });
 });
+
+// searchbar function
+function searchProjects() {
+  const searchBar = document.getElementById("searchBar");
+  const filter = searchBar.value.toLowerCase();
+  const projectCards = document.querySelectorAll(".project-card");
+  let noResults = true; // Assume no results initially
+
+  projectCards.forEach(card => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      const description = card.querySelector("p").textContent.toLowerCase();
+
+      if (title.includes(filter) || description.includes(filter)) {
+          card.style.display = "block"; // Show matching project
+          noResults = false; // We found a match
+      } else {
+          card.style.display = "none"; // Hide non-matching project
+      }
+  });
+
+  // Get the No Results message element
+  const noResultsMessage = document.getElementById("noResults");
+
+  if (noResults) {
+      noResultsMessage.style.display = "block"; // Show the message if no results
+  } else {
+      noResultsMessage.style.display = "none"; // Hide the message if results are found
+  }
+}
+
+// Function to clear search
+function clearSearch() {
+document.getElementById("searchBar").value = "";
+searchProjects(); // Reset search
+}

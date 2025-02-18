@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Club</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="toggle.css" />
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="lib/wow/customcursor.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+     @media (min-width: 768px) {
+        .logo-container img {
+       top: -10px;
+       left: -50px;
+       position: relative;
+        }
+        
+     }
+    </style>
+
+
+</head>
+<body>
+    
+    <header>
+        <div class="logo-container">
+          <img src="codingclub.png" alt="Logo">
+        </div>
+        <h1 id="typingText"></h1>
+        <nav>
+          <nav id="navbar">
+          <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#projects">Projects</a></li>
+               <li><a href="login.html">Login</a></li>
+              <li><a href="contributor.html">Contributors</a></li>
+              <li><a href="review.html">Reviews</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <button id="toggleTheme" class="toggle-btn">🌙</button>
+          </ul>
+        </nav>
+  
+           <nav>
+          <div class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="navLinks">
+              <span id="closeMenu"><i class="fas fa-times"></i></span>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="contributor.html">Contributors</a></li>
+              <li><a href="review.html">Reviews</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+          </ul>        
+      </nav>
+  </header> 
+
+  
+  <section id="projects">
+    <h2 data-aos="fade-up">Projects</h2>
+    <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>    
+
+    <section data-aos="fade-up" class="projects-section">
+      <h2 data-aos="fade-up">Our Projects</h2>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search projects..." oninput="searchProjects()">
+        <span id="clearBtn" onclick="clearSearch()">✖</span>
+    </div>
+    <div id="noResults" style="display: none; color: red; text-align: center; margin-top: 10px;">
+        No projects found
+    </div>  
+    
+            <div data-aos="fade-up" class="projects-container">
+          <!-- Project 1 -->
+          <div data-aos="fade-up" class="project-card">
+              <img src="todo.jpeg" alt="Project 1">
+              <h3>To-Do App</h3>
+              <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
+              <a href="#" class="view-demo">View Demo</a>
+          </div>
+
+          <!-- Project 2 -->
+          <div data-aos="fade-up" class="project-card">
+              <img src="guess.jpeg" alt="Project 2">
+              <h3>Guessing Game</h3>
+              <p>A fun guessing game built with JavaScript.</p>
+              <a href="#" class="view-demo">View Demo</a>
+          </div>
+
+          <!-- Project 3 -->
+          <div data-aos="fade-up" class="project-card">
+              <img src="color.jpeg" alt="Project 3">
+              <h3>Random Color Generator</h3>
+              <p>Click a button to generate a random color with hex codes.</p>
+              <a href="#" class="view-demo">View Demo</a>
+          </div>
+
+          <div data-aos="fade-up" class="project-card">
+            <img src="password.jpeg" alt="Project 4">
+            <h3>Password Generator</h3>
+            <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
+      </div>
+    </section>
+
+
+  <footer>
+       
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="newsletter">
+          <h3>Subscribe to our Newsletter</h3>
+          <form id="subscribeForm">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        
+          <div class="quick-contact">
+            <h3>Quick Links</h3>
+            <ul>
+              <li class="sec-nav"><a href="#home">Home</a></li>
+              <li class="sec-nav"><a href="#about">About</a></li>
+              <li class="sec-nav"><a href="event.html">Events</a></li>
+              <li class="sec-nav"><a href="#projects">Projects</a></li>
+              <li class="sec-nav"><a href="#contact">Contact</a></li>
+              <li class="sec-nav"><a href="#faq">FAQ</a></li>
+              <li class="sec-nav"><a href="#feedback">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="quick-contact">
+            <h3>Contact Us</h3>
+            <p>📍 123 Street, City, Country</p>
+            <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+            <p>📞 +123 456 7890</p>
+          </div>
+        
+        <div class="social-sharing">
+          <h3>Share Our Blog</h3>
+          <a href="#" id="facebookShare" class="social-icon">Facebook</a>
+          <a href="#" id="twitterShare" class="social-icon">Twitter</a>
+          <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
+          <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
+
+        </div>
+      </div>
+
+      <div class="privacy">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+
+      <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="toggle.js"></script>    
+</body>
+</html>
