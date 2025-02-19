@@ -596,7 +596,7 @@ button:hover {
   color: #007bff;
 }
 /* Responsive Fix */
-@media (max-width: 768px) {
+@media (max-width: 1035px) {
   .features {
     flex-direction: column; /* Stack on small screens */
     padding: 0;
