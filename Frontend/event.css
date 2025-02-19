@@ -44,6 +44,59 @@ body {
     border-radius: 5px;
 }
 
+.event-main-button{
+    background: linear-gradient(135deg,#0ca32d,#1097d6);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0,.3s ease-in-out;
+}
+.event-main-button:hover{
+    background: linear-gradient(135deg,#0a5a1b,#06608a);
+    transform: scale(1.12);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.add-event-form{
+    display: none;
+    margin: 50px;
+  }
+  .add-event-form h3{
+    font-size: 1.6rem;
+
+  }
+  
+  .add-event-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.20) ;
+     margin-top: 20px;
+     padding-bottom: 50px;
+  }
+  
+  
+  .eventbttn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 400px){
+    .add-event-form{
+        margin: 10px;
+        
+    }
+    .add-event-form form{
+        padding: 20px;
+    }
+    .eventbttn{
+         display: flex;
+         flex-direction: column;
+    }
+  }
+  .eventbttn button{
+     margin-right: 10px;
+     background: #0ca32d;
+  }
 /* Hackathon Section */
 .demo-hackathons {
     text-align: center;
