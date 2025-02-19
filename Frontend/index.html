@@ -143,7 +143,7 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="projectpage.html">Projects</a></li>
              <li><a href="login.html">Login</a></li>
             <li><a href="contributor.html">Contributors</a></li>
             <li><a href="review.html">Reviews</a></li>
@@ -214,12 +214,17 @@
   
       <!-- Add Event Form (Hidden by Default) -->
       <div data-aos="fade-up" class="add-event-form" id="eventForm" style="display: none;">
-          <h3>Add a New Event</h3>
+        
+          <form >
+            <h3>Add a New Event</h3>
           <input type="text" id="eventName" placeholder="Event Name">
           <input type="date" id="eventDate">
           <input type="text" id="eventDesc" placeholder="Event Description">
+          <div class="eventbttn">
           <button onclick="addEvent()">Submit</button>
           <button onclick="toggleEventForm()">Cancel</button>
+        </div>
+        </form>
       </div>
   
       <!-- Demo Hackathons Section -->
@@ -428,30 +433,30 @@
     </section>
 
     <section id="feedback" class="bg-blue-200 flex items-center justify-center min-h-screen flex-col">
-      <div data-aos="fade-up" class="feedback-form bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-          <h2 data-aos="fade-up" class="text-2xl font-bold text-center mb-4">We value your opinion.</h2>
-          <p data-aos="fade-up" class="text-center mb-4">How would you rate your overall experience?</p>
-  
-          <div data-aos="fade-up" class="flex justify-center mb-4" id="stars">
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="1"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="2"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="3"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="4"></i>
-              <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="5"></i>
-          </div>
-  
-          <p data-aos="fade-up" class="text-center mb-4">Kindly take a moment to tell us what you think.</p>
-  
-          <form data-aos="fade-up">
-              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Your Name" required>
-              <input type="email" class="w-full p-2 border rounded mb-4" placeholder="Your Email" required>
-              <input type="tel" class="w-full p-2 border rounded mb-4" placeholder="Your Phone Number" required>
-              <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Subject" required>
-              <textarea class="w-full p-2 border rounded mb-4" rows="4" placeholder="Your feedback..." required></textarea>
-              <button data-aos="fade-up" class="bg-blue-600 text-white py-2 px-4 rounded w-full">Share my feedback</button>
-          </form>
-      </div>
-  </section>
+        <div data-aos="fade-up" class="feedback-form bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 data-aos="fade-up" class="text-2xl font-bold text-center mb-4">We value your opinion.</h2>
+            <p data-aos="fade-up" class="text-center mb-4">How would you rate your overall experience?</p>
+    
+            <div data-aos="fade-up" class="flex justify-center mb-4" id="stars">
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="1"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="2"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="3"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="4"></i>
+                <i class="fas fa-star text-gray-400 text-2xl mx-1 cursor-pointer" data-value="5"></i>
+            </div>
+    
+            <p data-aos="fade-up" class="text-center mb-4">Kindly take a moment to tell us what you think.</p>
+            <form id="feedback-form" data-aos="fade-up">
+                <input type="text" id="name" name="name" class="w-full p-2 border rounded mb-4" placeholder="Your Name" >
+                <input type="email" id="email" name="email" class="w-full p-2 border rounded mb-4" placeholder="Your Email" >
+                <input type="tel" id="phone" name="phone" class="w-full p-2 border rounded mb-4" placeholder="Your Phone Number" >
+                <input type="text" id="subject" name="subject" class="w-full p-2 border rounded mb-4" placeholder="Subject" >
+                <textarea  id="feedback" name="feedback" class="w-full p-2 border rounded mb-4" rows="4" placeholder="Your feedback..." ></textarea>
+                <button type="submit" data-aos="fade-up" class="bg-blue-600 text-white py-2 px-4 rounded w-full">Share my feedback</button>
+            </form>
+        </div>
+    </section>
+    
   <section id="faq" class="container">
     <h1 data-aos="fade-up">Frequently Asked Questions</h1>
     <input data-aos="fade-up" type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
@@ -530,7 +535,7 @@
 </script>
 
     
-    <footer>
+    
        
     <footer class="footer">
       <div class="wrapper">
@@ -553,6 +558,7 @@
             <ul>
               <li class="sec-nav"><a href="#home">Home</a></li>
               <li class="sec-nav"><a href="#about">About</a></li>
+              <li class="sec-nav"><a href="blog.html">Blog</a></li>
               <li class="sec-nav"><a href="event.html">Events</a></li>
               <li class="sec-nav"><a href="#projects">Projects</a></li>
               <li class="sec-nav"><a href="#contact">Contact</a></li>
@@ -619,6 +625,18 @@
     <script>
     AOS.init({duration: 600, once: false });
     </script>
+   <script src="feedback.js"></script>
+   <script>
+    // Store the URL with the section ID in localStorage
+    window.localStorage.setItem("home", "https://coding-club-dgb7.vercel.app/index.html#home");
+    window.localStorage.setItem("about", "https://coding-club-dgb7.vercel.app/index.html#about");
+    // window.localStorage.setItem("project", "http://127.0.0.1:5501/Frontend/index.html#project");
+    window.localStorage.setItem("contact", "https://coding-club-dgb7.vercel.app/index.html#contact");
+    window.localStorage.setItem("faq", "https://coding-club-dgb7.vercel.app/index.html#faq");
+    window.localStorage.setItem("feedback", "https://coding-club-dgb7.vercel.app/index.html#feedback");
+    // window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#feedback");
+
+  </script>
 </body> 
 </html>
 
