@@ -49,7 +49,7 @@
                 <li><a href="projectpage.html">Projects</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="contributor.html">Contributors</a></li>
-                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a id="feedback-link" href="#feedback.html">Feedback</a></li>
         </ul>
       </nav>
     </header>
@@ -85,11 +85,11 @@
           <div class="quick-contact">
             <h3>Quick Links</h3>
             <ul>
-              <li class="sec-nav"><a href="/">Home</a></li>
-              <li class="sec-nav"><a href="/about">About</a></li>
+              <li class="sec-nav"><a id="home-link" href="/">Home</a></li>
+              <li class="sec-nav"><a id="about-link" href="/about">About</a></li>
               <li class="sec-nav"><a href="/blog">Blog</a></li>
-              <li class="sec-nav"><a href="/contact">Contact</a></li>
-              <li class="sec-nav"><a href="/feedback">Feedback</a></li>
+              <li class="sec-nav"><a id="contact-link" href="/contact">Contact</a></li>
+              <li class="sec-nav"><a id="feedback-link" href="https://coding-club-dgb7.vercel.app/index.html#feedback">Feedback</a></li>
             </ul>
           </div>
           <div class="quick-contact">
@@ -147,5 +147,12 @@
 
     <script src="./lib/wow/customcursor.js"></script>
     <script src="card.js"></script>
+    <script>
+      document.getElementById('feedback-link').href=window.localStorage.getItem('feedback')
+      document.getElementById('home-link').href = window.localStorage.getItem('home');
+      document.getElementById('about-link').href = window.localStorage.getItem('about');
+      document.getElementById('contact-link').href = window.localStorage.getItem('contact');
+      console.log(document.getElementById('feedback-link').href)
+    </script>
 </body> 
 </html>

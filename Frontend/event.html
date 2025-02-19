@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Club - Events</title>
     <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="style.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="lib/wow/customcursor.css">
+   
+
+ 
 
 </head>
 <body>
@@ -26,48 +31,67 @@
         <input type="text" id="search-bar" placeholder="Search events..." onkeyup="searchEvents()">
     </div>
 
-    <!-- Add Event Button -->
-    <button class="add-event-btn" onclick="showEventForm()">+ Add Event</button>
-
-
-    <!-- Event Form (Initially Hidden) -->
-    <div id="event-form" class="event-form">
-        <h3>Add New Event</h3>
-        <input type="text" id="event-title" placeholder="Event Title">
-        <input type="date" id="event-date">
-        <textarea id="event-desc" placeholder="Event Description"></textarea>
-        <button onclick="addEvent()">Add</button>
-        <button onclick="hideEventForm()">Cancel</button>
-    </div>
+   
 
     <!-- scroll button -->
     <button id="scrollToTop" class="scroll-btn">
         <i class="fas fa-arrow-up fa-xl"></i>
     </button>
-
+        <!-- Add Event Button -->
+        <button data-aos="fade-up" class="event-main-button" onclick="toggleEventForm()">Add Event</button>
+  
+        <!-- Add Event Form (Hidden by Default) -->
+        <div data-aos="fade-up" class="add-event-form" id="eventForm" >
+          
+            <form >
+              <h3>Add a New Event</h3>
+            <input type="text" id="eventName" placeholder="Event Name">
+            <input type="date" id="eventDate">
+            <input type="text" id="eventDesc" placeholder="Event Description">
+            <div class="eventbttn">
+            <button onclick="addEvent()">Submit</button>
+            <button onclick="toggleEventForm()">Cancel</button>
+          </div>
+          </form>
+        </div>
 
     <!-- Demo Hackathons Section -->
     <section class="demo-hackathons">
-        <h2>🔥 Upcoming Hackathons/Events</h2>
+        <h2>🔥More Upcoming Events</h2>
         <div class="hackathon-container">
             <div class="hackathon-card">
-                <h3>Beginner's Hackathon 2025</h3>
+                <h3>Cyber Code Fest 2025 </h3>
                 <p class="event-date">📅 March 5, 2025</p>
-                <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
+                <p class="event-desc"> A thrilling coding competition for security enthusiasts and ethical hackers..</p>
                 <button class="register-btn">Register</button>
             </div>
 
             <div class="hackathon-card">
-                <h3>AI Challenge Hackathon</h3>
+                <h3>InnovateX Hackathon</h3>
                 <p class="event-date">📅 March 15, 2025</p>
-                <p class="event-desc">Build AI-powered applications in this fun and interactive challenge.</p>
+                <p class="event-desc"> A hackathon focused on solving real-world problems with innovative tech solutions..</p>
                 <button class="register-btn">Register</button>
             </div>
 
             <div class="hackathon-card">
-                <h3>Full Stack Coding Challenge</h3>
+                <h3>Data Science Sprint </h3>
                 <p class="event-date">📅 March 25, 2025</p>
-                <p class="event-desc">Showcase your full-stack development skills in this exciting challenge.</p>
+                <p class="event-desc">A challenge-based event where participants build machine learning models and data-driven applications.
+</p>
+                <button class="register-btn">Register</button>
+            </div>
+            <div class="hackathon-card">
+                <h3>Blockchain Builders Hack </h3>
+                <p class="event-date">📅 March 27, 2025</p>
+                <p class="event-desc">A competition for developers to create decentralized applications (dApps) and smart contracts.
+</p>
+                <button class="register-btn">Register</button>
+            </div>
+            <div class="hackathon-card">
+                <h3>Speed Coding Showdown </h3>
+                <p class="event-date">📅 April 07, 2025</p>
+                <p class="event-desc">A fast-paced contest where coders compete to solve algorithmic problems in record time.
+</p>
                 <button class="register-btn">Register</button>
             </div>
         </div>
@@ -78,23 +102,23 @@
         <h2>⏳ Past Hackathons/Events</h2>
         <div class="hackathon-container">
             <div class="hackathon-card">
-                <h3>Beginner's Hackathon 2025</h3>
+                <h3>Quantum Code Quest</h3>
                 <p class="event-date">📅 January 5, 2025</p>
-                <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
+                <p class="event-desc"> A futuristic coding challenge exploring quantum computing concepts.</p>
                 <button class="register-btn">Register</button>
             </div>
 
             <div class="hackathon-card">
-                <h3>AI Challenge Hackathon</h3>
+                <h3>Hack the Future</h3>
                 <p class="event-date">📅 January 15, 2025</p>
-                <p class="event-desc">Build AI-powered applications in this fun and interactive challenge.</p>
+                <p class="event-desc">A tech marathon where participants build AI, blockchain, or IoT-based solutions.</p>
                 <button class="register-btn">Register</button>
             </div>
 
             <div class="hackathon-card">
-                <h3>Full Stack Coding Challenge</h3>
+                <h3>Cloud Wars Challenge</h3>
                 <p class="event-date">📅 January 25, 2025</p>
-                <p class="event-desc">Showcase your full-stack development skills in this exciting challenge.</p>
+                <p class="event-desc">A cloud computing competition focused on AWS, Azure, and Google Cloud projects.</p>
                 <button class="register-btn">Register</button>
             </div>
         </div>
@@ -104,7 +128,45 @@
     <div class="events-container" id="events-container">
         <!-- Events will be dynamically added here using JavaScript -->
     </div>
-
+    <script>
+        function toggleEventForm() {
+            let form = document.getElementById("eventForm");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+    
+        function addEvent() {
+            let name = document.getElementById("eventName").value;
+            let date = document.getElementById("eventDate").value;
+            let desc = document.getElementById("eventDesc").value;
+    
+            if (name === "" || date === "" || desc === "") {
+                alert("Please fill in all event details.");
+                return;
+            }
+    
+            let container = document.getElementById("hackathonContainer");
+    
+            let card = document.createElement("div");
+            card.classList.add("hackathon-card");
+    
+            card.innerHTML = `
+                <h3>${name}</h3>
+                <p class="event-date">📅 ${date}</p>
+                <p class="event-desc">${desc}</p>
+                <button class="register-btn">Register</button>
+            `;
+    
+            container.appendChild(card);
+    
+            // Clear input fields
+            document.getElementById("eventName").value = "";
+            document.getElementById("eventDate").value = "";
+            document.getElementById("eventDesc").value = "";
+    
+            // Hide the form after adding the event
+            toggleEventForm();
+        }
+    </script>
     <script src="event.js"></script>
 
     <div class="circle"></div>
