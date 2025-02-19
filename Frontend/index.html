@@ -99,6 +99,22 @@
             background-color: #054e9b;
             transform: scale(1.05);
         }
+        .profile {
+            position: absolute;
+            right:2rem;
+            top:6.8rem;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .profile-pic {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     </style>
   </head>
 <body>
@@ -135,7 +151,10 @@
             <button id="toggleTheme" class="toggle-btn">🌙</button>
         </ul>
       </nav>
-
+      <div class="profile">
+        <img id="profile-pic" class="profile-pic" alt="Profile Picture">
+        Welcome, <span id="username">User</span>
+    </div>
          <nav>
         <div class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
@@ -244,10 +263,21 @@
   </section>
   
   <script>
-      function toggleEventForm() {
-          let form = document.getElementById("eventForm");
-          form.style.display = form.style.display === "none" ? "block" : "none";
-      }
+    const user=JSON.parse(localStorage.getItem("user"));
+    const username = user.name || "User";
+    let profilePic = user.profilePhoto || "default.jpg";
+    console.log(user);
+
+    if (!profilePic.startsWith("data:image")) {
+        profilePic = "data:image/png;base64," + profilePic;
+    }
+  
+    document.getElementById("username").textContent = username;
+    document.getElementById("profile-pic").src = profilePic;
+    function toggleEventForm() {
+        let form = document.getElementById("eventForm");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+    }
   
       function addEvent() {
           let name = document.getElementById("eventName").value;
