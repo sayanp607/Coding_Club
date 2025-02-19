@@ -617,15 +617,16 @@ button:hover {
 }
 
 /* Footer Styling */
-.footer {
+footer {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #03a9f7, #77c6f1);
-    margin: 0;
-    padding: 0;
+     margin-left: 0px;
+     margin-right: 0px;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 90px;
     text-align: center;
     width: 100%;
+    
 }
 .wrapper{
     display: flex;
