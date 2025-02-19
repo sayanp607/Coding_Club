@@ -26,14 +26,13 @@
         }
         
      }
+
      footer{
-   
       padding-top: 20px;
       max-width: 100%;
       margin-left: -80px;
       margin-bottom: -90px;
     }
-     
     </style>
 
 
@@ -184,7 +183,27 @@
 
       <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
     </footer>
-
+    <script>
+      const text = "Coding Club";
+      let index = 0;
+  
+      function typeEffect() {
+        const typingElement = document.getElementById("typingText");
+  
+        if (!typingElement) return;
+  
+        typingElement.textContent = text.slice(0, index);
+        index++;
+  
+        if (index <= text.length) {
+          setTimeout(typeEffect, 100);
+        } else {
+          typingElement.style.borderRight = "none";
+        }
+      }
+  
+      document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
     <script src="script.js"></script>
     <script src="toggle.js"></script>    
 </body>
