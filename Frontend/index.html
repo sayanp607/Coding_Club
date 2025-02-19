@@ -195,12 +195,17 @@
   
       <!-- Add Event Form (Hidden by Default) -->
       <div data-aos="fade-up" class="add-event-form" id="eventForm" style="display: none;">
-          <h3>Add a New Event</h3>
+        
+          <form >
+            <h3>Add a New Event</h3>
           <input type="text" id="eventName" placeholder="Event Name">
           <input type="date" id="eventDate">
           <input type="text" id="eventDesc" placeholder="Event Description">
+          <div class="event-bttn">
           <button onclick="addEvent()">Submit</button>
           <button onclick="toggleEventForm()">Cancel</button>
+        </div>
+        </form>
       </div>
   
       <!-- Demo Hackathons Section -->
