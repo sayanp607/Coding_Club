@@ -1,8 +1,12 @@
 /* Projects Section */
+*{
+    margin: 0;
+    padding: 0;
+}
 .projects-section {
     text-align: center;
     padding: 40px 20px;
-    box-sizing: border-box; /* Ensures padding is included in the total width */
+  
 }
 
 .projects-section h2 {
@@ -16,6 +20,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+   
 }
 
 .projects-container {

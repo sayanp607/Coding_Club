@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .post {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Blog Page</h2>
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea
+        id="content"
+        placeholder="Write your post here..."
+        required
+      ></textarea>
+      <button onclick="addPost()">Add Post</button>
+      <div id="posts"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", loadPosts);
+
+      function addPost() {
+        const title = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+        if (!title || !content) return;
+
+        const posts = JSON.parse(localStorage.getItem("posts")) || [];
+        posts.push({ title, content });
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        document.getElementById("title").value = "";
+        document.getElementById("content").value = "";
+
+        loadPosts();
+      }
+
+      function loadPosts() {
+        const postsContainer = document.getElementById("posts");
+        postsContainer.innerHTML = "";
+        const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+        posts.forEach((post, index) => {
+          const postDiv = document.createElement("div");
+          postDiv.classList.add("post");
+          postDiv.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <button onclick="editPost(${index})">Edit</button>
+                    <button onclick="deletePost(${index})">Delete</button>
+                `;
+          postsContainer.appendChild(postDiv);
+        });
+      }
+
+      function editPost(index) {
+        const posts = JSON.parse(localStorage.getItem("posts"));
+        const newTitle = prompt("Edit Title", posts[index].title);
+        const newContent = prompt("Edit Content", posts[index].content);
+        if (newTitle !== null && newContent !== null) {
+          posts[index] = { title: newTitle, content: newContent };
+          localStorage.setItem("posts", JSON.stringify(posts));
+          loadPosts();
+        }
+      }
+
+      function deletePost(index) {
+        const posts = JSON.parse(localStorage.getItem("posts"));
+        posts.splice(index, 1);
+        localStorage.setItem("posts", JSON.stringify(posts));
+        loadPosts();
+      }
+    </script>
+  </body>
+</html>

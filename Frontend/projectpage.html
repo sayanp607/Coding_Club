@@ -27,6 +27,24 @@
          
       }
      </style>
+     @media (min-width: 768px) {
+        .logo-container img {
+       top: -10px;
+       left: -50px;
+       position: relative;
+        }
+        
+     }
+
+     footer{
+      padding-top: 20px;
+      max-width: 100%;
+      margin-left: -80px;
+      margin-bottom: -90px;
+    }
+    </style>
+
+
 </head>
 <body>
   <div class="overlay" id="overlay">
@@ -63,6 +81,36 @@
        <nav>
       <div class="hamburger" id="hamburger">
           <i class="fas fa-bars"></i>
+          <div data-aos="fade-up" class="project-card">
+            <img src="password.jpeg" alt="Project 4">
+            <h3>Password Generator</h3>
+            <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
+          <div data-aos="fade-up" class="project-card">
+            <img src="download (1).jpg" alt="Project 5">
+            <h3>Snake Game</h3>
+            <p>An enjoyable snake game created using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
+          <div data-aos="fade-up" class="project-card">
+            <img src="tictactoe.png" alt="Project 6">
+            <h3>Tic Tac Toe Game</h3>
+            <p>A multiplayer and playful game of tic tac toe created using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
+          <div data-aos="fade-up" class="project-card">
+            <img src="weather.jpg" alt="Project 7">
+            <h3>Weather App</h3>
+            <p>A simple weather created using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
+          <div data-aos="fade-up" class="project-card">
+            <img src="book.png" alt="Project 8">
+            <h3>Ebook</h3>
+            <p>An innovative and informative book app created using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="view-demo">View Demo</a>
+        </div>
       </div>
       <ul class="nav-links" id="navLinks">
           <span id="closeMenu"><i class="fas fa-times"></i></span>
@@ -175,6 +223,8 @@
 </div>
 
   </section>
+
+       
     <footer class="footer">
       <div class="wrapper">
         <div class="newsletter">
@@ -227,7 +277,27 @@
 
       <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
     </footer>
-
+    <script>
+      const text = "Coding Club";
+      let index = 0;
+  
+      function typeEffect() {
+        const typingElement = document.getElementById("typingText");
+  
+        if (!typingElement) return;
+  
+        typingElement.textContent = text.slice(0, index);
+        index++;
+  
+        if (index <= text.length) {
+          setTimeout(typeEffect, 100);
+        } else {
+          typingElement.style.borderRight = "none";
+        }
+      }
+  
+      document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
     <script src="script.js"></script>
     <script src="toggle.js"></script>
     <div class="circle"></div>
