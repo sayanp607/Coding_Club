@@ -25,14 +25,13 @@
             background-color: #f9f9f9;
         }
         .container {
-            max-width: 800px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
+          max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
         }
         h1, h2 {
             color:#0e9af7;
@@ -78,14 +77,14 @@
         <nav>
           <nav id="navbar">
           <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a id="home-link" href="#">Home</a></li>
+              <li><a id="about-link" href="#about">About</a></li>
               <li><a href="event.html">Events</a></li>
-              <li><a href="#projects">Projects</a></li>
+              <li><a  href="projectpage.html">Projects</a></li>
                <li><a href="login.html">Login</a></li>
               <li><a href="contributor.html">Contributors</a></li>
               <li><a href="review.html">Reviews</a></li>
-              <li><a href="#feedback">Feedback</a></li>
+              <li><a id="feedback-link" href="#feedback">Feedback</a></li>
               <button id="toggleTheme" class="toggle-btn">🌙</button>
           </ul>
         </nav>
@@ -96,20 +95,20 @@
           </div>
           <ul class="nav-links" id="navLinks">
               <span id="closeMenu"><i class="fas fa-times"></i></span>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a id="home-link" href="#">Home</a></li>
+              <li><a id="about-link" href="#about">About</a></li>
               <li><a href="#events">Events</a></li>
-              <li><a href="#projects">Projects</a></li>
+              <li><a href="projectpage.html">Projects</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="contributor.html">Contributors</a></li>
               <li><a href="review.html">Reviews</a></li>
-              <li><a href="#feedback">Feedback</a></li>
+              <li><a id="feedback-link" href="#feedback">Feedback</a></li>
               <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
           </ul>        
       </nav>
     </header>
     <div class="container">
-        <a href="index.html" class="back-button">⬅ Back to Home</a>
+        <!-- <a href="index.html" class="back-button">⬅ Back to Home</a> -->
 
         <h1>Privacy Policy</h1>
         <h3>Coding Club</h3>
@@ -240,5 +239,13 @@
     <script src="./lib/wow/customcursor.js"></script>
 
     <script src="card.js"></script>
+    <script>
+       document.getElementById('home-link').href = window.localStorage.getItem('home');
+       document.getElementById('about-link').href = window.localStorage.getItem('about');
+      //  document.getElementById('project-link').href = window.localStorage.getItem('project');
+       document.getElementById('feedback-link').href = window.localStorage.getItem('feedback');
+        document.getElementById('faq-link').href = window.localStorage.getItem('faq');
+       
+    </script>
 </body>
 </html>
