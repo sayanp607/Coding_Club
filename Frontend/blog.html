@@ -4,43 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      .container {
-        max-width: 600px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .post {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 0;
-      }
-      button {
-        margin: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="blog.css" />
   </head>
-  <body>
-    <div class="container">
-      <h2>Blog Page</h2>
-      <input type="text" id="title" placeholder="Title" required />
+  <body class="blog-body">
+    <div class="blog-container">
+      <h2 class="blog-header">Blog Page</h2>
+      <input
+        type="text"
+        id="title"
+        class="blog-input"
+        placeholder="Title"
+        required
+      />
       <textarea
         id="content"
-        placeholder="Write your post here..."
+        class="blog-textarea"
+        placeholder="Write the Post"
         required
       ></textarea>
-      <button onclick="addPost()">Add Post</button>
-      <div id="posts"></div>
+      <button class="blog-button" onclick="addPost()">Add Post</button>
+      <div id="posts" class="blog-posts"></div>
     </div>
 
     <script>
@@ -68,13 +51,13 @@
 
         posts.forEach((post, index) => {
           const postDiv = document.createElement("div");
-          postDiv.classList.add("post");
+          postDiv.classList.add("blog-post");
           postDiv.innerHTML = `
-                    <h3>${post.title}</h3>
-                    <p>${post.content}</p>
-                    <button onclick="editPost(${index})">Edit</button>
-                    <button onclick="deletePost(${index})">Delete</button>
-                `;
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <button class="blog-edit-button" onclick="editPost(${index})">Edit</button>
+            <button class="blog-delete-button" onclick="deletePost(${index})">Delete</button>
+          `;
           postsContainer.appendChild(postDiv);
         });
       }
