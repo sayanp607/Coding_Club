@@ -4,8 +4,10 @@
 
             if (hours >= 5 && hours < 12) {
                 greeting = "Good Morning! 🌅\n\nWelcome to Coding Club";
-            } else if (hours >= 12 && hours < 18) {
+            } else if (hours >= 12 && hours < 17) {
                 greeting = "Good Afternoon! ☀️\n\nWelcome to Coding Club";
+            } else if (hours >= 17 && hours < 21) {
+                greeting = "Good Evening! ☀️\n\nWelcome to Coding Club";
             } else {
                 greeting = "Good Night! 🌙\n\nWelcome to Coding Club";
             }
