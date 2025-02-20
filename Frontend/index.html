@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Club</title>
 
+    <link rel="stylesheet" href="about.css"/>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="toggle.css" />
     <link rel="stylesheet" href="event.css">
@@ -99,6 +101,22 @@
             background-color: #054e9b;
             transform: scale(1.05);
         }
+        .profile {
+            position: absolute;
+            right:2rem;
+            top:6.8rem;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .profile-pic {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     </style>
   </head>
 <body>
@@ -135,7 +153,10 @@
             <button id="toggleTheme" class="toggle-btn">🌙</button>
         </ul>
       </nav>
-
+      <div class="profile">
+        <img id="profile-pic" class="profile-pic" alt="Profile Picture">
+        Welcome, <span id="username">User</span>
+    </div>
          <nav>
         <div class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
@@ -178,12 +199,44 @@
     </section>
 
     <section id="about">
-      <h2 data-aos="fade-up">About Us</h2>
-      <p data-aos="fade-up">
-        We are a group of coding enthusiasts passionate about technology and
-        innovation.
-      </p>
-    </section>
+        <div class="about-container">
+          <h2>About Us</h2>
+          <p class="intro">
+            We are a passionate team of coding enthusiasts dedicated to solving real-world problems through technology and innovation. Our team is driven by creativity, collaboration, and continuous learning. We believe in making a difference by building solutions that impact people’s lives positively.
+          </p>
+      
+          <div class="team">
+            <h3>Meet Our Team</h3>
+            <div class="team-members">
+              <div class="member">
+                <img src="image1.png.png" alt="//">
+                <h4>Joe Rogan</h4>
+                <p>Frontend Developer</p>
+                <p class="more-info">Joe specializes in frontend development, focusing on creating seamless and intuitive user interfaces.</p>
+              </div>
+              <div class="member">
+                <img src="image2.png.jpg" alt="//">
+                <h4>Abhay</h4>
+                <p>Project Manager</p>
+                <p class="more-info">Abhay leads the team, ensuring timely delivery of projects and effective communication within the team.</p>
+              </div>
+              <div class="member">
+                <img src="image3.jpg" alt="//">
+                <h4>Jane Smith</h4>
+                <p>Backend Developer</p>
+                <p class="more-info">Jane works on backend architecture, optimizing performance, and ensuring data security for our applications.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="vision">
+            <h3>Our Vision</h3>
+            <p>
+              We strive to build scalable, innovative, and efficient technology solutions that bring value to both users and businesses. Our goal is to contribute to the tech community by creating open-source projects and empowering developers around the world.
+            </p>
+          </div>
+        </div>
+      </section>
 
     <section id="events">
       <h2 data-aos="fade-up">Events</h2>
@@ -195,12 +248,17 @@
   
       <!-- Add Event Form (Hidden by Default) -->
       <div data-aos="fade-up" class="add-event-form" id="eventForm" style="display: none;">
-          <h3>Add a New Event</h3>
+        
+          <form >
+            <h3>Add a New Event</h3>
           <input type="text" id="eventName" placeholder="Event Name">
           <input type="date" id="eventDate">
           <input type="text" id="eventDesc" placeholder="Event Description">
+          <div class="eventbttn">
           <button onclick="addEvent()">Submit</button>
           <button onclick="toggleEventForm()">Cancel</button>
+        </div>
+        </form>
       </div>
   
       <!-- Demo Hackathons Section -->
@@ -239,10 +297,21 @@
   </section>
   
   <script>
-      function toggleEventForm() {
-          let form = document.getElementById("eventForm");
-          form.style.display = form.style.display === "none" ? "block" : "none";
-      }
+    const user=JSON.parse(localStorage.getItem("user"));
+    const username = user.name || "User";
+    let profilePic = user.profilePhoto || "default.jpg";
+    console.log(user);
+
+    if (!profilePic.startsWith("data:image")) {
+        profilePic = "data:image/png;base64," + profilePic;
+    }
+  
+    document.getElementById("username").textContent = username;
+    document.getElementById("profile-pic").src = profilePic;
+    function toggleEventForm() {
+        let form = document.getElementById("eventForm");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+    }
   
       function addEvent() {
           let name = document.getElementById("eventName").value;
@@ -367,7 +436,7 @@
               <a href="#" class="view-demo">View Demo</a>
           </div>
         </div>
-        <a href="#" class="btn" target="_blank">More Projects</a>
+        <a href="projectpage.html" class="btn" target="_blank">More Projects</a>
       </section>
     </section>
 
@@ -500,7 +569,7 @@
 </script>
 
     
-    <footer>
+    
        
     <footer class="footer">
       <div class="wrapper">
@@ -523,6 +592,7 @@
             <ul>
               <li class="sec-nav"><a href="#home">Home</a></li>
               <li class="sec-nav"><a href="#about">About</a></li>
+              <li class="sec-nav"><a href="blog.html">Blog</a></li>
               <li class="sec-nav"><a href="event.html">Events</a></li>
               <li class="sec-nav"><a href="#projects">Projects</a></li>
               <li class="sec-nav"><a href="#contact">Contact</a></li>
@@ -590,7 +660,17 @@
     AOS.init({duration: 600, once: false });
     </script>
    <script src="feedback.js"></script>
-  
+   <script>
+    // Store the URL with the section ID in localStorage
+    window.localStorage.setItem("home", "https://coding-club-dgb7.vercel.app/index.html#home");
+    window.localStorage.setItem("about", "https://coding-club-dgb7.vercel.app/index.html#about");
+    // window.localStorage.setItem("project", "http://127.0.0.1:5501/Frontend/index.html#project");
+    window.localStorage.setItem("contact", "https://coding-club-dgb7.vercel.app/index.html#contact");
+    window.localStorage.setItem("faq", "https://coding-club-dgb7.vercel.app/index.html#faq");
+    window.localStorage.setItem("feedback", "https://coding-club-dgb7.vercel.app/index.html#feedback");
+    // window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#feedback");
+
+  </script>
 </body> 
 </html>
 
