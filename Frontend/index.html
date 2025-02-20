@@ -299,7 +299,7 @@
   <script>
     const user=JSON.parse(localStorage.getItem("user"));
     const username = user.name || "User";
-    let profilePic = user.profilePhoto || "default.jpg";
+    let profilePic = user.profilePhoto || <i class="fa-solid fa-user"></i>;
     console.log(user);
 
     if (!profilePic.startsWith("data:image")) {
