@@ -86,6 +86,9 @@ body {
   border-color: #ffcc00;
   box-shadow: 0px 0px 12px rgba(207, 205, 70, 0.9);
 }
+.dark-mode .answer{
+  color: rgb(202, 200, 200);
+}
 
 /* Dark mode for buttons */
 .dark-mode button:not(#toggleTheme) {
