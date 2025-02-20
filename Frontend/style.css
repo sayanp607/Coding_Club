@@ -550,6 +550,22 @@ button:hover {
 .eventbttn button{
    margin-right: 10px;
 }
+.demo-hackathons h2{
+  margin-bottom: 20px;
+}
+
+@media(max-width:460px){
+  .demo-hackathons h2{
+  min-width: 200px;
+  overflow-wrap: break-word;
+  }
+}
+@media(max-width:410px){
+  .demo-hackathons h2{
+    min-width: 100px;
+    overflow-wrap: break-word;
+  }
+}
 #projects {
   text-align: center;
   padding: 50px;
@@ -652,17 +668,7 @@ footer {
   padding: 5px 90px;
   text-align: center;
   width: 100%;
-
-  .footer {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #03a9f7, #77c6f1);
-    margin: 0;
-    padding: 0;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    width: 100%;
-  }
+}
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -841,4 +847,4 @@ footer {
       right: 5%;
     }
   }
-}
+
