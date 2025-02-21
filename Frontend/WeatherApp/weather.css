@@ -1,0 +1,79 @@
+/* General body styling */
+.weather-body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the weather app */
+.weather-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header */
+.weather-header {
+  margin-bottom: 20px;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px;
+  border: none;
+  background-color: #0366d6;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #024eaf;
+}
+
+/* Weather card */
+.weather-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* City name and weather details */
+.city-name {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.temp,
+.humidity,
+.feels,
+.time {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #555;
+}
