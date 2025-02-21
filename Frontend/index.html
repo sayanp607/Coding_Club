@@ -161,7 +161,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="projectpage.html">Projects</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="login.html" id="auth-link">Login</a></li>
+          
           <li><a href="contributor.html">Contributors</a></li>
           <li><a href="review.html">Reviews</a></li>
           <li><a href="#feedback">Feedback</a></li>
@@ -736,6 +737,40 @@
     AOS.init({ duration: 600, once: false });
   </script>
   <script src="feedback.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        updateAuthLink();
+    });
+
+    function updateAuthLink() {
+        let loggedInUser = localStorage.getItem("isLoggedIn"); // Fix here
+        let authLink = document.getElementById("auth-link");
+
+        console.log("Logged in status:", loggedInUser); // Debugging
+
+        if (authLink) {
+            if (loggedInUser === "true") {
+                authLink.innerText = "Logout";
+                authLink.href = "#";
+                authLink.onclick = function () {
+                    logout();
+                };
+            } else {
+                authLink.innerText = "Login";
+                authLink.href = "login.html";
+                authLink.onclick = null;
+            }
+        } else {
+            console.error("auth-link not found in the DOM!");
+        }
+    }
+
+    function logout() {
+        localStorage.removeItem("isLoggedIn"); // Fix here
+        updateAuthLink();
+        window.location.reload();
+    }
+</script>
   <script>
     // Store the URL with the section ID in localStorage
     window.localStorage.setItem("home", "https://coding-club-dgb7.vercel.app/index.html#home");
