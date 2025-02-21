@@ -1,43 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("team.json")
-        .then(response => response.json())
-        .then(data => displayTeam(data))
-        .catch(error => console.error("Error loading team data:", error));
-});
+const GITHUB_USER = "ak-0283";
+const GITHUB_REPO = "Coding_Club";
+const apiURL = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contributors`;
+let contributorsData = [];
 
-function displayTeam(team) {
-    const teamContainer = document.getElementById("teamContainer");
-    teamContainer.innerHTML = ""; // Clear previous content
-
-    team.forEach(member => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-            <img src="${member.image}" alt="${member.name}">
-            <h3>${member.name}</h3>
-            <p>${member.role}</p>
-            <div class="contributors">
-                <a href="${member.github}" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="${member.linkedin}" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        `;
-        teamContainer.appendChild(card);
-    });
+async function fetchContributors() {
+  try {
+    const response = await fetch(apiURL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    contributorsData = await response.json();
+    displayTeam(contributorsData);
+  } catch (error) {
+    console.error("Error fetching contributors:", error);
+    document.getElementById("teamContainer").innerHTML =
+      "<p>Failed to load contributors.</p>";
+  }
 }
-
 function filterTeam() {
-    const searchQuery = document.getElementById("search").value.toLowerCase();
-    fetch("team.json")
-        .then(response => response.json())
-        .then(data => {
-            const filtered = data.filter(member =>
-                member.name.toLowerCase().includes(searchQuery) ||
-                member.role.toLowerCase().includes(searchQuery)
-            );
-            displayTeam(filtered);
-        });
+  const searchQuery = document.getElementById("search").value.toLowerCase();
+  const filtered = contributorsData.filter((member) =>
+    member.login.toLowerCase().includes(searchQuery)
+  );
+  displayTeam(filtered);
 }
+
+function displayTeam(contributors) {
+  const teamContainer = document.getElementById("teamContainer");
+  teamContainer.innerHTML = "";
+  if (contributors.length === 0) {
+    teamContainer.innerHTML = "<p>No contributors found.</p>";
+    return;
+  }
+  contributors.forEach((member) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+        <img src="${member.avatar_url}" alt="${member.login}">
+        <h3>${member.login}</h3>
+        <a href="${member.html_url}" target="_blank">View GitHub Profile</a>
+        `;
+    teamContainer.appendChild(card);
+  });
+}
+
+fetchContributors();

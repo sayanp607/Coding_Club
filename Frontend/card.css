@@ -43,6 +43,10 @@ h1 {
   margin: 10px 0;
 }
 
+.dark-mode h1 {
+  color: white;
+}
+
 .close-btn {
   position: absolute;
   top: 10px;
