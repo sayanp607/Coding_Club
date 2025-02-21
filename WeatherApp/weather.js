@@ -27,7 +27,6 @@ function updateWeatherCard(data) {
   document.getElementById("temperature").textContent = data.main.temp;
   document.getElementById("humidity").textContent = data.main.humidity;
   document.getElementById("weatherCard").classList.remove("hidden");
-  // const aqi = aqiData.list[0].main.aqi;
   document.getElementById("feelsLike").textContent = data.main.feels_like;
   console.log(data);
 }
