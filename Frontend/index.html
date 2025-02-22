@@ -288,6 +288,7 @@
 
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
+    
     <!-- Search Bar -->
     <input data-aos="fade-up" type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
 
@@ -311,9 +312,13 @@
 
     <!-- Demo Hackathons Section -->
     <section data-aos="fade-up" class="demo-hackathons">
+      
       <h2>🔥 Upcoming Hackathons/Events</h2>
+      
+<p id="noResultMessage" style="display: none; color: red; text-align: center;">No results found</p>
       <div data-aos="fade-up" class="hackathon-container" id="hackathonContainer">
         <div class="hackathon-card">
+          
           <h3>Beginner's Hackathon 2025</h3>
           <p class="event-date">📅 March 5, 2025</p>
           <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
@@ -428,21 +433,33 @@
   </script>
 
 
-  <script>
-    function filterEvents() {
-      let input = document.getElementById("eventSearch").value.toLowerCase();
-      let cards = document.querySelectorAll(".hackathon-card");
+<script>
+  function filterEvents() {
+    let input = document.getElementById("eventSearch").value.toLowerCase();
+    let cards = document.querySelectorAll(".hackathon-card");
+    let noResultMessage = document.getElementById("noResultMessage");
+    let found = false;
 
-      cards.forEach(card => {
-        let eventName = card.querySelector("h3").innerText.toLowerCase();
-        if (eventName.includes(input)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+    cards.forEach(card => {
+      let eventName = card.querySelector("h3").innerText.toLowerCase();
+      if (eventName.includes(input)) {
+        card.style.display = "block";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show "No results found" message if no events match the search
+    if (found) {
+      noResultMessage.style.display = "none";
+    } else {
+      noResultMessage.style.display = "block";
     }
-  </script>
+  }
+</script>
+
+
 
 
 <section id="projects">
