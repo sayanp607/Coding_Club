@@ -657,13 +657,16 @@ button:hover {
   background: linear-gradient(135deg, #03a9f7, #77c6f1);
    overflow-wrap: break-word;
   color: white;
-  padding: 5px 18px;
   text-align: center;
     width: 100vw;
+    margin-inline-start: -78px;
+    margin-bottom: -90px;
 }
   .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding: 10px;
+
   }
   @media (max-width: 600px) {
     .wrapper {
