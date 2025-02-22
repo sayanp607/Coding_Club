@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
+  
 <body>
-    <button id="toggleTheme" class="toggle-btn">🌙</button>
+   
 
     <div class="overlay" id="overlay">
       <div class="card">
@@ -35,25 +36,60 @@
     </button>
 
     <header>
-
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <nav class="navbar" id="navbar">
-        <ul class="nav-links">
-          <h1 class="head1">Welcome to Our Coding Club</h1>
-        </ul>
+      <div class="logo-container">
+        <img src="codingclub.png" alt="Logo" />
+      </div>
+      <h1 id="typingText"></h1>
       <nav>
-        <ul>
-         <li><a href="./index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="event.html">Events</a></li>
-                <li><a href="projectpage.html">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="contributor.html">Contributors</a></li>
-                <li><a id="feedback-link" href="#feedback.html">Feedback</a></li>
-        </ul>
+        <nav id="navbar">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li>
+              <a href="https://coding-club-dgb7.vercel.app/index.html#about"
+                >About</a
+              >
+            </li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="projectpage.html">Projects</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contributor.html">Contributors</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li>
+              <a href="https://coding-club-dgb7.vercel.app/index.html#feedback"
+                >Feedback</a
+              >
+            </li>
+            <button id="toggleTheme" class="toggle-btn">🌙</button>
+          </ul>
+        </nav>
+
+        <nav>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <span id="closeMenu"><i class="fas fa-times"></i></span>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="https://coding-club-dgb7.vercel.app/index.html#about"
+                >About</a
+              >
+            </li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="projectpage.html">Projects</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contributor.html">Contributors</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li>
+              <a href="https://coding-club-dgb7.vercel.app/index.html#feedback"
+                >Feedback</a
+              >
+            </li>
+            <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+          </ul>
+        </nav>
       </nav>
     </header>
-
     <div class="banner">
         <h1>Meet Our Contributors</h1>
         <p>Dedicated minds behind Coding Club 🚀</p>
@@ -147,12 +183,6 @@
 
     <script src="./lib/wow/customcursor.js"></script>
     <script src="card.js"></script>
-    <script>
-      document.getElementById('feedback-link').href=window.localStorage.getItem('feedback')
-      document.getElementById('home-link').href = window.localStorage.getItem('home');
-      document.getElementById('about-link').href = window.localStorage.getItem('about');
-      document.getElementById('contact-link').href = window.localStorage.getItem('contact');
-      console.log(document.getElementById('feedback-link').href)
-    </script>
+    
 </body> 
 </html>
