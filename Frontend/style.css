@@ -255,7 +255,7 @@ header {
   letter-spacing: 2px;
   font-size: 1.2rem;
   font-weight: bold;
-   width:100vw;
+   width:100%;
 }
 
 .logo-container {
@@ -655,12 +655,13 @@ button:hover {
 .footer {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #03a9f7, #77c6f1);
-   overflow-wrap: break-word;
   color: white;
   text-align: center;
-    width: 100vw;
-    margin-inline-start: -78px;
-    margin-bottom: -90px;
+  width: 100%;
+  padding: 15px 20px;
+  position: relative; /* If you want it to stay in the flow */
+  bottom: 0;
+  left: 0;
 }
   .wrapper {
     display: flex;
