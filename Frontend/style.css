@@ -255,8 +255,7 @@ header {
   letter-spacing: 2px;
   font-size: 1.2rem;
   font-weight: bold;
-  width: 100%;
-  margin-top: 0px;
+   width:100vw;
 }
 
 .logo-container {
@@ -651,26 +650,16 @@ button:hover {
 }
 
 /* Footer Styling */
-footer {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #03a9f7, #77c6f1);
-     margin-left: 0px;
-     margin-right: 0px;
-    color: white;
-    padding: 5px 90px;
-    text-align: center;
-    width: 100%;
-    }
+
 
 .footer {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #03a9f7, #77c6f1);
-  margin-left: 0px;
-  margin-right: 0px;
+   overflow-wrap: break-word;
   color: white;
-  padding: 5px 90px;
+  padding: 5px 18px;
   text-align: center;
-  width: 100%;
+    width: 100vw;
 }
   .wrapper {
     display: flex;
@@ -681,6 +670,9 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .footer{
+      padding: 5px 30px;
     }
   }
   .newsletter {
@@ -693,6 +685,14 @@ footer {
   }
   .newsletter button {
     background: linear-gradient(135deg, #333, #444);
+  }
+  @media (max-width: 100px) {
+ 
+  
+    .newsletter input,  .newsletter button
+    {
+      width: 300px; /* Keep fixed width */
+    }
   }
   .sec-nav {
     padding: 3px;

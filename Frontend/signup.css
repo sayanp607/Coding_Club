@@ -203,3 +203,31 @@ body {
 #signup-profile-photo {
     display: none;
 }
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; /* Space for the eye icon */
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: gray;
+    font-size: 18px;
+}
+
+#togglePassword:hover {
+    color: black;
+}
