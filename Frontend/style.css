@@ -686,6 +686,14 @@ button:hover {
   .newsletter button {
     background: linear-gradient(135deg, #333, #444);
   }
+  @media (max-width: 100px) {
+ 
+  
+    .newsletter input,  .newsletter button
+    {
+      width: 300px; /* Keep fixed width */
+    }
+  }
   .sec-nav {
     padding: 3px;
     color: white;
