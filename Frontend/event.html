@@ -87,25 +87,25 @@
         <button data-aos="fade-up" class="event-main-button" onclick="toggleEventForm()">Add Event</button>
   
         <!-- Add Event Form (Hidden by Default) -->
-        <div data-aos="fade-up" class="add-event-form" id="eventForm" >
-          
-            <form >
-              <h3>Add a New Event</h3>
-            <input type="text" id="eventName" placeholder="Event Name">
-            <input type="date" id="eventDate">
-            <input type="text" id="eventDesc" placeholder="Event Description">
-            <div class="eventbttn">
-            <button onclick="addEvent()">Submit</button>
-            <button onclick="toggleEventForm()">Cancel</button>
-          </div>
-          </form>
+        <div data-aos="fade-up" class="add-event-form" id="eventForm" style="display: none;">
+            <form onsubmit="return addEvent(event)">
+                <h3>Add a New Event</h3>
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="date" id="eventDate" required>
+                <input type="text" id="eventDesc" placeholder="Event Description" required>
+                <div class="eventbttn">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="toggleEventForm()">Cancel</button>
+                </div>
+            </form>
         </div>
+        <section class="demo-hackathons">
+          <h2>🔥More Upcoming Events</h2>
+        
 
-    <!-- Demo Hackathons Section -->
-    <section class="demo-hackathons">
-        <h2>🔥More Upcoming Events</h2>
-        <div class="hackathon-container">
-            <div class="hackathon-card">
+            <!-- Events Section -->
+            <div class="hackathon-container" id="hackathon-container">
+              <div class="hackathon-card">
                 <h3>Cyber Code Fest 2025 </h3>
                 <p class="event-date">📅 March 5, 2025</p>
                 <p class="event-desc"> A thrilling coding competition for security enthusiasts and ethical hackers..</p>
@@ -131,70 +131,64 @@
                   <button class="register-btn">Register</button>
                 </a>
             </div>
-
             <div class="hackathon-card">
-                <h3>Blockchain Builders Hack </h3>
-                <p class="event-date">📅 March 27, 2025</p>
-                <p class="event-desc">A competition for developers to create decentralized applications (dApps) and smart contracts.</p>
-                <a href="login.html">
-                  <button class="register-btn">Register</button>
-                </a>
-            </div>
-
-           
-
-            <div class="hackathon-card">
-                <h3>Speed Coding Showdown </h3>
-                <p class="event-date">📅 April 07, 2025</p>
-                <p class="event-desc">A fast-paced contest where coders compete to solve algorithmic problems in record time.</p>
-                <a href="login.html">
-                  <button class="register-btn">Register</button>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Demo Hackathons Section -->
-    <section class="demo-hackathons">
-        <h2>⏳ Past Hackathons/Events</h2>
-        <div class="hackathon-container">
-            <div class="hackathon-card">
-                <h3>Quantum Code Quest</h3>
-                <p class="event-date">📅 January 5, 2025</p>
-                <p class="event-desc"> A futuristic coding challenge exploring quantum computing concepts.</p>
-                <a href="leaderboard.html">
-                <button class="register-btn">Leaderboard</button>
+              <h3>Blockchain Builders Hack </h3>
+              <p class="event-date">📅 March 27, 2025</p>
+              <p class="event-desc">A competition for developers to create decentralized applications (dApps) and smart contracts.</p>
+              <a href="login.html">
+                <button class="register-btn">Register</button>
               </a>
+          </div>
+
+         
+
+          <div class="hackathon-card">
+              <h3>Speed Coding Showdown </h3>
+              <p class="event-date">📅 April 07, 2025</p>
+              <p class="event-desc">A fast-paced contest where coders compete to solve algorithmic problems in record time.</p>
+              <a href="login.html">
+                <button class="register-btn">Register</button>
+              </a>
+          </div>
+
+              <!-- Events will be dynamically added here using JavaScript -->
             </div>
-
-            
-
-            <div class="hackathon-card">
-                <h3>Cloud Wars Challenge</h3>
-                <p class="event-date">📅 January 25, 2025</p>
-                <p class="event-desc">A cloud computing competition focused on AWS, Azure, and Google Cloud projects.</p>
-                <a href="leaderboard1.html">
+  
+        </section>
+        <section class="demo-hackathons">
+          <h2>⏳ Past Hackathons/Events</h2>
+          <div class="hackathon-container">
+              <div class="hackathon-card">
+                  <h3>Quantum Code Quest</h3>
+                  <p class="event-date">📅 January 5, 2025</p>
+                  <p class="event-desc"> A futuristic coding challenge exploring quantum computing concepts.</p>
+                  <a href="leaderboard.html">
                   <button class="register-btn">Leaderboard</button>
                 </a>
-            </div>
-
-            <div class="hackathon-card">
-                <h3>Hack the Future</h3>
-                <p class="event-date">📅 January 15, 2025</p>
-                <p class="event-desc">A tech marathon where participants build AI, blockchain, or IoT-based solutions.</p>
-                <a href="leaderboard2.html">
-                  <button class="register-btn">Leaderboard</button>
-                </a>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Events Section -->
-    <div class="events-container" id="events-container">
-        <!-- Events will be dynamically added here using JavaScript -->
-    </div>
+              </div>
+  
+              
+  
+              <div class="hackathon-card">
+                  <h3>Cloud Wars Challenge</h3>
+                  <p class="event-date">📅 January 25, 2025</p>
+                  <p class="event-desc">A cloud computing competition focused on AWS, Azure, and Google Cloud projects.</p>
+                  <a href="leaderboard1.html">
+                    <button class="register-btn">Leaderboard</button>
+                  </a>
+              </div>
+  
+              <div class="hackathon-card">
+                  <h3>Hack the Future</h3>
+                  <p class="event-date">📅 January 15, 2025</p>
+                  <p class="event-desc">A tech marathon where participants build AI, blockchain, or IoT-based solutions.</p>
+                  <a href="leaderboard2.html">
+                    <button class="register-btn">Leaderboard</button>
+                  </a>
+              </div>
+              
+          </div>
+      </section>
 
     <footer class="footer">
         <div class="wrapper">
@@ -248,48 +242,97 @@
   
         <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
       </footer>
-  
-    <script>
-        function toggleEventForm() {
-            let form = document.getElementById("eventForm");
-            form.style.display = form.style.display === "none" ? "block" : "none";
-        }
-    
-        function addEvent() {
-            let name = document.getElementById("eventName").value;
-            let date = document.getElementById("eventDate").value;
-            let desc = document.getElementById("eventDesc").value;
-    
-            if (name === "" || date === "" || desc === "") {
-                alert("Please fill in all event details.");
-                return;
-            }
-    
-            let container = document.getElementById("hackathonContainer");
-    
-            let card = document.createElement("div");
-            card.classList.add("hackathon-card");
-    
-            card.innerHTML = `
-                <h3>${name}</h3>
-                <p class="event-date">📅 ${date}</p>
-                <p class="event-desc">${desc}</p>
-                <button class="register-btn">Register</button>
-            `;
-    
-            container.appendChild(card);
-    
-            // Clear input fields
-            document.getElementById("eventName").value = "";
-            document.getElementById("eventDate").value = "";
-            document.getElementById("eventDesc").value = "";
-    
-            // Hide the form after adding the event
-            toggleEventForm();
-        }
-    </script>
-   <script src="script.js"></script>
-   <script src="toggle.js"></script>
+      <script>
+          // Load events from local storage when the page loads
+    document.addEventListener("DOMContentLoaded", loadEvents);
+
+// Toggle the visibility of the event form
+function toggleEventForm() {
+    const form = document.getElementById("eventForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+}
+
+// Add a new event
+function addEvent(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const eventName = document.getElementById("eventName").value.trim();
+    const eventDate = document.getElementById("eventDate").value;
+    const eventDesc = document.getElementById("eventDesc").value.trim();
+
+    if (!eventName || !eventDate || !eventDesc) {
+        alert("Please fill out all fields!");
+        return;
+    }
+
+    // Create a new event object with a unique ID (using current timestamp)
+    const newEvent = {
+        id: Date.now(),
+        name: eventName,
+        date: eventDate,
+        description: eventDesc
+    };
+
+    // Retrieve stored events or initialize an empty array
+    let events = JSON.parse(localStorage.getItem("events")) || [];
+
+    // Add the new event to the array
+    events.push(newEvent);
+
+    // Save the updated events array to local storage
+    localStorage.setItem("events", JSON.stringify(events));
+
+    // Render the new event
+    renderEvent(newEvent);
+
+    // Reset the form and hide it
+    document.querySelector("form").reset();
+    toggleEventForm();
+}
+
+// Render a single event
+function renderEvent(eventObj) {
+    const eventContainer = document.getElementById("hackathon-container");
+
+    const eventCard = document.createElement("div");
+    eventCard.classList.add("event-card");
+    eventCard.setAttribute("data-id", eventObj.id);
+    eventCard.innerHTML = `
+    <div class="hackathon-card">
+      <h3>${eventObj.name}</h3>
+      <p class="event-date"><strong>Date:</strong> ${eventObj.date}</p>
+      <p class="event-desc">${eventObj.description}</p>
+      <button onclick="deleteEvent(${eventObj.id})">Delete</button>
+      </div>
+    `;
+
+    eventContainer.appendChild(eventCard);
+}
+
+// Load events from local storage and render them
+function loadEvents() {
+    const events = JSON.parse(localStorage.getItem("events")) || [];
+    events.forEach(eventObj => renderEvent(eventObj));
+}
+
+// Delete an event by its unique ID
+function deleteEvent(id) {
+    // Remove the event card from the DOM
+    const eventContainer = document.getElementById("hackathon-container");
+    const eventCard = eventContainer.querySelector(`[data-id="${id}"]`);
+    if (eventCard) {
+        eventCard.remove();
+    }
+
+    // Update local storage: filter out the event with the given id
+    let events = JSON.parse(localStorage.getItem("events")) || [];
+    events = events.filter(ev => ev.id !== id);
+    localStorage.setItem("events", JSON.stringify(events));
+}
+</script>
+      <!-- <script src="event.js"></script> -->
+      <script src="script.js"></script>
+      <script src="toggle.js"></script>
    <div class="circle"></div>
    <div class="circle"></div>
    <div class="circle"></div>
@@ -314,7 +357,6 @@
    <div class="circle"></div>
    <div class="circle"></div>
    <script src="./lib/wow/customcursor.js"></script>
-
    <script src="card.js"></script>
 </body>
 </html>
