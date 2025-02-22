@@ -249,47 +249,9 @@
         <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
       </footer>
   
-    <script>
-        function toggleEventForm() {
-            let form = document.getElementById("eventForm");
-            form.style.display = form.style.display === "none" ? "block" : "none";
-        }
-    
-        function addEvent() {
-            let name = document.getElementById("eventName").value;
-            let date = document.getElementById("eventDate").value;
-            let desc = document.getElementById("eventDesc").value;
-    
-            if (name === "" || date === "" || desc === "") {
-                alert("Please fill in all event details.");
-                return;
-            }
-    
-            let container = document.getElementById("hackathonContainer");
-    
-            let card = document.createElement("div");
-            card.classList.add("hackathon-card");
-    
-            card.innerHTML = `
-                <h3>${name}</h3>
-                <p class="event-date">📅 ${date}</p>
-                <p class="event-desc">${desc}</p>
-                <button class="register-btn">Register</button>
-            `;
-    
-            container.appendChild(card);
-    
-            // Clear input fields
-            document.getElementById("eventName").value = "";
-            document.getElementById("eventDate").value = "";
-            document.getElementById("eventDesc").value = "";
-    
-            // Hide the form after adding the event
-            toggleEventForm();
-        }
-    </script>
-   <script src="script.js"></script>
-   <script src="toggle.js"></script>
+      <!-- <script src="event.js"></script> -->
+      <script src="script.js"></script>
+      <script src="toggle.js"></script>
    <div class="circle"></div>
    <div class="circle"></div>
    <div class="circle"></div>
@@ -314,7 +276,6 @@
    <div class="circle"></div>
    <div class="circle"></div>
    <script src="./lib/wow/customcursor.js"></script>
-
    <script src="card.js"></script>
 </body>
 </html>
