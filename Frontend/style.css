@@ -651,16 +651,7 @@ button:hover {
 }
 
 /* Footer Styling */
-footer {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #03a9f7, #77c6f1);
-     margin-left: 0px;
-     margin-right: 0px;
-    color: white;
-    padding: 5px 90px;
-    text-align: center;
-    width: 100%;
-    }
+
 
 .footer {
   font-family: Arial, sans-serif;
@@ -668,7 +659,7 @@ footer {
   margin-left: 0px;
   margin-right: 0px;
   color: white;
-  padding: 5px 90px;
+  padding: 5px 18px;
   text-align: center;
   width: 100%;
 }
@@ -681,6 +672,9 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .footer{
+      padding: 5px 30px;
     }
   }
   .newsletter {
