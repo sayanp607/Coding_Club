@@ -132,6 +132,30 @@
       border-radius: 50%;
     }
   </style>
+  
+  <style>
+    .search-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+  
+    #searchBar {
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+  
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -423,6 +447,12 @@
 
 
 <section id="projects">
+
+  <!-- Search Bar -->
+  <div class="search-container" data-aos="fade-up">
+    <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
+  </div>
+
   <h2 data-aos="fade-up">Projects</h2>
   <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>
 
@@ -447,10 +477,7 @@
           <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
-  <!-- Search Bar -->
-  <div class="search-container" data-aos="fade-up">
-      <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
-  </div>
+  
 
 
   <section data-aos="fade-up" class="projects-section">
@@ -490,29 +517,7 @@
   </section>
 </section>
 
-<style>
-  .search-container {
-      text-align: center;
-      margin-bottom: 20px;
-  }
 
-  #searchBar {
-      width: 80%;
-      max-width: 400px;
-      padding: 10px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-  }
-
-  .projects-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-  }
-</style>
 
 <script>
   function filterProjects() {
