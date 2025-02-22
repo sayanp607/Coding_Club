@@ -77,3 +77,22 @@
   margin: 10px 0;
   color: #555;
 }
+
+/* back button */
+.material-symbols-outlined {
+  font-size: 3.5rem;
+  margin-left: 20px;
+  margin-top: 20px;
+  line-height: normal;
+  border-radius: 50%;
+  border: 2px solid;
+  border-color: transparent;
+}
+.material-symbols-outlined:hover{
+  color: white;
+  background-color: #03a9f7;
+  border:2px solid #05699782;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(52, 51, 51, 0.5);
+  transition: all 0.3s ease-out;
+}
