@@ -658,9 +658,6 @@ button:hover {
    overflow-wrap: break-word;
   color: white;
   text-align: center;
-    width: 100vw;
-    margin-inline-start: -78px;
-    margin-bottom: -90px;
 }
   .wrapper {
     display: flex;
