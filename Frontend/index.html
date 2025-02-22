@@ -38,13 +38,30 @@
     .container {
       max-width: 800px;
       margin: auto;
-      background: #fff;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    .intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out;
+}
 
+.intro:hover {
+  transform: scale(1.02);
+}
     h1 {
       text-align: center;
       color: #2c3e50;
@@ -131,6 +148,30 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
+    }
+  </style>
+  
+  <style>
+    .search-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+  
+    #searchBar {
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+  
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
     }
   </style>
 </head>
@@ -221,11 +262,17 @@
   <section id="about">
     <div class="about-container">
       <h2>About Us</h2>
-      <p class="intro">
-        We are a passionate team of coding enthusiasts dedicated to solving real-world problems through technology and
-        innovation. Our team is driven by creativity, collaboration, and continuous learning. We believe in making a
-        difference by building solutions that impact people’s lives positively.
-      </p>
+        <p class="intro">
+          We are a passionate team of coding enthusiasts dedicated to solving real-world problems through technology and innovation.  
+          Our club brings together individuals from diverse backgrounds who share a common love for programming, problem-solving, and creative thinking.  
+          Through workshops, hackathons, and collaborative projects, we aim to enhance our skills, explore emerging technologies, and push the boundaries of what is possible.  
+        
+          We believe in fostering a supportive and inclusive community where everyone, from beginners to experienced developers, can learn, contribute, and grow.  
+          Whether you're looking to sharpen your coding skills, build exciting projects, or connect with like-minded tech enthusiasts, our club is the perfect place for you.  
+        
+          Join us as we innovate, collaborate, and make a difference through technology!
+        </p>
+        
 
       <div class="team">
         <h3>Meet Our Team</h3>
@@ -267,6 +314,7 @@
 
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
+    
     <!-- Search Bar -->
     <input data-aos="fade-up" type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
 
@@ -290,9 +338,13 @@
 
     <!-- Demo Hackathons Section -->
     <section data-aos="fade-up" class="demo-hackathons">
+      
       <h2>🔥 Upcoming Hackathons/Events</h2>
+      
+<p id="noResultMessage" style="display: none; color: red; text-align: center;">No results found</p>
       <div data-aos="fade-up" class="hackathon-container" id="hackathonContainer">
         <div class="hackathon-card">
+          
           <h3>Beginner's Hackathon 2025</h3>
           <p class="event-date">📅 March 5, 2025</p>
           <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
@@ -407,24 +459,42 @@
   </script>
 
 
-  <script>
-    function filterEvents() {
-      let input = document.getElementById("eventSearch").value.toLowerCase();
-      let cards = document.querySelectorAll(".hackathon-card");
+<script>
+  function filterEvents() {
+    let input = document.getElementById("eventSearch").value.toLowerCase();
+    let cards = document.querySelectorAll(".hackathon-card");
+    let noResultMessage = document.getElementById("noResultMessage");
+    let found = false;
 
-      cards.forEach(card => {
-        let eventName = card.querySelector("h3").innerText.toLowerCase();
-        if (eventName.includes(input)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+    cards.forEach(card => {
+      let eventName = card.querySelector("h3").innerText.toLowerCase();
+      if (eventName.includes(input)) {
+        card.style.display = "block";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show "No results found" message if no events match the search
+    if (found) {
+      noResultMessage.style.display = "none";
+    } else {
+      noResultMessage.style.display = "block";
     }
-  </script>
+  }
+</script>
+
+
 
 
 <section id="projects">
+
+  <!-- Search Bar -->
+  <div class="search-container" data-aos="fade-up">
+    <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
+  </div>
+
   <h2 data-aos="fade-up">Projects</h2>
   <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>
 
@@ -449,15 +519,19 @@
           <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
+        <!-- Project 3 -->
+      
   <!-- Search Bar -->
   <div class="search-container" data-aos="fade-up">
       <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
   </div>
+  
 
 
   <section data-aos="fade-up" class="projects-section">
       <h2 data-aos="fade-up">Our Projects</h2>
 
+      
       <div data-aos="fade-up" class="projects-container" id="projectsContainer">
           <!-- Project Cards -->
           <div data-aos="fade-up" class="project-card" data-title="To-Do App">
@@ -492,29 +566,7 @@
   </section>
 </section>
 
-<style>
-  .search-container {
-      text-align: center;
-      margin-bottom: 20px;
-  }
 
-  #searchBar {
-      width: 80%;
-      max-width: 400px;
-      padding: 10px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-  }
-
-  .projects-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-  }
-</style>
 
 <script>
   function filterProjects() {
@@ -533,7 +585,7 @@
 </script>
 
   <section id="contact" class="container" style="background-color: transparent; box-shadow: none;">
-    <div data-aos="fade-up" class="feedback-form container bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+    <div data-aos="fade-up" class="feedback-form container  p-6 rounded-lg shadow-lg w-full max-w-md">
       <h2 data-aos="fade-up">Contact Us</h2>
       <form data-aos="fade-up" id="form" method="POST" action="https://api.web3forms.com/submit">
         <input type="hidden" name="access_key" value="PUBLIC_KEY">
@@ -585,10 +637,16 @@
   </section>
 
   <section id="faq" class="container">
+
     <h1 data-aos="fade-up">Frequently Asked Questions</h1>
     <input data-aos="fade-up" type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
 
+    <p id="no-results" style="display: none; text-align: center; color: red; font-weight: bold;">
+      No results found.
+    </p>
     <section data-aos="fade-up" class="faq-item">
+     
+      
       <p data-aos="fade-up" class="question" onclick="toggleAnswer(this)">💻 What is the coding club about?</p>
       <p data-aos="fade-up" class="answer">Our coding club is a community for programmers of all levels to collaborate,
         learn, and work on projects together.</p>
@@ -664,18 +722,27 @@
       let answer = element.nextElementSibling;
       answer.style.display = answer.style.display === "block" ? "none" : "block";
     }
-
+  
     function searchFAQ() {
       let input = document.querySelector('.search-box').value.toLowerCase();
       let questions = document.querySelectorAll('.faq-item');
-
+      let noResultsMessage = document.getElementById('no-results');
+      let hasResults = false;
+  
       questions.forEach(item => {
         let text = item.textContent.toLowerCase();
-        item.style.display = text.includes(input) ? "block" : "none";
+        if (text.includes(input)) {
+          item.style.display = "block";
+          hasResults = true;
+        } else {
+          item.style.display = "none";
+        }
       });
+  
+      noResultsMessage.style.display = hasResults ? "none" : "block";
     }
   </script>
-
+  
 
 
 

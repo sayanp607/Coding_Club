@@ -22,16 +22,17 @@ function filterTeam() {
   const filtered = contributorsData.filter((member) =>
     member.login.toLowerCase().includes(searchQuery)
   );
-  displayTeam(filtered);
+
+  if (filtered.length === 0) {
+    displayNoResults();
+  } else {
+    displayTeam(filtered);
+  }
 }
 
 function displayTeam(contributors) {
   const teamContainer = document.getElementById("teamContainer");
   teamContainer.innerHTML = "";
-  if (contributors.length === 0) {
-    teamContainer.innerHTML = "<p>No contributors found.</p>";
-    return;
-  }
   contributors.forEach((member) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -42,6 +43,11 @@ function displayTeam(contributors) {
         `;
     teamContainer.appendChild(card);
   });
+}
+
+function displayNoResults() {
+  const teamContainer = document.getElementById("teamContainer");
+  teamContainer.innerHTML = "<p>No contributor with this name exists.</p>";
 }
 
 fetchContributors();
