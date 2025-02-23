@@ -213,7 +213,7 @@
 
   <header>
     <div class="logo-container">
-     <img src="codingclub.png" alt="logo">
+      <img src="codingclub.png" alt="Logo">
     </div>
     <h1 id="typingText"></h1>
     <nav>
@@ -298,21 +298,21 @@
         <h3>Meet Our Team</h3>
         <div class="team-members">
           <div class="member">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="//">
+            <img src="image1.png.png" alt="//">
             <h4>Joe Rogan</h4>
             <p>Frontend Developer</p>
             <p class="more-info">Joe specializes in frontend development, focusing on creating seamless and intuitive
               user interfaces.</p>
           </div>
           <div class="member">
-            <img src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="//">
+            <img src="image2.png.jpg" alt="//">
             <h4>Abhay</h4>
             <p>Project Manager</p>
             <p class="more-info">Abhay leads the team, ensuring timely delivery of projects and effective communication
               within the team.</p>
           </div>
           <div class="member">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="//">
+            <img src="image3.jpg" alt="//">
             <h4>Jane Smith</h4>
             <p>Backend Developer</p>
             <p class="more-info">Jane works on backend architecture, optimizing performance, and ensuring data security
@@ -605,9 +605,9 @@
         <p id="charCount">0 / 200</p>
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         <div data-aos="fade-up" class="icons-btn">
-          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><img src="download.jpg"
+          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><img src="./components/linkidn.png"
               alt="linkedin-logo"></a>
-          <a href="https://github.com/ak-0283" target="_blank"><img src="download.png" alt="github-logo"></a>
+          <a href="https://github.com/ak-0283" target="_blank"><img src="./components/github.png" alt="github-logo"></a>
           <button type="submit">Send</button>
         </div>
         <div id="result"></div>
@@ -766,7 +766,7 @@
             placeholder="Enter your email"
             required
           />
-          <button type="submit">Subscribe</button>
+          <button id="subscribeBtn">Subscribe</button>
         </form>
       </div>
 
@@ -876,6 +876,9 @@
         updateAuthLink();
         window.location.reload();
     }
+    document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
 </script>
   <script>
     // Store the URL with the section ID in localStorage

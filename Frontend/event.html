@@ -79,14 +79,14 @@
           </div>
           <ul class="nav-links" id="navLinks">
               <span id="closeMenu"><i class="fas fa-times"></i></span>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#projects">Projects</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="https://coding-club-dgb7.vercel.app/index.html#about">About</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="projectpage.html">Projects</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="contributor.html">Contributors</a></li>
               <li><a href="review.html">Reviews</a></li>
-              <li><a href="#feedback">Feedback</a></li>
+              <li><a href="https://coding-club-dgb7.vercel.app/index.html#feedback">Feedback</a></li>
               <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
           </ul>        
       </nav>
@@ -221,7 +221,7 @@
                 placeholder="Enter your email"
                 required
               />
-              <button type="submit">Subscribe</button>
+              <button id="subscribeBtn" type="submit">Subscribe</button>
             </form>
           </div>
   
@@ -271,7 +271,9 @@ function toggleEventForm() {
     const form = document.getElementById("eventForm");
     form.style.display = form.style.display === "none" ? "block" : "none";
 }
-
+document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
 // Add a new event
 function addEvent(event) {
     event.preventDefault(); // Prevent page reload
