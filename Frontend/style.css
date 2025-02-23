@@ -370,7 +370,7 @@ form {
 form input,
 form textarea {
   display: block;
-  margin: 10px auto;
+  margin: 10px;
   padding: 14px;
   width: 80%;
   max-width: 600px;
@@ -401,6 +401,18 @@ form textarea:focus {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 400px) {
+  .icons-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .icons-btn button {
+    padding-right: 30px;
+    margin-right: 20px;
+  }
 }
 .icons-btn img {
   height: 40px;
@@ -473,7 +485,6 @@ button:hover {
     padding: 30px;
   }
 
-  form input,
   form textarea {
     width: 90%;
   }
@@ -527,7 +538,9 @@ button:hover {
   max-width: 100vw; /* Prevent horizontal scrolling */
   box-sizing: border-box; /* Ensure padding doesn’t affect width */
 }
-
+.member img {
+  width: 120px;
+}
 #events {
   text-align: center;
   padding: 50px;
@@ -690,15 +703,40 @@ button:hover {
   .footer {
     padding: 5px 30px;
   }
+  .newsletter button {
+    width: 50%;
+  }
+  .newsletter {
+    display: block;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .newsletter {
   margin: 20px;
 }
-
-.newsletter input {
-  padding: 10px;
-  margin-right: 5px;
+.quick-contact {
+  text-align: center;
 }
+.quick-contact h3 {
+  text-align: center;
+}
+.quick-contact ul {
+  text-align: center;
+}
+.quick-contact p {
+  text-align: center;
+}
+
+.social-icon {
+  justify-content: center;
+}
+
+/* .newsletter input {
+  padding: 10px;
+  margin-right: 5px; */
+/* } */
 .newsletter button {
   background: linear-gradient(135deg, #333, #444);
 }
@@ -723,7 +761,13 @@ button:hover {
   text-align: left;
   margin: 20px;
   color: white;
+  /* list-style: none; */
 }
+
+.quick-contact ul {
+  list-style-type: none;
+}
+
 .social-sharing {
   margin-right: 40px;
 }

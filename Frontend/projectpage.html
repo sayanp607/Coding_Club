@@ -30,10 +30,11 @@
     />
     <style>
       body {
-        padding: 20px !important;
+        padding: 0px !important;
       }
       header {
         padding: 20px 0px !important;
+        width: 100% !important;
       }
 
       @media (min-width: 768px) {
@@ -288,7 +289,7 @@
               placeholder="Enter your email"
               required
             />
-            <button type="submit">Subscribe</button>
+            <button id="subscribeBtn" type="submit">Subscribe</button>
           </form>
         </div>
 
@@ -366,6 +367,11 @@
       }
 
       document.addEventListener("DOMContentLoaded", typeEffect);
+      document
+        .getElementById("subscribeBtn")
+        .addEventListener("click", function () {
+          alert("You have subscribed!");
+        });
     </script>
     <script src="script.js"></script>
     <script src="toggle.js"></script>
