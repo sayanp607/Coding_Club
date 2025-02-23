@@ -1,207 +1,219 @@
 /* Projects Section */
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 .projects-section {
-    text-align: center;
-    padding: 40px 20px;
-  
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .projects-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-/* Project Card Container */ */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-   
+/* Project Card Container */
+*/ .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    position: relative; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
 }
 
 /* Project Card */
 .project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 .project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .project-card h3 {
-    margin: 15px 0 10px;
-    font-size: 24px;
+  margin: 15px 0 10px;
+  font-size: 24px;
 }
 
 .project-card p {
-    font-size: 16px;
-    color: #666;
+  font-size: 16px;
+  color: #666;
 }
 
 .project-card .view-demo {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #03a9f7;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #03a9f7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .project-card .view-demo:hover {
-    background: #0288d1;
+  background: #0288d1;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .search-container {
-        max-width: 100%; /* Ensure the search bar takes full width on smaller devices */
-        margin: 0 10px;
-    }
+  .search-container {
+    max-width: 100%; /* Ensure the search bar takes full width on smaller devices */
+    margin: 0 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .projects-section {
-        padding: 20px 10px; /* Adjust padding for small screens */
-    }
+  .projects-section {
+    padding: 20px 10px; /* Adjust padding for small screens */
+  }
 
-    .search-container {
-        width: 100%;
-        margin: 0 15px;
-    }
+  .search-container {
+    width: 100%;
+    margin: 0 15px;
+  }
 
-    #searchBar {
-        padding: 10px 25px 10px 10px;
-        font-size: 14px;
-    }
+  #searchBar {
+    padding: 10px 25px 10px 10px;
+    font-size: 14px;
+  }
 
-    #clearBtn {
-        right: -25px;
-    }
+  #clearBtn {
+    right: -25px;
+  }
 }
 
 /* Searchbar design */
 .search-container {
-    position: relative;
-    width: 100%;
-    max-width: 80%;  /* Ensure it fills the available width */
-    margin: 20px auto;
-    padding: 0 10px;  /* Add padding to prevent overflow */
+  position: relative;
+  width: 100%;
+  max-width: 80%; /* Ensure it fills the available width */
+  margin: 20px auto;
+  padding: 0 10px; /* Add padding to prevent overflow */
 }
 
 #searchBar {
-    width: 100%;
-    padding: 10px 35px 10px 10px; /* Space for the clear button */
-    font-size: 16px;
-    border: 2px solid #03a9f7;
-    border-radius: 8px;
-    outline: none;
-    transition: 0.3s;
+  width: 100%;
+  padding: 10px 35px 10px 10px; /* Space for the clear button */
+  font-size: 16px;
+  border: 2px solid #03a9f7;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+.dark-mode #searchBar {
+  background: #666;
+  color: #fff;
+  border-color: goldenrod;
+  /* box-shadow: 0px 0px 8px rgb(248, 255, 43); */
+}
+#searchBar:focus {
+  border-color: #0375f7;
+  box-shadow: 0px 0px 8px rgb(43, 188, 255);
 }
 
-#searchBar:focus {
-    border-color: #0375f7;
-    box-shadow: 0px 0px 8px rgb(43, 188, 255);
+.dark-mode ::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.dark-mode #searchBar:focus {
+  border-color: #0375f7;
+  box-shadow: 0px 0px 8px goldenrod;
 }
 
 /* Clear button inside the search bar */
 #clearBtn {
-    position: absolute;
-    right: 10px; /* Adjust the position so it doesn't overlap with the search bar text */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: gray;
-    cursor: pointer;
-    display: none; /* Hidden by default */
-    user-select: none;
+  position: absolute;
+  right: 10px; /* Adjust the position so it doesn't overlap with the search bar text */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  user-select: none;
 }
 
 #clearBtn:hover {
-    color: #dc3545;
+  color: #dc3545;
 }
 
 /* Make clear button visible when there's text in the search bar */
 #searchBar:not(:placeholder-shown) + #clearBtn {
-    display: block;
+  display: block;
 }
 
 #noResults {
-    text-align: center;
-    color: #dc3545;
-    font-size: 16px;
-    margin-top: 10px;
-    display: none;
+  text-align: center;
+  color: #dc3545;
+  font-size: 16px;
+  margin-top: 10px;
+  display: none;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /* Adjustments for small screens */
 @media (max-width: 480px) {
-    .projects-section {
-        padding: 20px 10px; /* Adjust padding for small screens */
-    }
+  .projects-section {
+    padding: 20px 10px; /* Adjust padding for small screens */
+  }
 
-    .search-container {
-        width: 70%;
-        margin: 0 15px;
-    }
+  .search-container {
+    width: 70%;
+    margin: 0 15px;
+  }
 
-    #searchBar {
-        padding: 10px 25px 10px 10px;
-        font-size: 14px;
-    }
+  #searchBar {
+    padding: 10px 25px 10px 10px;
+    font-size: 14px;
+  }
 
-    #clearBtn {
-        right: 5px;  /* Ensure the button is inside */
-    }
+  #clearBtn {
+    right: 5px; /* Ensure the button is inside */
+  }
 }
 
 @media (max-width: 768px) {
-    .projects-section {
-        padding: 20px 10px; /* Adjust padding for small screens */
-    }
+  .projects-section {
+    padding: 20px 10px; /* Adjust padding for small screens */
+  }
 
-    .search-container {
-        width: 70%;
-    }
+  .search-container {
+    width: 70%;
+  }
 
-    #searchBar {
-        padding: 10px 25px 10px 10px;
-        font-size: 14px;
-    }
+  #searchBar {
+    padding: 10px 25px 10px 10px;
+    font-size: 14px;
+  }
 
-    #clearBtn {
-        right: 5px;  /* Ensure the button is inside */
-    }
+  #clearBtn {
+    right: 5px; /* Ensure the button is inside */
+  }
 }
-
