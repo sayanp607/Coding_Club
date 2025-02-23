@@ -185,7 +185,7 @@ color: #f4c542;
               placeholder="Enter your email"
               required
             />
-            <button type="submit">Subscribe</button>
+            <button id="" type="submit">Subscribe</button>
           </form>
         </div>
 
@@ -229,6 +229,11 @@ color: #f4c542;
 
     <script src="script.js"></script>
     <script src="toggle.js"></script>
+    <script>
+      document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
+    </script>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>

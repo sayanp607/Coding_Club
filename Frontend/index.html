@@ -766,7 +766,7 @@
             placeholder="Enter your email"
             required
           />
-          <button type="submit">Subscribe</button>
+          <button id="subscribeBtn">Subscribe</button>
         </form>
       </div>
 
@@ -876,6 +876,9 @@
         updateAuthLink();
         window.location.reload();
     }
+    document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
 </script>
   <script>
     // Store the URL with the section ID in localStorage
