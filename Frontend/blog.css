@@ -78,3 +78,13 @@
 .blog-delete-button:hover {
   background-color: #c82333;
 }
+.quick-contact {
+  text-align: center;
+  margin: 20px;
+  color: white;
+  /* list-style: none; */
+}
+
+.quick-contact ul {
+  list-style-type: none;
+}

@@ -217,3 +217,13 @@
     right: 5px; /* Ensure the button is inside */
   }
 }
+.quick-contact {
+  text-align: center;
+  margin: 20px;
+  color: white;
+  /* list-style: none; */
+}
+
+.quick-contact ul {
+  list-style-type: none;
+}
