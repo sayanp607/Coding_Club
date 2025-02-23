@@ -402,6 +402,18 @@ form textarea:focus {
   justify-content: center;
   align-items: center;
 }
+@media(max-width:400px){
+  .icons-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .icons-btn button{
+   padding-right: 30px;
+   margin-right: 20px;
+  }
+}
 .icons-btn img {
   height: 40px;
   border-radius: 50%;
@@ -896,3 +908,4 @@ button:hover {
     right: 5%;
   }
 }
+
