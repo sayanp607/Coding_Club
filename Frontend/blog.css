@@ -88,3 +88,27 @@
 .quick-contact ul {
   list-style-type: none;
 }
+
+.dark-mode .blog-card {
+  background-color: #333 !important;
+}
+.dark-mode .blog-content p {
+  color: #fff !important;
+}
+
+.dark-mode .search-bar {
+  background-color: #333 !important;
+  color: #fff;
+}
+.dark-mode .blog-input {
+  background-color: #333 !important;
+  color: #ddd;
+}
+.dark-mode .blog-textarea {
+  background-color: #333 !important;
+  color: #ddd;
+}
+
+.dark-mode .read-more {
+  background: goldenrod;
+}
