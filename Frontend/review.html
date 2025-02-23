@@ -54,6 +54,12 @@
             text-align: center;
             animation: slide 15s infinite;
         }
+        .dark-mode .testimonial-section{
+          background-color: #333;
+        }
+        .dark-mode h2{
+color: #f4c542;
+        }
         @keyframes slide {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-100%); }
@@ -179,7 +185,7 @@
               placeholder="Enter your email"
               required
             />
-            <button type="submit">Subscribe</button>
+            <button id="" type="submit">Subscribe</button>
           </form>
         </div>
 
@@ -223,6 +229,11 @@
 
     <script src="script.js"></script>
     <script src="toggle.js"></script>
+    <script>
+      document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
+    </script>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
