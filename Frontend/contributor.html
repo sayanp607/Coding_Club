@@ -100,6 +100,7 @@
         <div class="newsletter">
           <h3>Subscribe to our Newsletter</h3>
           <form id="subscribeForm">
+
             <input type="email" id="emailInput" placeholder="Enter your email" required />
             <button type="submit">Subscribe</button>
           </form>
@@ -131,6 +132,42 @@
           <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
           <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
 
+
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              required
+            />
+            <button id="subscribeBtn" type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        
+          <div class="quick-contact">
+            <h3>Quick Links</h3>
+            <ul>
+              <li class="sec-nav"><a id="home-link" href="/">Home</a></li>
+              <li class="sec-nav"><a id="about-link" href="/about">About</a></li>
+              <li class="sec-nav"><a href="blog.html">Blog</a></li>
+              <li class="sec-nav"><a id="contact-link" href="/contact">Contact</a></li>
+              <li class="sec-nav"><a id="feedback-link" href="https://coding-club-dgb7.vercel.app/index.html#feedback">Feedback</a></li>
+            </ul>
+          </div>
+          <div class="quick-contact">
+            <h3>Contact Us</h3>
+            <p>📍 123 Street, City, Country</p>
+            <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+            <p>📞 +123 456 7890</p>
+          </div>
+        
+          <div class="social-sharing">
+            <h3>Share Our Blog</h3>
+            <a href="#" id="facebookShare" class="social-icon"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#" id="twitterShare" class="social-icon"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" id="linkedinShare" class="social-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#" id="instagramShare" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+
         </div>
       </div>
 
@@ -145,6 +182,11 @@
     <script src="script.js"></script>
     <script src="toggle.js"></script>
     <script src="contributor.js"></script>
+    <script>
+      document.getElementById("subscribeBtn").addEventListener("click", function() {
+    alert("You have subscribed!");
+  });
+    </script>
 
     <div class="circle"></div>
     <div class="circle"></div>
