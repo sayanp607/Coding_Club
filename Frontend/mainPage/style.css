@@ -430,9 +430,6 @@ form textarea:focus {
 }
 
 @media(max-width:400px) {
-
-@media (max-width: 400px) {
-
   .icons-btn {
     display: flex;
     flex-direction: column;
@@ -754,8 +751,6 @@ button:hover {
   text-align: center;
 
   /* width: 100vw; */
-  width: 100vw;
-
   /* margin-inline-start: -78px;
     margin-bottom: -90px; */
   width: 100%;
@@ -861,44 +856,25 @@ button:hover {
 }
 
 .social-sharing {
-  text-align: center;
+  margin-right: 40px;
 }
 
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.social-sharing a {
+  margin: 0 10px;
+  color: white;
   text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-  width: 200px;
+  display: flex;
 }
 
-.social-icon i {
-  font-size: 22px;
+.social-sharing a:hover {
+  text-decoration: underline;
 }
-
 
 .social-icon {
   padding: 5px 5px;
   color: white;
 }
 
-
-.social-icon:hover {
-  background: #f1f1f1;
-}
-
-/* Optional: Add specific colors */
-#facebookShare { color: #1877f2; }
-#twitterShare { color: #1da1f2; }
-#linkedinShare { color: #0077b5; }
-#instagramShare { color: #e4405f; }
 .privacy {
   margin: 10px 0;
   color: white;
@@ -1030,7 +1006,6 @@ button:hover {
     right: 5%;
   }
 }
-
 
 * {
   margin: 0;
@@ -1207,24 +1182,3 @@ h1 {
   gap: 20px;
   justify-content: center;
 }
-
-.dark-mode #contact h2 {
-  color: goldenrod;
-}
-.dark-mode #projects h2 {
-  color: goldenrod;
-}
-.dark-mode #feedback h2 {
-  color: goldenrod;
-}
-.dark-mode #faq h1 {
-  color: goldenrod;
-}
-.dark-mode #events h2 {
-  color: goldenrod;
-}
-.dark-mode #about h2,
-#about h3 {
-  color: goldenrod;
-}
-

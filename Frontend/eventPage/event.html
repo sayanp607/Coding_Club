@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Club - Events</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="toggle.css" />
-    <link rel="stylesheet" href="event.css">
-    <link rel="stylesheet" href="lib/wow/customcursor.css">
+    <link rel="stylesheet" href="../mainPage/style.css" />
+    <link rel="stylesheet" href="../toggle/toggle.css" />
+    <link rel="stylesheet" href="./event.css">
+    <link rel="stylesheet" href="../lib/wow/customcursor.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -33,7 +33,7 @@
       </button>
       <header>
         <div class="logo-container">
-          <img src="codingclub.png" alt="Logo">
+          <img src="../images/codingclub.png" alt="Logo">
         </div>
         <h1 id="typingText"></h1>
         <nav>
@@ -57,14 +57,14 @@
           </div>
           <ul class="nav-links" id="navLinks">
               <span id="closeMenu"><i class="fas fa-times"></i></span>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="https://coding-club-dgb7.vercel.app/index.html#about">About</a></li>
-              <li><a href="event.html">Events</a></li>
-              <li><a href="projectpage.html">Projects</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#projects">Projects</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="contributor.html">Contributors</a></li>
               <li><a href="review.html">Reviews</a></li>
-              <li><a href="https://coding-club-dgb7.vercel.app/index.html#feedback">Feedback</a></li>
+              <li><a href="#feedback">Feedback</a></li>
               <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
           </ul>        
       </nav>
@@ -107,7 +107,7 @@
                 <h3>Cyber Code Fest 2025 </h3>
                 <p class="event-date">📅 March 5, 2025</p>
                 <p class="event-desc"> A thrilling coding competition for security enthusiasts and ethical hackers..</p>
-                <a href="login.html">
+                <a href="../AllLoginPage/loginPage/login.html">
                   <button class="register-btn">Register</button>
                 </a>
             </div>
@@ -116,7 +116,7 @@
                 <h3>InnovateX Hackathon</h3>
                 <p class="event-date">📅 March 15, 2025</p>
                 <p class="event-desc"> A hackathon focused on solving real-world problems with innovative tech solutions..</p>
-                <a href="login.html">
+                <a href="../AllLoginPage/loginPage/login.html">
                   <button class="register-btn">Register</button>
                 </a>
             </div>
@@ -125,7 +125,7 @@
                 <h3>Data Science Sprint </h3>
                 <p class="event-date">📅 March 25, 2025</p>
                 <p class="event-desc">A challenge-based event where participants build machine learning models and data-driven applications.</p>
-                <a href="login.html">
+                <a href="../AllLoginPage/loginPage/login.html">
                   <button class="register-btn">Register</button>
                 </a>
             </div>
@@ -133,7 +133,7 @@
               <h3>Blockchain Builders Hack </h3>
               <p class="event-date">📅 March 27, 2025</p>
               <p class="event-desc">A competition for developers to create decentralized applications (dApps) and smart contracts.</p>
-              <a href="login.html">
+              <a href="../AllLoginPage/loginPage/login.html">
                 <button class="register-btn">Register</button>
               </a>
           </div>
@@ -144,7 +144,7 @@
               <h3>Speed Coding Showdown </h3>
               <p class="event-date">📅 April 07, 2025</p>
               <p class="event-desc">A fast-paced contest where coders compete to solve algorithmic problems in record time.</p>
-              <a href="login.html">
+              <a href="../AllLoginPage/loginPage/login.html">
                 <button class="register-btn">Register</button>
               </a>
           </div>
@@ -160,7 +160,7 @@
                   <h3>Quantum Code Quest</h3>
                   <p class="event-date">📅 January 5, 2025</p>
                   <p class="event-desc"> A futuristic coding challenge exploring quantum computing concepts.</p>
-                  <a href="leaderboard.html">
+                  <a href="../leaderboard/leaderboard.html">
                   <button class="register-btn">Leaderboard</button>
                 </a>
               </div>
@@ -171,7 +171,7 @@
                   <h3>Cloud Wars Challenge</h3>
                   <p class="event-date">📅 January 25, 2025</p>
                   <p class="event-desc">A cloud computing competition focused on AWS, Azure, and Google Cloud projects.</p>
-                  <a href="leaderboard1.html">
+                  <a href="../leaderboard/leaderboard.html">
                     <button class="register-btn">Leaderboard</button>
                   </a>
               </div>
@@ -180,7 +180,7 @@
                   <h3>Hack the Future</h3>
                   <p class="event-date">📅 January 15, 2025</p>
                   <p class="event-desc">A tech marathon where participants build AI, blockchain, or IoT-based solutions.</p>
-                  <a href="leaderboard2.html">
+                  <a href="../leaderboard/leaderboard2.html">
                     <button class="register-btn">Leaderboard</button>
                   </a>
               </div>
@@ -199,7 +199,7 @@
                 placeholder="Enter your email"
                 required
               />
-              <button id="subscribeBtn" type="submit">Subscribe</button>
+              <button type="submit">Subscribe</button>
             </form>
           </div>
   
@@ -234,8 +234,8 @@
         </div>
   
         <div class="privacy">
-          <a href="privacy.html">Privacy Policy</a> |
-          <a href="terms.html">Terms & Conditions</a>
+          <a href="../privacyPage/privacy.html">Privacy Policy</a> |
+          <a href="../termsPage/terms.html">Terms & Conditions</a>
         </div>
   
         <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
@@ -249,9 +249,7 @@ function toggleEventForm() {
     const form = document.getElementById("eventForm");
     form.style.display = form.style.display === "none" ? "block" : "none";
 }
-document.getElementById("subscribeBtn").addEventListener("click", function() {
-    alert("You have subscribed!");
-  });
+
 // Add a new event
 function addEvent(event) {
     event.preventDefault(); // Prevent page reload
@@ -331,8 +329,8 @@ function deleteEvent(id) {
 }
 </script>
       <!-- <script src="event.js"></script> -->
-      <script src="script.js"></script>
-      <script src="toggle.js"></script>
+      <script src="../mainPage/script.js"></script>
+      <script src="../toggle/toggle.js"></script>
    <div class="circle"></div>
    <div class="circle"></div>
    <div class="circle"></div>
@@ -356,7 +354,7 @@ function deleteEvent(id) {
    <div class="circle"></div>
    <div class="circle"></div>
    <div class="circle"></div>
-   <script src="./lib/wow/customcursor.js"></script>
-   <script src="card.js"></script>
+   <script src="../lib/wow/customcursor.js"></script>
+   <script src="../card/card.js"></script>
 </body>
 </html>
