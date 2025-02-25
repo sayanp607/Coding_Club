@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coding Club</title>
 
-  <link rel="stylesheet" href="../aboutPage/about.css" />
+  <link rel="stylesheet" href="aboutPage/about.css" />
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="../toggle/toggle.css" />
-  <link rel="stylesheet" href="../eventPage/event.css">
-  <link rel="stylesheet" href="../projectPage/project.css">
-  <link rel="stylesheet" href="../card/card.css">
+  <link rel="stylesheet" href="mainPage/style.css" />
+  <link rel="stylesheet" href="toggle/toggle.css" />
+  <link rel="stylesheet" href="eventPage/event.css">
+  <link rel="stylesheet" href="projectPage/project.css">
+  <link rel="stylesheet" href="card/card.css">
   <link rel="stylesheet" href="../lib/wow/customcursor.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -41,7 +41,7 @@
 
   <header>
     <div class="logo-container">
-      <img src="../images/codingclub.png" alt="logo">
+      <img src="images/codingclub.png" alt="logo">
     </div>
     <h1 id="typingText"></h1>
     <nav>
@@ -50,11 +50,11 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#events">Events</a></li>
-          <li><a href="../projectPage/projectpage.html">Projects</a></li>
-          <li><a href="../AllLoginPage/loginPage/login.html" id="auth-link">Login</a></li>
+          <li><a href="projectPage/projectpage.html">Projects</a></li>
+          <li><a href="AllLoginPage/loginPage/login.html" id="auth-link">Login</a></li>
 
-          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
-          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="reviewPage/review.html">Reviews</a></li>
           <li><a href="#feedback">Feedback</a></li>
           <li><a href="#">
               <div class="profile">
@@ -76,9 +76,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
-          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
-          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="reviewPage/review.html">Reviews</a></li>
           <li><a href="#feedback">Feedback</a></li>
           <li><a href="#">
               <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
@@ -175,6 +175,40 @@
     </div>
   </section>
 
+  <section class="why-choose-us">
+    <h2 class="section-heading">Why Choose Us?</h2>
+    
+    <div class="why-text">
+        <p>
+            In a rapidly evolving tech landscape, staying ahead is crucial. At Coding Club, we provide an ecosystem where innovation meets expertise. Whether you're a beginner or an experienced developer, our community, mentorship, and resources empower you to excel.
+        </p>
+    </div>
+
+    <div class="why-us-container">
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-bolt"></i>
+            <h3>Cutting-Edge Technologies</h3>
+            <p>Stay ahead with the latest programming languages and frameworks.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-users"></i>
+            <h3>Strong Community</h3>
+            <p>Join a vibrant community of developers, learners, and experts.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Expert Mentorship</h3>
+            <p>Get guidance from industry professionals and experienced developers.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Innovation Hub</h3>
+            <p>Work on real-world projects and transform your ideas into reality.</p>
+        </div>
+    </div>
+</section>
+
+
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
 
@@ -211,7 +245,7 @@
           <h3>Beginner's Hackathon 2025</h3>
           <p class="event-date">📅 March 5, 2025</p>
           <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
-          <a href="../AllLoginPage/beginloginPage/beginlogin.html">
+          <a href="AllLoginPage/beginloginPage/beginlogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
@@ -220,7 +254,7 @@
           <h3>AI Challenge Hackathon</h3>
           <p class="event-date">📅 March 15, 2025</p>
           <p class="event-desc">Build AI-powered applications in this fun and interactive challenge.</p>
-          <a href="../AllLoginPage/ailoginPage/ailogin.html">
+          <a href="AllLoginPage/ailoginPage/ailogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
@@ -229,12 +263,12 @@
           <h3>Full Stack Coding Challenge</h3>
           <p class="event-date">📅 March 25, 2025</p>
           <p class="event-desc">Showcase your full-stack development skills in this exciting challenge.</p>
-          <a href="../AllLoginPage/stackloginPage/stacklogin.html">
+          <a href="AllLoginPage/stackloginPage/stacklogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
       </div>
-      <a data-aos="fade-up" href="../eventPage/event.html" class="btn" target="_blank">More Events</a>
+      <a data-aos="fade-up" href="eventPage/event.html" class="btn" target="_blank">More Events</a>
     </section>
   </section>
 
@@ -367,49 +401,49 @@
 
       <div data-aos="fade-up" class="projects-container">
         <div data-aos="fade-up" class="project-card">
-          <img src="../images/todo.jpeg" alt="Project 1">
+          <img src="images/todo.jpeg" alt="Project 1">
           <h3>To-Do App</h3>
           <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
           <a href="https://todoapp-codingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card">
-          <img src="../images/guess.jpeg" alt="Project 2">
+          <img src="images/guess.jpeg" alt="Project 2">
           <h3>Guessing Game</h3>
           <p>A fun guessing game built with JavaScript.</p>
           <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="To-Do App">
-          <img src="../images/todo.jpeg" alt="Project 3">
+          <img src="images/todo.jpeg" alt="Project 3">
           <h3>To-Do App</h3>
           <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
           <a href="https://todoapp-codingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Guessing Game">
-          <img src="../images/guess.jpeg" alt="Project 4">
+          <img src="images/guess.jpeg" alt="Project 4">
           <h3>Guessing Game</h3>
           <p>A fun guessing game built with JavaScript.</p>
           <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Random Color Generator">
-          <img src="../images/color.jpeg" alt="Project 5">
+          <img src="images/color.jpeg" alt="Project 5">
           <h3>Random Color Generator</h3>
           <p>Click a button to generate a random color with hex codes.</p>
           <a href="https://random-colour-generator-web.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Password Generator">
-          <img src="../images/password.jpeg" alt="Project 6">
+          <img src="images/password.jpeg" alt="Project 6">
           <h3>Password Generator</h3>
           <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
           <a href="https://passwordgeneratorcodingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
       </div>
-      <a href="../projectPage/projectpage.html" class="btn" target="_blank">More Projects</a>
+      <a href="projectPage/projectpage.html" class="btn" target="_blank">More Projects</a>
     </section>
   </section>
 
@@ -448,9 +482,9 @@
         <p id="charCount">0 / 200</p>
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         <div data-aos="fade-up" class="icons-btn">
-          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><img src="../images/download.jpg"
+          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><img src="images/download.jpg"
               alt="linkedin-logo"></a>
-          <a href="https://github.com/ak-0283" target="_blank"><img src="../images/download.png" alt="github-logo"></a>
+          <a href="https://github.com/ak-0283" target="_blank"><img src="images/download.png" alt="github-logo"></a>
           <button type="submit">Send</button>
         </div>
         <div id="result"></div>
@@ -639,15 +673,15 @@
     </div>
 
     <div class="privacy">
-      <a href="../privacyPage/privacy.html">Privacy Policy</a> |
-      <a href="../termsPage/terms.html">Terms & Conditions</a>
+      <a href="privacyPage/privacy.html">Privacy Policy</a> |
+      <a href="termsPage/terms.html">Terms & Conditions</a>
     </div>
 
     <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
   </footer>
 
-  <script src="../mainPage/script.js"></script>
-  <script src="../toggle/toggle.js"></script>
+  <script src="mainPage/script.js"></script>
+  <script src="toggle/toggle.js"></script>
 
   <div class="circle"></div>
   <div class="circle"></div>
@@ -675,12 +709,12 @@
 
   <script src="../lib/wow/customcursor.js"></script>
 
-  <script src="../card/card.js"></script>
+  <script src="card/card.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ duration: 600, once: false });
   </script>
-  <script src="../feedbackPage/feedback.js"></script>
+  <script src="feedbackPage/feedback.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       updateAuthLink();
@@ -701,7 +735,7 @@
           };
         } else {
           authLink.innerText = "Login";
-          authLink.href = "../AllLoginPage/loginPage/login.html";
+          authLink.href = "AllLoginPage/loginPage/login.html";
           authLink.onclick = null;
         }
       } else {

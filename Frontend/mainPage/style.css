@@ -16,6 +16,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #0569dd, #003b6c);
 }
+.why-text {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black; /* Light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  .why-text {
+      color: #ddd; /* Dark mode adjustment */
+  }
+}
 
 body {
   font-family: "Poppins", Arial, sans-serif;
@@ -84,6 +98,12 @@ body {
   box-shadow: (0 4px 15px rgba(255, 255, 255, 0.1));
   border: 1px solid black;
 }
+.dark-mode #about .intro{
+  background-color: #333;
+  color: rgb(214, 208, 208);
+  
+}
+
 
 /* Dark mode for form elements */
 .dark-mode form input,
