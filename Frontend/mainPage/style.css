@@ -98,6 +98,12 @@ body {
   box-shadow: (0 4px 15px rgba(255, 255, 255, 0.1));
   border: 1px solid black;
 }
+.dark-mode #about .intro{
+  background-color: #333;
+  color: rgb(214, 208, 208);
+  
+}
+
 
 /* Dark mode for form elements */
 .dark-mode form input,
