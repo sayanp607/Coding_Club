@@ -16,6 +16,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #0569dd, #003b6c);
 }
+.why-text {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black; /* Light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  .why-text {
+      color: #ddd; /* Dark mode adjustment */
+  }
+}
 
 body {
   font-family: "Poppins", Arial, sans-serif;
