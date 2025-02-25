@@ -11,6 +11,7 @@ body {
     background: linear-gradient(to right, #2b7ec6, #00f2fe);
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh; /* Full height of viewport */
@@ -47,7 +48,8 @@ body {
 
 /* Centering the Signup Form */
 .signup-wrapper {
-    margin-top: 250px;
+    margin-top: 600px;
+    margin-bottom: 50px;
     width: 100%;
     max-width: 400px;
     padding: 30px;
@@ -231,3 +233,87 @@ body {
 #togglePassword:hover {
     color: black;
 }
+/* Footer Styling */
+
+.footer {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #2366a0, #1ec2ca);
+    color: white;
+    text-align: center;
+     width: 100%;
+    padding: 5px 0px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .footer {
+      padding: 5px 30px;
+    }
+  
+    .newsletter button {
+      width: 50%;
+    }
+  
+    .newsletter {
+      display: block;
+      margin: 0px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  .newsletter {
+    margin: 20px;
+  }
+  
+  .quick-contact {
+    text-align: center;
+  }
+  
+  .quick-contact h3 {
+    text-align: center;
+  }
+  
+  .quick-contact ul {
+    text-align: center;
+  }
+  
+  .quick-contact p {
+    text-align: center;
+  }
+  
+  .social-icon {
+    justify-content: center;
+  }
+  
+.newsletter input {
+    padding: 10px;
+    margin-right: 5px; 
+}
+  
+  .newsletter button {
+    background: linear-gradient(135deg, #333, #444);
+  }
+  
+  @media (max-width: 100px) {
+  
+    .newsletter input,
+    .newsletter button {
+      width: 300px;
+      /* Keep fixed width */
+    }
+  }
