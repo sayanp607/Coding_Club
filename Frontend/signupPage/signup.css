@@ -233,87 +233,214 @@ body {
 #togglePassword:hover {
     color: black;
 }
-/* Footer Styling */
-
 .footer {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #2366a0, #1ec2ca);
-    color: white;
-    text-align: center;
-     width: 100%;
-    padding: 5px 0px;
-    position: relative;
-    bottom: 0;
-    left: 0;
-  }
-  
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #258ECE, #03EBFA);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
   .wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-  }
-  
-  @media (max-width: 600px) {
-    .wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-  
-    .footer {
+  }
+
+  .footer {
       padding: 5px 30px;
-    }
-  
-    .newsletter button {
+  }
+
+  .newsletter button {
       width: 50%;
-    }
-  
-    .newsletter {
+  }
+
+  .newsletter {
       display: block;
       margin: 0px;
       justify-content: center;
       align-items: center;
-    }
   }
-  
-  .newsletter {
-    margin: 20px;
-  }
-  
-  .quick-contact {
-    text-align: center;
-  }
-  
-  .quick-contact h3 {
-    text-align: center;
-  }
-  
-  .quick-contact ul {
-    text-align: center;
-  }
-  
-  .quick-contact p {
-    text-align: center;
-  }
-  
-  .social-icon {
-    justify-content: center;
-  }
-  
-.newsletter input {
-    padding: 10px;
-    margin-right: 5px; 
 }
-  
+
+.newsletter {
+  margin: 20px;
+}
+
+.quick-contact {
+  text-align: center;
+}
+
+.quick-contact h3 {
+  text-align: center;
+}
+
+.quick-contact ul {
+  text-align: center;
+}
+
+.quick-contact p {
+  text-align: center;
+}
+
+.social-icon {
+  justify-content: center;
+}
+
+.newsletter button {
+  background: linear-gradient(135deg, #333, #444);
+}
+
+@media (max-width: 100px) {
+  .newsletter input,
   .newsletter button {
-    background: linear-gradient(135deg, #333, #444);
-  }
-  
-  @media (max-width: 100px) {
-  
-    .newsletter input,
-    .newsletter button {
       width: 300px;
       /* Keep fixed width */
-    }
   }
+}
+
+.sec-nav {
+  padding: 3px;
+  color: white;
+}
+
+.sec-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.sec-nav a:hover {
+  text-decoration: underline;
+}
+
+.quick-contact {
+  text-align: left;
+  margin: 20px;
+  color: white;
+  /* list-style: none; */
+}
+
+.quick-contact ul {
+  list-style-type: none;
+}
+
+.social-sharing {
+  margin-right: 40px;
+}
+
+.social-sharing a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+}
+
+.social-sharing a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  padding: 5px 5px;
+  color: white;
+}
+
+.privacy {
+  margin: 10px 0;
+  color: white;
+}
+
+.privacy a {
+  text-decoration: none;
+  color: white;
+}
+
+.privacy a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 10px;
+}
+
+
+/* Responsive for Small Screens */
+@media (max-width: 600px) {
+  .social-icons .icon {
+      font-size: 1.2rem;
+      margin: 0 8px;
+  }
+}
+
+form input,
+form textarea {
+    display: block;
+    margin: 12px auto;
+    padding: 14px;
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background: #f9f9f9;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+  background: #333;
+  color: white;
+  border: 2px solid #666;
+}
+
+.dark-mode form input:hover,
+.dark-mode form textarea:hover {
+  border-color: #ffcc00;
+  box-shadow: 0px 0px 12px rgba(207, 205, 70, 0.9);
+}
+
+form input:hover,
+form textarea:hover {
+  border-color: #007bff;
+  /* Change border color */
+  box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.5);
+  /* Soft glowing effect */
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #333;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.3);
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #03a9f7, #77c6f1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #048bca, #77c6f1);
+  transform: scale(1.08);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
