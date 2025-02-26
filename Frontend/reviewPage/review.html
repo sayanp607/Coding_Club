@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coding Club</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <link rel="stylesheet" href="../toggle/toggle.css" />
-    <link rel="stylesheet" href="../reviewPage/review.css">
-    <link rel="stylesheet" href="../card/card.css">
-    <link rel="stylesheet" href="../lib/wow/customcursor.css">
+  <title>Coding Club</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="../toggle/toggle.css" />
+  <link rel="stylesheet" href="../reviewPage/review.css">
+  <link rel="stylesheet" href="../card/card.css">
+  <link rel="stylesheet" href="../lib/wow/customcursor.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
   <div class="overlay" id="overlay">
     <div class="card">
-        <button class="close-btn" onclick="closeCard()">X</button>
-        <h1 id="greeting"></h1>
+      <button class="close-btn" onclick="closeCard()">X</button>
+      <h1 id="greeting"></h1>
     </div>
   </div>
 
@@ -36,160 +38,155 @@
     <h1 id="typingText"></h1>
     <nav>
       <nav id="navbar">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../eventPage/event.html">Events</a></li>
-        <li><a href="../projectPage/projectpage.html">Projects</a></li>
-        <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
-        <li><a href="../contributorPage/contributor.html">Contributors</a></li>
-        <li><a href="../reviewPage/review.html">Reviews</a></li>
-        <li><a href="../index.html#feedback">Feedback</a></li>
-        <li><a href="../Frontend//User/user.html">
-          <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
-          </div>
-        </a></li>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <li><a href="../Frontend//User/user.html">
+              <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
+              </div>
+            </a></li>
           <button id="toggleTheme" class="toggle-btn">🌙</button>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
 
-       <nav>
-      <div class="hamburger" id="hamburger">
+      <nav>
+        <div class="hamburger" id="hamburger">
           <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-links" id="navLinks">
+        </div>
+        <ul class="nav-links" id="navLinks">
           <span id="closeMenu"><i class="fas fa-times"></i></span>
           <li><a href="../index.html">Home</a></li>
-              <li><a href="../index.html#about">About</a></li>
-              <li><a href="../eventPage/event.html">Events</a></li>
-              <li><a href="../projectPage/projectpage.html">Projects</a></li>
-              <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
-              <li><a href="../contributorPage/contributor.html">Contributors</a></li>
-              <li><a href="../reviewPage/review.html">Reviews</a></li>
-              <li><a href="../index.html#feedback">Feedback</a></li>
-              <li><a href="../Frontend//User/user.html">
-                <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
-                </div>
-              </a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <li><a href="../Frontend//User/user.html">
+              <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
+              </div>
+            </a></li>
           <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
-      </ul>        
-  </nav>
-</header>   
-    <div class="testimonial-section">
-        <h2>What Our Users Say</h2>
-        <div class="testimonials">
-            
-            <div class="testimonial">
-                <img src="https://i.pravatar.cc/80?img=5" alt="Sarah M." class="profile-img">
-                <p>"Amazing platform for coders! Projects are just mind blowings."</p>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <h4>- Sarah M.</h4>
-            </div>
+        </ul>
+      </nav>
+  </header>
+  <div class="testimonial-section">
+    <h2>What Our Users Say</h2>
+    <div class="testimonials">
 
-            <div class="testimonial">
-                <img src="https://i.pravatar.cc/80?img=12" alt="John D." class="profile-img">
-                <p>"The events help me to enhance my coding skills with industry level projects."</p>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <h4>- John D.</h4>
-            </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/80?img=5" alt="Sarah M." class="profile-img">
+        <p>"Amazing platform for coders! Projects are just mind blowings."</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h4>- Sarah M.</h4>
+      </div>
 
-            <div class="testimonial">
-                <img src="https://i.pravatar.cc/80?img=19" alt="Lisa K." class="profile-img">
-                <p>"Great platform to learn projects. The code base is too simple to understand for beginners!"</p>
-                <div class="stars">⭐⭐⭐⭐</div>
-                <h4>- Lisa K.</h4>
-            </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/80?img=12" alt="John D." class="profile-img">
+        <p>"The events help me to enhance my coding skills with industry level projects."</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h4>- John D.</h4>
+      </div>
 
-            <div class="testimonial">
-                <img src="https://i.pravatar.cc/80?img=25" alt="Mark T." class="profile-img">
-                <p>"A hidden gem for coding enthusiasts! Highly recommended."</p>
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <h4>- Mark T.</h4>
-            </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/80?img=19" alt="Lisa K." class="profile-img">
+        <p>"Great platform to learn projects. The code base is too simple to understand for beginners!"</p>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <h4>- Lisa K.</h4>
+      </div>
 
-        </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/80?img=25" alt="Mark T." class="profile-img">
+        <p>"A hidden gem for coding enthusiasts! Highly recommended."</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h4>- Mark T.</h4>
+      </div>
+
     </div>
-    <footer class="footer">
-      <div class="wrapper">
-        <div class="newsletter">
-          <h3>Subscribe to our Newsletter</h3>
-          <form id="subscribeForm">
-            <input
-              type="email"
-              id="emailInput"
-              placeholder="Enter your email"
-              required
-            />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-
-        
-          <div class="quick-contact">
-            <h3>Quick Links</h3>
-            <ul>
-              <li class="sec-nav"><a href="../index.html">Home</a></li>
-                <li class="sec-nav"><a href="../index.html#about">About</a></li>
-                <li class="sec-nav"><a href="../eventPage/event.html">Events</a></li>
-                <li class="sec-nav"><a href="../projectPage/projectpage.html">Projects</a></li>
-                <li class="sec-nav"><a href="../index.html#contact">Contact</a></li>
-                <li class="sec-nav"><a href="../index.html#faq">FAQ</a></li>
-                <li class="sec-nav"><a href="../index.html#feedback">Feedback</a></li>
-            </ul>
-          </div>
-          <div class="quick-contact">
-            <h3>Contact Us</h3>
-            <p>📍 123 Street, City, Country</p>
-            <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
-            <p>📞 +123 456 7890</p>
-          </div>
-        
-        <div class="social-sharing">
-          <h3>Share Our Blog</h3>
-          <a href="#" id="facebookShare" class="social-icon">Facebook</a>
-          <a href="#" id="twitterShare" class="social-icon">Twitter</a>
-          <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
-          <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
-
-        </div>
+  </div>
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="newsletter">
+        <h3>Subscribe to our Newsletter</h3>
+        <form id="subscribeForm">
+          <input type="email" id="emailInput" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
 
-      <div class="privacy">
-        <a href="../privacyPage/privacy.html">Privacy Policy</a> |
-        <a href="../termsPage/terms.html">Terms & Conditions</a>
+
+      <div class="quick-contact">
+        <h3>Quick Links</h3>
+        <ul>
+          <li class="sec-nav"><a href="../index.html">Home</a></li>
+          <li class="sec-nav"><a href="../index.html#about">About</a></li>
+          <li class="sec-nav"><a href="../eventPage/event.html">Events</a></li>
+          <li class="sec-nav"><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li class="sec-nav"><a href="../index.html#contact">Contact</a></li>
+          <li class="sec-nav"><a href="../index.html#faq">FAQ</a></li>
+          <li class="sec-nav"><a href="../index.html#feedback">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="quick-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Street, City, Country</p>
+        <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+        <p>📞 +123 456 7890</p>
       </div>
 
-      <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
-    </footer>
+      <div class="social-sharing">
+        <h3>Share Our Blog</h3>
+        <a href="#" id="facebookShare" class="social-icon">Facebook</a>
+        <a href="#" id="twitterShare" class="social-icon">Twitter</a>
+        <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
+        <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
 
-    <script src="../mainPage/script.js"></script>
-    <script src="../toggle/toggle.js"></script>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+      </div>
+    </div>
 
-    <script src="../lib/wow/customcursor.js"></script>
+    <div class="privacy">
+      <a href="../privacyPage/privacy.html">Privacy Policy</a> |
+      <a href="../termsPage/terms.html">Terms & Conditions</a>
+    </div>
 
-    <script src="../card/card.js"></script>
+    <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
+  </footer>
+
+  <script src="../mainPage/script.js"></script>
+  <script src="../toggle/toggle.js"></script>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <script src="../lib/wow/customcursor.js"></script>
+  <script src="../card/card.js"></script>
 </body>
+
 </html>
