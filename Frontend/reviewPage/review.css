@@ -17,6 +17,10 @@
     background: linear-gradient(45deg, #0569dd, #003b6c);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Poppins", Arial, sans-serif;
     margin: 0;
@@ -24,6 +28,8 @@ body {
     text-align: center;
     background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
 }
 
 /* Dark Mode Styles */
@@ -83,9 +89,10 @@ body {
     box-shadow: (0 4px 15px rgba(255, 255, 255, 0.1));
     border: 1px solid black;
 }
-.dark-mode .testimonial-section{
+
+.dark-mode .testimonial-section {
     background-color: #333;
-} 
+}
 
 /* Dark mode for form elements */
 .dark-mode form input,
@@ -185,6 +192,14 @@ body {
     justify-content: center;
 }
 
+/* Style for screens 768px and below */
+@media (max-width: 790px) {
+    .toggle-btn {
+        top: 50px;
+        right: 10px;
+    }
+}
+
 /* Toggle theme style */
 #toggleTheme {
     background: transparent;
@@ -238,13 +253,16 @@ body {
 
 .container {
     color: black;
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* Ensures no horizontal overflow */
 }
 
 h1,
@@ -277,17 +295,30 @@ ul {
 }
 
 @media (max-width: 768px) {
+
+    html,
     body {
         padding: 10px;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
     }
 
     .container {
         padding: 15px;
+        box-sizing: border-box;
+        /* Ensure padding does not cause overflow */
     }
 
     .back-button {
         padding: 6px 12px;
         font-size: 12px;
+    }
+
+    /* theme toggle button */
+    .toggle-btn {
+        position: absolute;
+        top: 10px;
+        /* right: -10px; */
     }
 }
 
@@ -296,13 +327,15 @@ ul {
 header {
     background: linear-gradient(135deg, #03a9f7, #77c6f1);
     color: #fff;
-    padding: 20px 0px;
+    padding: 20px 0;
     box-shadow: 0px 4px 15px rgba(30, 29, 29, 0.3);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 1.2rem;
     font-weight: bold;
-    width: 100% !important;
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure no overflow from padding */
 }
 
 .logo-container {
@@ -350,16 +383,13 @@ header h1 {
 
 /* Navigation Bar */
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 30px;
     display: flex;
     justify-content: center;
     gap: 20px;
-}
-
-nav ul li {
-    display: contents;
 }
 
 nav ul li a {
@@ -392,8 +422,25 @@ nav ul li a div:hover {
     color: #ffcc00;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+
+    html,
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        padding: 0 0 20px 0;
+        margin: 0 0 0 20px;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
@@ -404,20 +451,28 @@ nav ul li a div:hover {
     }
 
     section {
-        width: 90%;
-        padding: 30px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        /* Ensure padding doesn't cause overflow */
     }
 
-    form textarea {
-        width: 90%;
-    }
-
+    form textarea,
+    form input,
     button {
-        width: 90%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        /* Ensure no overflow */
+    }
+
+    .back-button {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 
-/* scroll button */
+/* Scroll Button */
 .scroll-btn {
     position: fixed;
     bottom: 20px;
