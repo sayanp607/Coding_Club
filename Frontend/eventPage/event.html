@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Club - Events</title>
+    <link rel="stylesheet" href="../mainPage/style.css" />
+    <link rel="stylesheet" href="../toggle/toggle.css" />
+    <link rel="stylesheet" href="./event.css">
+    <link rel="stylesheet" href="../lib/wow/customcursor.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+ 
+
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay">
+        <div class="card">
+            <button class="close-btn" onclick="closeCard()">X</button>
+            <h1 id="greeting"></h1>
+        </div>
+      </div>
+    
+      <!-- scroll button -->
+      <button id="scrollToTop" class="scroll-btn">
+        <i class="fas fa-arrow-up fa-xl"></i>
+      </button>
+      <header>
+        <div class="logo-container">
+          <img src="../images/codingclub.png" alt="Logo">
+        </div>
+        <h1 id="typingText"></h1>
+        <nav>
+          <nav id="navbar">
+          <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../eventPage/event.html">Events</a></li>
+              <li><a href="../projectPage/projectpage.html">Projects</a></li>
+               <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+              <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+              <li><a href="../reviewPage/review.html">Reviews</a></li>
+              <li><a href="../index.html#feedback">Feedback</a></li>
+              <li><a href="../Frontend//User/user.html">
+                <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
+                </div>
+              </a></li>
+              <button id="toggleTheme" class="toggle-btn">🌙</button>
+          </ul>
+        </nav>
+    
+           <nav>
+          <div class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="navLinks">
+              <span id="closeMenu"><i class="fas fa-times"></i></span>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../eventPage/event.html">Events</a></li>
+              <li><a href="../projectPage/projectpage.html">Projects</a></li>
+              <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+              <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+              <li><a href="../reviewPage/review.html">Reviews</a></li>
+              <li><a href="../index.html#feedback">Feedback</a></li>
+              <li><a href="../Frontend//User/user.html">
+                <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
+                </div>
+              </a></li>
+              <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+          </ul>        
+      </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search events..." onkeyup="searchEvents()">
+    </div>
+
+   
+
+    <!-- scroll button -->
+    <button id="scrollToTop" class="scroll-btn">
+        <i class="fas fa-arrow-up fa-xl"></i>
+    </button>
+        <!-- Add Event Button -->
+        <button data-aos="fade-up" class="event-main-button" onclick="toggleEventForm()">Add Event</button>
+  
+        <!-- Add Event Form (Hidden by Default) -->
+        <div data-aos="fade-up" class="add-event-form" id="eventForm" style="display: none;">
+            <form onsubmit="return addEvent(event)">
+                <h3>Add a New Event</h3>
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="date" id="eventDate" required>
+                <input type="text" id="eventDesc" placeholder="Event Description" required>
+                <div class="eventbttn">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="toggleEventForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <section class="demo-hackathons">
+          <h2>🔥More Upcoming Events</h2>
+        
+
+            <!-- Events Section -->
+            <div class="hackathon-container" id="hackathon-container">
+              <div class="hackathon-card">
+                <h3>Cyber Code Fest 2025 </h3>
+                <p class="event-date">📅 March 5, 2025</p>
+                <p class="event-desc"> A thrilling coding competition for security enthusiasts and ethical hackers..</p>
+                <a href="../AllLoginPage/loginPage/login.html">
+                  <button class="register-btn">Register</button>
+                </a>
+            </div>
+
+            <div class="hackathon-card">
+                <h3>InnovateX Hackathon</h3>
+                <p class="event-date">📅 March 15, 2025</p>
+                <p class="event-desc"> A hackathon focused on solving real-world problems with innovative tech solutions..</p>
+                <a href="../AllLoginPage/loginPage/login.html">
+                  <button class="register-btn">Register</button>
+                </a>
+            </div>
+
+            <div class="hackathon-card">
+                <h3>Data Science Sprint </h3>
+                <p class="event-date">📅 March 25, 2025</p>
+                <p class="event-desc">A challenge-based event where participants build machine learning models and data-driven applications.</p>
+                <a href="../AllLoginPage/loginPage/login.html">
+                  <button class="register-btn">Register</button>
+                </a>
+            </div>
+            <div class="hackathon-card">
+              <h3>Blockchain Builders Hack </h3>
+              <p class="event-date">📅 March 27, 2025</p>
+              <p class="event-desc">A competition for developers to create decentralized applications (dApps) and smart contracts.</p>
+              <a href="../AllLoginPage/loginPage/login.html">
+                <button class="register-btn">Register</button>
+              </a>
+          </div>
+
+         
+
+          <div class="hackathon-card">
+              <h3>Speed Coding Showdown </h3>
+              <p class="event-date">📅 April 07, 2025</p>
+              <p class="event-desc">A fast-paced contest where coders compete to solve algorithmic problems in record time.</p>
+              <a href="../AllLoginPage/loginPage/login.html">
+                <button class="register-btn">Register</button>
+              </a>
+          </div>
+
+              <!-- Events will be dynamically added here using JavaScript -->
+            </div>
+  
+        </section>
+        <section class="demo-hackathons">
+          <h2>⏳ Past Hackathons/Events</h2>
+          <div class="hackathon-container">
+              <div class="hackathon-card">
+                  <h3>Quantum Code Quest</h3>
+                  <p class="event-date">📅 January 5, 2025</p>
+                  <p class="event-desc"> A futuristic coding challenge exploring quantum computing concepts.</p>
+                  <a href="../leaderboard/leaderboard.html">
+                  <button class="register-btn">Leaderboard</button>
+                </a>
+              </div>
+  
+              
+  
+              <div class="hackathon-card">
+                  <h3>Cloud Wars Challenge</h3>
+                  <p class="event-date">📅 January 25, 2025</p>
+                  <p class="event-desc">A cloud computing competition focused on AWS, Azure, and Google Cloud projects.</p>
+                  <a href="../leaderboard/leaderboard.html">
+                    <button class="register-btn">Leaderboard</button>
+                  </a>
+              </div>
+  
+              <div class="hackathon-card">
+                  <h3>Hack the Future</h3>
+                  <p class="event-date">📅 January 15, 2025</p>
+                  <p class="event-desc">A tech marathon where participants build AI, blockchain, or IoT-based solutions.</p>
+                  <a href="../leaderboard/leaderboard2.html">
+                    <button class="register-btn">Leaderboard</button>
+                  </a>
+              </div>
+              
+          </div>
+      </section>
+
+    <footer class="footer">
+        <div class="wrapper">
+          <div class="newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form id="subscribeForm">
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+  
+          
+            <div class="quick-contact">
+              <h3>Quick Links</h3>
+              <ul>
+                <li class="sec-nav"><a href="../index.html">Home</a></li>
+                <li class="sec-nav"><a href="../index.html#about">About</a></li>
+                <li class="sec-nav"><a href="../eventPage/event.html">Events</a></li>
+                <li class="sec-nav"><a href="../projectPage/projectpage.html">Projects</a></li>
+                <li class="sec-nav"><a href="../index.html#contact">Contact</a></li>
+                <li class="sec-nav"><a href="../index.html#faq">FAQ</a></li>
+                <li class="sec-nav"><a href="../index.html#feedback">Feedback</a></li>
+              </ul>
+            </div>
+            <div class="quick-contact">
+              <h3>Contact Us</h3>
+              <p>📍 123 Street, City, Country</p>
+              <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+              <p>📞 +123 456 7890</p>
+            </div>
+          
+          <div class="social-sharing">
+            <h3>Share Our Blog</h3>
+            <a href="#" id="facebookShare" class="social-icon">Facebook</a>
+            <a href="#" id="twitterShare" class="social-icon">Twitter</a>
+            <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
+            <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
+  
+          </div>
+        </div>
+  
+        <div class="privacy">
+          <a href="../privacyPage/privacy.html">Privacy Policy</a> |
+          <a href="../termsPage/terms.html">Terms & Conditions</a>
+        </div>
+  
+        <div class="copyright">© 2025 YourWebsite. All rights reserved.</div>
+      </footer>
+      <script>
+          // Load events from local storage when the page loads
+    document.addEventListener("DOMContentLoaded", loadEvents);
+
+// Toggle the visibility of the event form
+function toggleEventForm() {
+    const form = document.getElementById("eventForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+}
+
+// Add a new event
+function addEvent(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const eventName = document.getElementById("eventName").value.trim();
+    const eventDate = document.getElementById("eventDate").value;
+    const eventDesc = document.getElementById("eventDesc").value.trim();
+
+    if (!eventName || !eventDate || !eventDesc) {
+        alert("Please fill out all fields!");
+        return;
+    }
+
+    // Create a new event object with a unique ID (using current timestamp)
+    const newEvent = {
+        id: Date.now(),
+        name: eventName,
+        date: eventDate,
+        description: eventDesc
+    };
+
+    // Retrieve stored events or initialize an empty array
+    let events = JSON.parse(localStorage.getItem("events")) || [];
+
+    // Add the new event to the array
+    events.push(newEvent);
+
+    // Save the updated events array to local storage
+    localStorage.setItem("events", JSON.stringify(events));
+
+    // Render the new event
+    renderEvent(newEvent);
+
+    // Reset the form and hide it
+    document.querySelector("form").reset();
+    toggleEventForm();
+}
+
+// Render a single event
+function renderEvent(eventObj) {
+    const eventContainer = document.getElementById("hackathon-container");
+
+    const eventCard = document.createElement("div");
+    eventCard.classList.add("event-card");
+    eventCard.setAttribute("data-id", eventObj.id);
+    eventCard.innerHTML = `
+    <div class="hackathon-card">
+      <h3>${eventObj.name}</h3>
+      <p class="event-date"><strong>Date:</strong> ${eventObj.date}</p>
+      <p class="event-desc">${eventObj.description}</p>
+      <button onclick="deleteEvent(${eventObj.id})">Delete</button>
+      </div>
+    `;
+
+    eventContainer.appendChild(eventCard);
+}
+
+// Load events from local storage and render them
+function loadEvents() {
+    const events = JSON.parse(localStorage.getItem("events")) || [];
+    events.forEach(eventObj => renderEvent(eventObj));
+}
+
+// Delete an event by its unique ID
+function deleteEvent(id) {
+    // Remove the event card from the DOM
+    const eventContainer = document.getElementById("hackathon-container");
+    const eventCard = eventContainer.querySelector(`[data-id="${id}"]`);
+    if (eventCard) {
+        eventCard.remove();
+    }
+
+    // Update local storage: filter out the event with the given id
+    let events = JSON.parse(localStorage.getItem("events")) || [];
+    events = events.filter(ev => ev.id !== id);
+    localStorage.setItem("events", JSON.stringify(events));
+}
+</script>
+      <!-- <script src="event.js"></script> -->
+      <script src="../script.js"></script>
+      <script src="../toggle/toggle.js"></script>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <script src="../lib/wow/customcursor.js"></script>
+   <script src="../card/card.js"></script>
+</body>
+</html>

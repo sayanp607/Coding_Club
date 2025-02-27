@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Page</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="../toggle/toggle.css" />
+  <!-- <link rel="stylesheet" href="event.css"> -->
+  <link rel="stylesheet" href="../blogPage/blog.css">
+  <link rel="stylesheet" href="../card/card.css">
+  <link rel="stylesheet" href="../lib/wow/customcursor.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="blog-body">
+  <div class="overlay" id="overlay">
+    <div class="card">
+      <button class="close-btn" onclick="closeCard()">X</button>
+      <h1 id="greeting"></h1>
+    </div>
+  </div>
+
+  <!-- scroll button -->
+  <button id="scrollToTop" class="scroll-btn">
+    <i class="fas fa-arrow-up fa-xl"></i>
+  </button>
+  <header>
+    <div class="logo-container">
+      <img src="../images/codingclub.png" alt="Logo">
+    </div>
+    <h1 id="typingText"></h1>
+    <nav>
+      <nav id="navbar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <button id="toggleTheme" class="toggle-btn">🌙</button>
+        </ul>
+      </nav>
+
+      <nav>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <span id="closeMenu"><i class="fas fa-times"></i></span>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+        </ul>
+      </nav>
+  </header>
+  <div class="blog-container">
+    <h2 class="blog-header">Blog Page</h2>
+    <input type="text" id="title" class="blog-input" placeholder="Title" required />
+    <textarea id="content" class="blog-textarea" placeholder="Write the Post" required></textarea>
+    <button class="blog-button" onclick="addPost()">Add Post</button>
+    <div id="posts" class="blog-posts"></div>
+  </div>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <div class="container">
+      <h1 class="blog-title">Available Blogs</h1>
+      <p id="noResults" style="display: none; text-align: center; font-size: 18px; color: red;">No results found</p>
+      <!-- Search Bar -->
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search blogs..." onkeyup="searchBlogs()">
+
+      <!-- Blog Posts -->
+      <div class="blog-card" data-title="Why Join a Coding Club?">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.XtRar8D0Fol-NUBFFSE_egHaEK&pid=Api&P=0&h=180" alt="coding club">
+        <div class="blog-content">
+          <h2>Why Join a Coding Club?</h2>
+          <p>A coding club provides a collaborative space to learn, share ideas, and work on exciting projects. Whether
+            you're a beginner or an expert, coding clubs help you grow and network with like-minded individuals.</p>
+          <a href="https://r.search.yahoo.com/_ylt=Awr1QHz6PLhnMCYPli7nHgx.;_ylu=Y29sbwMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1740156282/RO=10/RU=https%3a%2f%2fwww.geekboots.com%2fstory%2fthe-benefits-of-coding-clubs-for-students-beyond-the-classroom/RK=2/RS=Ogb.6CqAfYIzy5xszzID505JM94-"
+            class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-title="Top 5 Coding Projects for Beginners">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.mBTx4bwsTtjwfd6c4KlklAHaEK&pid=Api&P=0&h=180" alt="projects">
+        <div class="blog-content">
+          <h2>Top 5 Coding Projects for Beginners</h2>
+          <p>Getting started with coding? Here are five beginner-friendly projects that will help you learn programming
+            fundamentals and build real-world applications.</p>
+          <a href="https://www.geeksforgeeks.org/top-10-projects-for-beginners-to-practice-html-and-css-skills/"
+            class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-title="How to Master Competitive Programming">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.NaaGgqZBDlhjx5ykbgF3GAHaDe&pid=Api&P=0&h=180" alt="cp">
+        <div class="blog-content">
+          <h2>How to Master Competitive Programming</h2>
+          <p>Want to excel in coding competitions? Learn essential problem-solving techniques, algorithms, and platforms
+            to sharpen your competitive programming skills.</p>
+          <a href="https://www.codechef.com/getting-started" class="read-more">Read More</a>
+        </div>
+      </div>
+      <div class="blog-card" data-title="Best Resources to Learn Web Development">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.hewryE3nxzTjQtWvXJF1UwHaFq&pid=Api&P=0&h=180" alt="web dev">
+        <div class="blog-content">
+          <h2>Best Resources to Learn Web Development</h2>
+          <p>Web development is a valuable skill. Check out the best online platforms, courses, and tools to master
+            HTML, CSS, JavaScript, and more.</p>
+          <a href="https://www.w3schools.com/" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <script>
+    function searchBlogs() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let blogCards = document.querySelectorAll('.blog-card');
+      let noResults = document.getElementById('noResults');
+      let found = false;
+
+      blogCards.forEach(card => {
+        let title = card.getAttribute('data-title').toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = "flex";
+          found = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Show 'No results found' if no blogs match
+      if (found) {
+        noResults.style.display = "none";
+      } else {
+        noResults.style.display = "block";
+      }
+    }
+  </script>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="newsletter">
+        <h3>Subscribe to our Newsletter</h3>
+        <form id="subscribeForm">
+          <input type="email" id="emailInput" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+
+      <div class="quick-contact">
+        <h3>Quick Links</h3>
+        <ul>
+          <li class="sec-nav"><a href="../index.html">Home</a></li>
+          <li class="sec-nav"><a href="../index.html#about">About</a></li>
+          <li class="sec-nav"><a href="../eventPage/event.html">Events</a></li>
+          <li class="sec-nav"><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li class="sec-nav"><a href="../index.html#contact">Contact</a></li>
+          <li class="sec-nav"><a href="../index.html#faq">FAQ</a></li>
+          <li class="sec-nav"><a href="../index.html#feedback">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="quick-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Street, City, Country</p>
+        <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+        <p>📞 +123 456 7890</p>
+      </div>
+
+      <div class="social-sharing">
+        <h3>Share Our Blog</h3>
+        <a href="#" id="facebookShare" class="social-icon">Facebook</a>
+        <a href="#" id="twitterShare" class="social-icon">Twitter</a>
+        <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
+        <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
+
+      </div>
+    </div>
+
+    <div class="privacy">
+      <a href="../privacyPage/privacy.html">Privacy Policy</a> |
+      <a href="../termsPage/terms.html">Terms & Conditions</a>
+    </div>
+
+    <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", loadPosts);
+
+    function addPost() {
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+      if (!title || !content) return;
+
+      const posts = JSON.parse(localStorage.getItem("posts")) || [];
+      posts.push({ title, content });
+      localStorage.setItem("posts", JSON.stringify(posts));
+
+      document.getElementById("title").value = "";
+      document.getElementById("content").value = "";
+
+      loadPosts();
+    }
+
+    function loadPosts() {
+      const postsContainer = document.getElementById("posts");
+      postsContainer.innerHTML = "";
+      const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+      posts.forEach((post, index) => {
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("blog-post");
+        postDiv.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <button class="blog-edit-button" onclick="editPost(${index})">Edit</button>
+            <button class="blog-delete-button" onclick="deletePost(${index})">Delete</button>
+          `;
+        postsContainer.appendChild(postDiv);
+      });
+    }
+
+    function editPost(index) {
+      const posts = JSON.parse(localStorage.getItem("posts"));
+      const newTitle = prompt("Edit Title", posts[index].title);
+      const newContent = prompt("Edit Content", posts[index].content);
+      if (newTitle !== null && newContent !== null) {
+        posts[index] = { title: newTitle, content: newContent };
+        localStorage.setItem("posts", JSON.stringify(posts));
+        loadPosts();
+      }
+    }
+
+    function deletePost(index) {
+      const posts = JSON.parse(localStorage.getItem("posts"));
+      posts.splice(index, 1);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      loadPosts();
+    }
+  </script>
+  <script src="../mainPage/script.js"></script>
+  <script src="../toggle/toggle.js"></script>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script src="../lib/wow/customcursor.js"></script>
+
+  <script src="../card/card.js"></script>
+</body>
+
+</html>
