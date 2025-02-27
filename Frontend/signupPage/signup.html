@@ -81,6 +81,7 @@
         class="signup-input"
         id="signup-phone"
         placeholder="Phone Number"
+        maxlength="10" required oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);"
       />
       <input
         type="text"
