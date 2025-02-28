@@ -143,6 +143,10 @@ body {
     width: 100%;
 }
 
+input::placeholder{
+    font-size: 1rem !important;
+}
+
 .signup-input {
     width: 100%;
     padding: 10px;
