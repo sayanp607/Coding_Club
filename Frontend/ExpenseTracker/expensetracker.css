@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  max-width: 400px;
+  background: #f4f4f4;
+}
+h2 {
+  text-align: center;
+}
+.container {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+.expense-list {
+  margin-top: 10px;
+}
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 3px;
+}
