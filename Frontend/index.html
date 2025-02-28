@@ -391,6 +391,7 @@
     <div class="search-container" data-aos="fade-up">
       <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
     </div>
+    
 
     <h2 data-aos="fade-up">Projects</h2>
     <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>
@@ -399,6 +400,7 @@
     <section data-aos="fade-up" class="projects-section">
       <h2 data-aos="fade-up">Our Projects</h2>
 
+      <p id="noResults" style="display: none; text-align: center; color: red;">No results found</p>
       <div data-aos="fade-up" class="projects-container">
        
 
@@ -441,19 +443,29 @@
 
 
   <script>
-    function filterProjects() {
-      let input = document.getElementById("searchBar").value.toLowerCase();
-      let projectCards = document.querySelectorAll(".project-card");
+  function filterProjects() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let projectCards = document.querySelectorAll(".project-card");
+    let noResultsMessage = document.getElementById("noResults");
 
-      projectCards.forEach(card => {
-        let title = card.getAttribute("data-title").toLowerCase();
-        if (title.includes(input)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+    let found = false;
+
+    projectCards.forEach(card => {
+      let title = card.getAttribute("data-title").toLowerCase();
+      if (title.includes(input)) {
+        card.style.display = "block";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (!found) {
+      noResultsMessage.style.display = "block";
+    } else {
+      noResultsMessage.style.display = "none";
     }
+  }
   </script>
 
   <section id="contact" class="container" style="background-color: transparent; box-shadow: none;">
