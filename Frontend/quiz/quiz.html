@@ -75,6 +75,7 @@
         Your score: <span id="score">0</span>
       </div>
       <button class="restart-btn" style="display: none">Restart Quiz</button>
+      <div id="scoreboard">Past Score</div>
     </div>
     <script>
       fetch("quiz.json")
@@ -102,6 +103,7 @@
           const resultEl = document.querySelector(".result");
           const scoreEl = document.getElementById("score");
           const restartBtn = document.querySelector(".restart-btn");
+          const scoreboardEl = document.getElementById("scoreboard");
 
           function loadQuestion() {
             if (currentQuestion >= 5) {
@@ -153,6 +155,25 @@
             resultEl.style.display = "block";
             scoreEl.textContent = score;
             restartBtn.style.display = "block";
+
+            saveScore(score);
+            displayScores();
+          }
+
+          function saveScore(newScore) {
+            let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+            scores.unshift(newScore);
+            if (scores.length > 3) scores.pop(); // Keep only last 3 scores
+            localStorage.setItem("quizScores", JSON.stringify(scores));
+          }
+
+          function displayScores() {
+            const scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+            scoreboardEl.innerHTML =
+              `<h3>Past Scores:</h3>` +
+              scores
+                .map((s, i) => `<div>Game ${i + 1}: ${s} points</div>`)
+                .join("");
           }
 
           restartBtn.addEventListener("click", () => {
@@ -169,6 +190,7 @@
           });
 
           loadQuestion();
+          displayScores(); // Show past scores on load
         })
         .catch((error) => {
           console.error("Error fetching quiz data:", error);
