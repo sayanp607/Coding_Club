@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .leaderboard {
+            width: 50%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            color: black;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        .leaderboard ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .leaderboard li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .leaderboard li img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #007bff;
+        }
+
+        .leaderboard .rank {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leaderboard">
+        <h2>Top 10 participants of Cloud Wars Challenge</h2>
+        <ul id="leaderboard-list"></ul>
+    </div>
+
+    <script>
+        const participants = [
+            { name: "Alice", title: "2nd Year in Computer Science", email: "alice@example.com", logo: "https://randomuser.me/api/portraits/women/1.jpg" },
+            { name: "Bob", title: "3rd Year in Mechanical Engineering", email: "bob@example.com", logo: "https://randomuser.me/api/portraits/men/1.jpg" },
+            { name: "Charlie", title: "1st Year in Civil Engineering", email: "charlie@example.com", logo: "https://randomuser.me/api/portraits/men/2.jpg" },
+            { name: "David", title: "Final Year in Electrical Engineering", email: "david@example.com", logo: "https://randomuser.me/api/portraits/men/3.jpg" },
+            { name: "Emma", title: "2nd Year in Biotechnology", email: "emma@example.com", logo: "https://randomuser.me/api/portraits/women/2.jpg" },
+            { name: "Frank", title: "3rd Year in Chemical Engineering", email: "frank@example.com", logo: "https://randomuser.me/api/portraits/men/4.jpg" },
+            { name: "Grace", title: "1st Year in Aerospace Engineering", email: "grace@example.com", logo: "https://randomuser.me/api/portraits/women/3.jpg" },
+            { name: "Hannah", title: "Final Year in Computer Science", email: "hannah@example.com", logo: "https://randomuser.me/api/portraits/women/4.jpg" },
+            { name: "Isaac", title: "2nd Year in Robotics Engineering", email: "isaac@example.com", logo: "https://randomuser.me/api/portraits/men/5.jpg" },
+            { name: "Jack", title: "3rd Year in Mechatronics", email: "jack@example.com", logo: "https://randomuser.me/api/portraits/men/6.jpg" }
+        ];
+
+        const leaderboardList = document.getElementById("leaderboard-list");
+
+        participants.forEach((participant, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span class="rank">#${index + 1}</span>
+                <img src="${participant.logo}" alt="${participant.name}">
+                <span><strong>${participant.name}</strong> <br> ${participant.title} <br> <small>${participant.email}</small></span>
+            `;
+            leaderboardList.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>

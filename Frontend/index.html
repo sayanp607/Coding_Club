@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coding Club</title>
 
-  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="aboutPage/about.css" />
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="toggle.css" />
-  <link rel="stylesheet" href="event.css">
-  <link rel="stylesheet" href="project.css">
-  <link rel="stylesheet" href="card.css">
-  <link rel="stylesheet" href="lib/wow/customcursor.css">
+  <link rel="stylesheet" href="mainPage/style.css" />
+  <link rel="stylesheet" href="toggle/toggle.css" />
+  <link rel="stylesheet" href="eventPage/event.css">
+  <link rel="stylesheet" href="projectPage/project.css">
+  <link rel="stylesheet" href="card/card.css">
+  <link rel="stylesheet" href="../lib/wow/customcursor.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,179 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body{
-      padding: 0px;
-    }
 
-    header{
-          padding: 20px 0px !important;
-          width: 100% !important;
-        }
-
-        footer{
-        width: 100% !important;
-        padding: 5px 0px !important;
-      }
-
-      .wrapper {
-        justify-content: space-evenly !important;
-      }
-
-    body {
-      background-color: #f5f5f5;
-      color: #333;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .intro {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #333;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  margin: 20px auto;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  transition: transform 0.3s ease-in-out;
-}
-.dark-mode h1,.dark-mode h2,.dark-mode h3{
-  color: #ffcc00 !important;
-}
-
-
-.intro:hover {
-  transform: scale(1.02);
-}
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #ddd;
-      padding: 15px 0;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .question {
-      font-weight: bold;
-      cursor: pointer;
-      color: #1f618d;
-    }
-
-    .answer {
-      display: none;
-      padding-top: 10px;
-      color: #555;
-    }
-
-    .search-box {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 15px;
-      }
-    }
-
-    #eventSearch {
-      width: 90%;
-      padding: 10px;
-      font-size: 16px;
-      margin: 10px auto;
-      display: block;
-      border: 2px solid #2fa5f4;
-      border-radius: 5px;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      background-color: #00c8ff;
-      color: white;
-      padding: 12px 24px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-      background-color: #054e9b;
-      transform: scale(1.05);
-    }
-
-    .profile {
-      padding: 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .profile-pic {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-    }
-  </style>
-  
-  <style>
-    .search-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-  
-    #searchBar {
-        width: 80%;
-        max-width: 400px;
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        outline: none;
-    }
-  
-    .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-  </style>
 </head>
 
 <body>
@@ -213,29 +41,31 @@
 
   <header>
     <div class="logo-container">
-      <img src="codingclub.png" alt="Logo">
+      <img src="images/codingclub.png" alt="logo">
     </div>
     <h1 id="typingText"></h1>
     <nav>
       <nav id="navbar">
         <ul>
-          <li><a href="./index.html">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#events">Events</a></li>
-          <li><a href="projectpage.html">Projects</a></li>
-          <li><a href="login.html" id="auth-link">Login</a></li>
-          
-          <li><a href="contributor.html">Contributors</a></li>
-          <li><a href="review.html">Reviews</a></li>
+          <li><a href="projectPage/projectpage.html">Projects</a></li>
+          <li><a href="AllLoginPage/loginPage/login.html" id="auth-link">Login</a></li>
+
+          <li><a href="contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="reviewPage/review.html">Reviews</a></li>
           <li><a href="#feedback">Feedback</a></li>
-          <li><a href="#"><div class="profile">
-            <img src="./profile.png" id="profile-pic" class="profile-pic" alt="Profile Picture">Account
-          </div></a></li>
+          <li><a href="../Frontend//User/user.html">
+              <div class="profile">
+                <img id="profile-pic" class="profile-pic" alt="Profile Picture" >Account
+              </div>
+            </a></li>
           <button id="toggleTheme" class="toggle-btn">🌙</button>
         </ul>
       </nav>
-      
-         <nav class="hamburgerNav">
+
+      <nav class="hamburgerNav">
 
         <div class="hamburger" id="hamburger">
           <i class="fas fa-bars"></i>
@@ -246,12 +76,14 @@
           <li><a href="#about">About</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="contributor.html">Contributors</a></li>
-          <li><a href="review.html">Reviews</a></li>
+          <li><a href="AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="reviewPage/review.html">Reviews</a></li>
           <li><a href="#feedback">Feedback</a></li>
-          <li><a href="#"><div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
-          </div></a></li>
+          <li><a href="../Frontend//User/user.html">
+              <div class="profile"><img id="profile-pic" class="profile-pic" alt="Profile Picture">Account
+              </div>
+            </a></li>
           <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
         </ul>
       </nav>
@@ -282,37 +114,48 @@
   <section id="about">
     <div class="about-container">
       <h2>About Us</h2>
-        <p class="intro">
-          We are a passionate team of coding enthusiasts dedicated to solving real-world problems through technology and innovation.  
-          Our club brings together individuals from diverse backgrounds who share a common love for programming, problem-solving, and creative thinking.  
-          Through workshops, hackathons, and collaborative projects, we aim to enhance our skills, explore emerging technologies, and push the boundaries of what is possible.  
-        
-          We believe in fostering a supportive and inclusive community where everyone, from beginners to experienced developers, can learn, contribute, and grow.  
-          Whether you're looking to sharpen your coding skills, build exciting projects, or connect with like-minded tech enthusiasts, our club is the perfect place for you.  
-        
-          Join us as we innovate, collaborate, and make a difference through technology!
-        </p>
-        
+      <p class="intro">
+        We are a passionate team of coding enthusiasts dedicated to solving real-world problems through technology and
+        innovation.
+        Our club brings together individuals from diverse backgrounds who share a common love for programming,
+        problem-solving, and creative thinking.
+        Through workshops, hackathons, and collaborative projects, we aim to enhance our skills, explore emerging
+        technologies, and push the boundaries of what is possible.
+
+        We believe in fostering a supportive and inclusive community where everyone, from beginners to experienced
+        developers, can learn, contribute, and grow.
+        Whether you're looking to sharpen your coding skills, build exciting projects, or connect with like-minded tech
+        enthusiasts, our club is the perfect place for you.
+
+        Join us as we innovate, collaborate, and make a difference through technology!
+      </p>
+
 
       <div class="team">
         <h3>Meet Our Team</h3>
         <div class="team-members">
           <div class="member">
-            <img src="image1.jpeg" alt="//">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+              alt="//">
             <h4>Joe Rogan</h4>
             <p>Frontend Developer</p>
             <p class="more-info">Joe specializes in frontend development, focusing on creating seamless and intuitive
               user interfaces.</p>
           </div>
           <div class="member">
-            <img src="image2.jpeg" alt="//">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+              alt="//">
             <h4>Abhay</h4>
             <p>Project Manager</p>
             <p class="more-info">Abhay leads the team, ensuring timely delivery of projects and effective communication
               within the team.</p>
           </div>
           <div class="member">
-            <img src="image3.avif " alt="//">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+              alt="//">
             <h4>Jane Smith</h4>
             <p>Backend Developer</p>
             <p class="more-info">Jane works on backend architecture, optimizing performance, and ensuring data security
@@ -332,9 +175,43 @@
     </div>
   </section>
 
+  <section class="why-choose-us">
+    <h2 class="section-heading">Why Choose Us?</h2>
+    
+    <div class="why-text">
+        <p>
+            In a rapidly evolving tech landscape, staying ahead is crucial. At Coding Club, we provide an ecosystem where innovation meets expertise. Whether you're a beginner or an experienced developer, our community, mentorship, and resources empower you to excel.
+        </p>
+    </div>
+
+    <div class="why-us-container">
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-bolt"></i>
+            <h3>Cutting-Edge Technologies</h3>
+            <p>Stay ahead with the latest programming languages and frameworks.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-users"></i>
+            <h3>Strong Community</h3>
+            <p>Join a vibrant community of developers, learners, and experts.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Expert Mentorship</h3>
+            <p>Get guidance from industry professionals and experienced developers.</p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Innovation Hub</h3>
+            <p>Work on real-world projects and transform your ideas into reality.</p>
+        </div>
+    </div>
+</section>
+
+
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
-    
+
     <!-- Search Bar -->
     <input data-aos="fade-up" type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
 
@@ -358,17 +235,17 @@
 
     <!-- Demo Hackathons Section -->
     <section data-aos="fade-up" class="demo-hackathons">
-      
+
       <h2>🔥 Upcoming Hackathons/Events</h2>
-      
-<p id="noResultMessage" style="display: none; color: red; text-align: center;">No results found</p>
+
+      <p id="noResultMessage" style="display: none; color: red; text-align: center;">No results found</p>
       <div data-aos="fade-up" class="hackathon-container" id="hackathonContainer">
         <div class="hackathon-card">
-          
+
           <h3>Beginner's Hackathon 2025</h3>
           <p class="event-date">📅 March 5, 2025</p>
           <p class="event-desc">A beginner-friendly hackathon to kickstart your coding journey.</p>
-          <a href="beginlogin.html">
+          <a href="AllLoginPage/beginloginPage/beginlogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
@@ -377,7 +254,7 @@
           <h3>AI Challenge Hackathon</h3>
           <p class="event-date">📅 March 15, 2025</p>
           <p class="event-desc">Build AI-powered applications in this fun and interactive challenge.</p>
-          <a href="ailogin.html">
+          <a href="AllLoginPage/ailoginPage/ailogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
@@ -386,12 +263,12 @@
           <h3>Full Stack Coding Challenge</h3>
           <p class="event-date">📅 March 25, 2025</p>
           <p class="event-desc">Showcase your full-stack development skills in this exciting challenge.</p>
-          <a href="stacklogin.html">
+          <a href="AllLoginPage/stackloginPage/stacklogin.html">
             <button class="register-btn">Register</button>
           </a>
         </div>
       </div>
-      <a data-aos="fade-up" href="event.html" class="btn" target="_blank">More Events</a>
+      <a data-aos="fade-up" href="eventPage/event.html" class="btn" target="_blank">More Events</a>
     </section>
   </section>
 
@@ -479,44 +356,44 @@
   </script>
 
 
-<script>
-  function filterEvents() {
-    let input = document.getElementById("eventSearch").value.toLowerCase();
-    let cards = document.querySelectorAll(".hackathon-card");
-    let noResultMessage = document.getElementById("noResultMessage");
-    let found = false;
+  <script>
+    function filterEvents() {
+      let input = document.getElementById("eventSearch").value.toLowerCase();
+      let cards = document.querySelectorAll(".hackathon-card");
+      let noResultMessage = document.getElementById("noResultMessage");
+      let found = false;
 
-    cards.forEach(card => {
-      let eventName = card.querySelector("h3").innerText.toLowerCase();
-      if (eventName.includes(input)) {
-        card.style.display = "block";
-        found = true;
+      cards.forEach(card => {
+        let eventName = card.querySelector("h3").innerText.toLowerCase();
+        if (eventName.includes(input)) {
+          card.style.display = "block";
+          found = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Show "No results found" message if no events match the search
+      if (found) {
+        noResultMessage.style.display = "none";
       } else {
-        card.style.display = "none";
+        noResultMessage.style.display = "block";
       }
-    });
-
-    // Show "No results found" message if no events match the search
-    if (found) {
-      noResultMessage.style.display = "none";
-    } else {
-      noResultMessage.style.display = "block";
     }
-  }
-</script>
+  </script>
 
 
 
 
-<section id="projects">
+  <section id="projects">
 
-  <!-- Search Bar -->
-  <div class="search-container" data-aos="fade-up">
-    <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
-  </div>
+    <!-- Search Bar -->
+    <div class="search-container" data-aos="fade-up">
+      <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
+    </div>
 
-  <h2 data-aos="fade-up">Projects</h2>
-  <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>
+    <h2 data-aos="fade-up">Projects</h2>
+    <p data-aos="fade-up">Check out the amazing projects built by our club members.</p>
 
 
     <section data-aos="fade-up" class="projects-section">
@@ -524,72 +401,72 @@
 
       <div data-aos="fade-up" class="projects-container">
         <div data-aos="fade-up" class="project-card">
-          <img src="todo.jpeg" alt="Project 1">
+          <img src="images/todo.jpeg" alt="Project 1">
           <h3>To-Do App</h3>
           <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
           <a href="https://todoapp-codingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card">
-          <img src="guess.jpeg" alt="Project 2">
+          <img src="images/guess.jpeg" alt="Project 2">
           <h3>Guessing Game</h3>
           <p>A fun guessing game built with JavaScript.</p>
           <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="To-Do App">
-            <img src="todo.jpeg" alt="Project 3">
-            <h3>To-Do App</h3>
-            <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
-            <a href="https://todoapp-codingclub.netlify.app/" class="view-demo">View Demo</a>
+          <img src="images/todo.jpeg" alt="Project 3">
+          <h3>To-Do App</h3>
+          <p>A simple and interactive to-do app using HTML, CSS, and JavaScript.</p>
+          <a href="https://todoapp-codingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Guessing Game">
-            <img src="guess.jpeg" alt="Project 4">
-            <h3>Guessing Game</h3>
-            <p>A fun guessing game built with JavaScript.</p>
-            <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
+          <img src="images/guess.jpeg" alt="Project 4">
+          <h3>Guessing Game</h3>
+          <p>A fun guessing game built with JavaScript.</p>
+          <a href="https://guessing-gameonline.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Random Color Generator">
-            <img src="color.jpeg" alt="Project 5">
-            <h3>Random Color Generator</h3>
-            <p>Click a button to generate a random color with hex codes.</p>
-            <a href="https://random-colour-generator-web.netlify.app/" class="view-demo">View Demo</a>
+          <img src="images/color.jpeg" alt="Project 5">
+          <h3>Random Color Generator</h3>
+          <p>Click a button to generate a random color with hex codes.</p>
+          <a href="https://random-colour-generator-web.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
         <div data-aos="fade-up" class="project-card" data-title="Password Generator">
-            <img src="password.jpeg" alt="Project 6">
-            <h3>Password Generator</h3>
-            <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
-            <a href="https://passwordgeneratorcodingclub.netlify.app/" class="view-demo">View Demo</a>
+          <img src="images/password.jpeg" alt="Project 6">
+          <h3>Password Generator</h3>
+          <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
+          <a href="https://passwordgeneratorcodingclub.netlify.app/" class="view-demo">View Demo</a>
         </div>
 
       </div>
-      <a href="projectpage.html" class="btn" target="_blank">More Projects</a>
+      <a href="projectPage/projectpage.html" class="btn" target="_blank">More Projects</a>
+    </section>
   </section>
-</section>
 
 
 
 
 
 
-<script>
-  function filterProjects() {
+  <script>
+    function filterProjects() {
       let input = document.getElementById("searchBar").value.toLowerCase();
       let projectCards = document.querySelectorAll(".project-card");
 
       projectCards.forEach(card => {
-          let title = card.getAttribute("data-title").toLowerCase();
-          if (title.includes(input)) {
-              card.style.display = "block";
-          } else {
-              card.style.display = "none";
-          }
+        let title = card.getAttribute("data-title").toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
       });
-  }
-</script>
+    }
+  </script>
 
   <section id="contact" class="container" style="background-color: transparent; box-shadow: none;">
     <div data-aos="fade-up" class="feedback-form container  p-6 rounded-lg shadow-lg w-full max-w-md">
@@ -605,9 +482,8 @@
         <p id="charCount">0 / 200</p>
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         <div data-aos="fade-up" class="icons-btn">
-          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><img src="./components/linkidn.png"
-              alt="linkedin-logo"></a>
-          <a href="https://github.com/ak-0283" target="_blank"><img src="./components/github.png" alt="github-logo"></a>
+          <a href="https://www.linkedin.com/in/abhay-kumar-117b4327b/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+          <a href="https://github.com/ak-0283" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
           <button type="submit">Send</button>
         </div>
         <div id="result"></div>
@@ -652,8 +528,8 @@
       No results found.
     </p>
     <section data-aos="fade-up" class="faq-item">
-     
-      
+
+
       <p data-aos="fade-up" class="question" onclick="toggleAnswer(this)">💻 What is the coding club about?</p>
       <p data-aos="fade-up" class="answer">Our coding club is a community for programmers of all levels to collaborate,
         learn, and work on projects together.</p>
@@ -723,7 +599,7 @@
 
 
   </section>
-</section>
+  </section>
 
 
   <script>
@@ -731,13 +607,13 @@
       let answer = element.nextElementSibling;
       answer.style.display = answer.style.display === "block" ? "none" : "block";
     }
-  
+
     function searchFAQ() {
       let input = document.querySelector('.search-box').value.toLowerCase();
       let questions = document.querySelectorAll('.faq-item');
       let noResultsMessage = document.getElementById('no-results');
       let hasResults = false;
-  
+
       questions.forEach(item => {
         let text = item.textContent.toLowerCase();
         if (text.includes(input)) {
@@ -747,11 +623,11 @@
           item.style.display = "none";
         }
       });
-  
+
       noResultsMessage.style.display = hasResults ? "none" : "block";
     }
   </script>
-  
+
 
 
 
@@ -760,36 +636,31 @@
       <div class="newsletter">
         <h3>Subscribe to our Newsletter</h3>
         <form id="subscribeForm">
-          <input
-            type="email"
-            id="emailInput"
-            placeholder="Enter your email"
-            required
-          />
+          <input type="email" id="emailInput" placeholder="Enter your email" required />
           <button type="submit">Subscribe</button>
         </form>
       </div>
 
-      
-        <div class="quick-contact">
-          <h3>Quick Links</h3>
-          <ul>
-            <li class="sec-nav"><a href="#home">Home</a></li>
-            <li class="sec-nav"><a href="#about">About</a></li>
-            <li class="sec-nav"><a href="event.html">Events</a></li>
-            <li class="sec-nav"><a href="#projects">Projects</a></li>
-            <li class="sec-nav"><a href="#contact">Contact</a></li>
-            <li class="sec-nav"><a href="#faq">FAQ</a></li>
-            <li class="sec-nav"><a href="#feedback">Feedback</a></li>
-          </ul>
-        </div>
-        <div class="quick-contact">
-          <h3>Contact Us</h3>
-          <p>📍 123 Street, City, Country</p>
-          <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
-          <p>📞 +123 456 7890</p>
-        </div>
-      
+
+      <div class="quick-contact">
+        <h3>Quick Links</h3>
+        <ul>
+          <li class="sec-nav"><a href="#home">Home</a></li>
+          <li class="sec-nav"><a href="#about">About</a></li>
+          <li class="sec-nav"><a href="#events">Events</a></li>
+          <li class="sec-nav"><a href="#projects">Projects</a></li>
+          <li class="sec-nav"><a href="#contact">Contact</a></li>
+          <li class="sec-nav"><a href="#faq">FAQ</a></li>
+          <li class="sec-nav"><a href="#feedback">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="quick-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Street, City, Country</p>
+        <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+        <p>📞 +123 456 7890</p>
+      </div>
+
       <div class="social-sharing">
         <h3>Share Our Blog</h3>
         <a href="#" id="facebookShare" class="social-icon">Facebook</a>
@@ -801,15 +672,15 @@
     </div>
 
     <div class="privacy">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacyPage/privacy.html">Privacy Policy</a> |
+      <a href="termsPage/terms.html">Terms & Conditions</a>
     </div>
 
     <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="toggle.js"></script>
+  <script src="mainPage/script.js"></script>
+  <script src="toggle/toggle.js"></script>
 
   <div class="circle"></div>
   <div class="circle"></div>
@@ -835,48 +706,48 @@
   <div class="circle"></div>
   <div class="circle"></div>
 
-  <script src="./lib/wow/customcursor.js"></script>
+  <script src="../lib/wow/customcursor.js"></script>
 
-  <script src="card.js"></script>
+  <script src="card/card.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ duration: 600, once: false });
   </script>
-  <script src="feedback.js"></script>
+  <script src="feedbackPage/feedback.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-        updateAuthLink();
+      updateAuthLink();
     });
 
     function updateAuthLink() {
-        let loggedInUser = localStorage.getItem("isLoggedIn"); // Fix here
-        let authLink = document.getElementById("auth-link");
+      let loggedInUser = localStorage.getItem("isLoggedIn"); // Fix here
+      let authLink = document.getElementById("auth-link");
 
-        console.log("Logged in status:", loggedInUser); // Debugging
+      console.log("Logged in status:", loggedInUser); // Debugging
 
-        if (authLink) {
-            if (loggedInUser === "true") {
-                authLink.innerText = "Logout";
-                authLink.href = "#";
-                authLink.onclick = function () {
-                    logout();
-                };
-            } else {
-                authLink.innerText = "Login";
-                authLink.href = "login.html";
-                authLink.onclick = null;
-            }
+      if (authLink) {
+        if (loggedInUser === "true") {
+          authLink.innerText = "Logout";
+          authLink.href = "#";
+          authLink.onclick = function () {
+            logout();
+          };
         } else {
-            console.error("auth-link not found in the DOM!");
+          authLink.innerText = "Login";
+          authLink.href = "AllLoginPage/loginPage/login.html";
+          authLink.onclick = null;
         }
+      } else {
+        console.error("auth-link not found in the DOM!");
+      }
     }
 
     function logout() {
-        localStorage.removeItem("isLoggedIn"); // Fix here
-        updateAuthLink();
-        window.location.reload();
+      localStorage.removeItem("isLoggedIn"); // Fix here
+      updateAuthLink();
+      window.location.reload();
     }
-</script>
+  </script>
   <script>
     // Store the URL with the section ID in localStorage
     window.localStorage.setItem("home", "https://coding-club-dgb7.vercel.app/index.html#home");
