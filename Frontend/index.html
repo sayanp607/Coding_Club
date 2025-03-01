@@ -26,7 +26,10 @@
 
 <body>
 
-
+  <div id="loader">
+    <img src="./infinite-spinner.svg" alt="">
+  </div>
+  <div id="content">
   <div class="overlay" id="overlay">
     <div class="card">
       <button class="close-btn" onclick="closeCard()">X</button>
@@ -600,7 +603,7 @@
 
   </section>
   </section>
-
+</div>
 
   <script>
     function toggleAnswer(element) {
@@ -758,6 +761,12 @@
     window.localStorage.setItem("feedback", "https://coding-club-dgb7.vercel.app/index.html#feedback");
     // window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#feedback");
 
+  </script>
+  <script>
+    setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000);
   </script>
 </body>
 
