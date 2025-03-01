@@ -26,7 +26,10 @@
 
 <body>
 
-
+  <div id="loader">
+    <img src="./infinite-spinner.svg" alt="">
+  </div>
+  <div id="content">
   <div class="overlay" id="overlay">
     <div class="card">
       <button class="close-btn" onclick="closeCard()">X</button>
@@ -58,7 +61,7 @@
           <li><a href="#feedback">Feedback</a></li>
           <li><a href="../Frontend//User/user.html">
               <div class="profile">
-                <img id="profile-pic" class="profile-pic" alt="Profile Picture" >Account
+                <img src="profile.png" style="height: 20px;" id="profile-pic" class="profile-pic" alt="Profile Picture" >Account
               </div>
             </a></li>
           <button id="toggleTheme" class="toggle-btn">🌙</button>
@@ -212,7 +215,7 @@
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
 
-    <!-- Search Bar -->
+    <!-- Search Bar --> 
     <input data-aos="fade-up" type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
 
     <!-- Add Event Button -->
@@ -600,7 +603,7 @@
 
   </section>
   </section>
-
+</div>
 
   <script>
     function toggleAnswer(element) {
@@ -760,6 +763,12 @@
     window.localStorage.setItem("feedback", "https://coding-club-dgb7.vercel.app/index.html#feedback");
     // window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#feedback");
 
+  </script>
+  <script>
+    setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000);
   </script>
 </body>
 
