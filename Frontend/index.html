@@ -26,7 +26,10 @@
 
 <body>
 
-
+  <div id="loader">
+    <img src="./infinite-spinner.svg" alt="">
+  </div>
+  <div id="content">
   <div class="overlay" id="overlay">
     <div class="card">
       <button class="close-btn" onclick="closeCard()">X</button>
@@ -58,7 +61,7 @@
           <li><a href="#feedback">Feedback</a></li>
           <li><a href="../Frontend//User/user.html">
               <div class="profile">
-                <img id="profile-pic" class="profile-pic" alt="Profile Picture" >Account
+                <img src="profile.png" style="height: 20px;" id="profile-pic" class="profile-pic" alt="Profile Picture" >Account
               </div>
             </a></li>
           <button id="toggleTheme" class="toggle-btn">🌙</button>
@@ -212,7 +215,7 @@
   <section id="events">
     <h2 data-aos="fade-up">Events</h2>
 
-    <!-- Search Bar -->
+    <!-- Search Bar --> 
     <input data-aos="fade-up" type="text" id="eventSearch" placeholder="Search events here..." onkeyup="filterEvents()">
 
     <!-- Add Event Button -->
@@ -400,7 +403,7 @@
     <section data-aos="fade-up" class="projects-section">
       <h2 data-aos="fade-up">Our Projects</h2>
 
-      <p id="noResults" style="display: none; text-align: center; color: red;">No results found</p>
+      <h2 id="noResults" style="display: none; text-align: center; color: rgb(7, 177, 223);">No results found</h2>
       <div data-aos="fade-up" class="projects-container">
        
 
@@ -600,7 +603,7 @@
 
   </section>
   </section>
-
+</div>
 
   <script>
     function toggleAnswer(element) {
@@ -649,6 +652,7 @@
           <li class="sec-nav"><a href="#about">About</a></li>
           <li class="sec-nav"><a href="#events">Events</a></li>
           <li class="sec-nav"><a href="#projects">Projects</a></li>
+          <li class="sec-nav"><a href="blogPage/blog.html">Blogs</a></li>
           <li class="sec-nav"><a href="#contact">Contact</a></li>
           <li class="sec-nav"><a href="resource/resource.html">Resources</a></li>
           <li class="sec-nav"><a href="#faq">FAQ</a></li>
@@ -759,6 +763,12 @@
     window.localStorage.setItem("feedback", "https://coding-club-dgb7.vercel.app/index.html#feedback");
     // window.localStorage.setItem("contact", "http://127.0.0.1:5501/Frontend/index.html#feedback");
 
+  </script>
+  <script>
+    setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000);
   </script>
 </body>
 

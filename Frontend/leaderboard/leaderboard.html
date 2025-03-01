@@ -2,118 +2,254 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            text-align: center;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leaderboard - Coding Club</title>
+  <link rel="stylesheet" href="../toggle/toggle.css" />
+  <link rel="stylesheet" href="../projectPage/project.css">
+  <link rel="stylesheet" href="./privacy.css">
+  <link rel="stylesheet" href="../card/card.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2ebfd5, #fad0c4);
+      text-align: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+  }
 
-        .leaderboard {
-            width: 50%;
-            margin: 50px auto;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            color: black;
-        }
+  .leaderboard {
+      width: 50%;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      color: black;
+  }
 
-        h2 {
-            margin-bottom: 20px;
-            color: #ff5f6d;
-            font-size: 24px;
-        }
+  h2 {
+      margin-bottom: 20px;
+      color: #ff5f6d;
+      font-size: 24px;
+  }
 
-        .leaderboard ul {
-            list-style: none;
-            padding: 0;
-        }
+  .leaderboard ul {
+      list-style: none;
+      padding: 0;
+  }
 
-        .leaderboard li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px;
-            border-bottom: 1px solid #ddd;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 5px;
-            margin: 5px 0;
-            flex-wrap: wrap;
-        }
+  .leaderboard li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      margin: 5px 0;
+      flex-wrap: wrap;
+  }
 
-        .leaderboard li img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 2px solid #ff5f6d;
-        }
+  .leaderboard li img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      border: 2px solid #ff5f6d;
+  }
 
-        .leaderboard .rank {
-            font-weight: bold;
-            color: #ff5f6d;
-            font-size: 18px;
-        }
+  .leaderboard .rank {
+      font-weight: bold;
+      color: #ff5f6d;
+      font-size: 18px;
+  }
 
-        .details {
-            flex: 1;
-            text-align: left;
-        }
+  .details {
+      flex: 1;
+      text-align: left;
+  }
 
-        .details span {
-            display: block;
-        }
+  .details span {
+      display: block;
+  }
 
-        .email {
-            font-size: 12px;
-            color: gray;
-        }
-    </style>
+  .email {
+      font-size: 12px;
+      color: gray;
+  }
+</style>
 </head>
 
 <body>
-    <div class="leaderboard">
-        <h2>Top 10 participants of Quantum Code Quest</h2>
-        <ul id="leaderboard-list"></ul>
+
+  <!-- scroll button -->
+  <button id="scrollToTop" class="scroll-btn">
+    <i class="fas fa-arrow-up fa-xl"></i>
+  </button>
+  <header>
+    <div class="logo-container">
+      <img src="../images/codingclub.svg" alt="Logo">
+    </div>
+    <h1 id="typingText"></h1>
+    <nav>
+      <nav id="navbar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <button id="toggleTheme" class="toggle-btn">🌙</button>
+        </ul>
+      </nav>
+
+      <nav>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <span id="closeMenu"><i class="fas fa-times"></i></span>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../eventPage/event.html">Events</a></li>
+          <li><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
+          <li><a href="../contributorPage/contributor.html">Contributors</a></li>
+          <li><a href="../reviewPage/review.html">Reviews</a></li>
+          <li><a href="../index.html#feedback">Feedback</a></li>
+          <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
+        </ul>
+      </nav>
+  </header>
+  <div class="leaderboard">
+    <h2>Top 10 participants of Quantum Code Quest</h2>
+    <ul id="leaderboard-list"></ul>
+  </div>
+  
+  <script>
+    const participants = [
+        { name: "Alice Johnson", title: "Software Engineer", email: "alice@example.com", logo: "https://randomuser.me/api/portraits/women/1.jpg" },
+        { name: "Bob Smith", title: "Project Manager", email: "bob@example.com", logo: "https://randomuser.me/api/portraits/men/1.jpg" },
+        { name: "Charlie Brown", title: "Data Scientist", email: "charlie@example.com", logo: "https://randomuser.me/api/portraits/men/2.jpg" },
+        { name: "David Wilson", title: "UI/UX Designer", email: "david@example.com", logo: "https://randomuser.me/api/portraits/men/3.jpg" },
+        { name: "Emma Davis", title: "Marketing Lead", email: "emma@example.com", logo: "https://randomuser.me/api/portraits/women/2.jpg" },
+        { name: "Frank Martin", title: "Backend Developer", email: "frank@example.com", logo: "https://randomuser.me/api/portraits/men/4.jpg" },
+        { name: "Grace Lee", title: "Product Manager", email: "grace@example.com", logo: "https://randomuser.me/api/portraits/women/3.jpg" },
+        { name: "Hannah White", title: "QA Engineer", email: "hannah@example.com", logo: "https://randomuser.me/api/portraits/women/4.jpg" },
+        { name: "Isaac King", title: "DevOps Engineer", email: "isaac@example.com", logo: "https://randomuser.me/api/portraits/men/5.jpg" },
+        { name: "Jack Black", title: "Full Stack Developer", email: "jack@example.com", logo: "https://randomuser.me/api/portraits/men/6.jpg" }
+    ];
+  
+    const leaderboardList = document.getElementById("leaderboard-list");
+  
+    participants.forEach((participant, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span class="rank">#${index + 1}</span>
+            <img src="${participant.logo}" alt="${participant.name}">
+            <div class="details">
+                <span><strong>${participant.name}</strong></span>
+                <span>${participant.title}</span>
+                <span class="email">${participant.email}</span>
+            </div>
+        `;
+        leaderboardList.appendChild(li);
+    });
+  </script>
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="newsletter">
+        <h3>Subscribe to our Newsletter</h3>
+        <form id="subscribeForm">
+          <input type="email" id="emailInput" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+
+      <div class="quick-contact">
+        <h3>Quick Links</h3>
+        <ul>
+          <li class="sec-nav"><a href="../index.html">Home</a></li>
+          <li class="sec-nav"><a href="https://coding-club-dgb7.vercel.app/#about">About</a></li>
+          <li class="sec-nav"><a href="../eventPage/event.html">Events</a></li>
+          <li class="sec-nav"><a href="../projectPage/projectpage.html">Projects</a></li>
+          <li class="sec-nav"><a href="https://coding-club-dgb7.vercel.app/#contact">Contact</a></li>
+          <li class="sec-nav"><a href="https://coding-club-dgb7.vercel.app/#faq">FAQ</a></li>
+          <li class="sec-nav"><a href="https://coding-club-dgb7.vercel.app/#feedback">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="quick-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Street, City, Country</p>
+        <p><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com</p>
+        <p>📞 +123 456 7890</p>
+      </div>
+
+      <div class="social-sharing">
+        <h3>Share Our Blog</h3>
+        <a href="#" id="facebookShare" class="social-icon">Facebook</a>
+        <a href="#" id="twitterShare" class="social-icon">Twitter</a>
+        <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
+        <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
+
+      </div>
     </div>
 
-    <script>
-        const participants = [
-            { name: "Alice Johnson", title: "Software Engineer", email: "alice@example.com", logo: "https://randomuser.me/api/portraits/women/1.jpg" },
-            { name: "Bob Smith", title: "Project Manager", email: "bob@example.com", logo: "https://randomuser.me/api/portraits/men/1.jpg" },
-            { name: "Charlie Brown", title: "Data Scientist", email: "charlie@example.com", logo: "https://randomuser.me/api/portraits/men/2.jpg" },
-            { name: "David Wilson", title: "UI/UX Designer", email: "david@example.com", logo: "https://randomuser.me/api/portraits/men/3.jpg" },
-            { name: "Emma Davis", title: "Marketing Lead", email: "emma@example.com", logo: "https://randomuser.me/api/portraits/women/2.jpg" },
-            { name: "Frank Martin", title: "Backend Developer", email: "frank@example.com", logo: "https://randomuser.me/api/portraits/men/4.jpg" },
-            { name: "Grace Lee", title: "Product Manager", email: "grace@example.com", logo: "https://randomuser.me/api/portraits/women/3.jpg" },
-            { name: "Hannah White", title: "QA Engineer", email: "hannah@example.com", logo: "https://randomuser.me/api/portraits/women/4.jpg" },
-            { name: "Isaac King", title: "DevOps Engineer", email: "isaac@example.com", logo: "https://randomuser.me/api/portraits/men/5.jpg" },
-            { name: "Jack Black", title: "Full Stack Developer", email: "jack@example.com", logo: "https://randomuser.me/api/portraits/men/6.jpg" }
-        ];
+    <div class="privacy">
+      <a href="../privacyPage/privacy.html">Privacy Policy</a> |
+      <a href="../termsPage/terms.html">Terms & Conditions</a>
+    </div>
 
-        const leaderboardList = document.getElementById("leaderboard-list");
+    <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
+  </footer>
+  <script src="../mainPage/script.js"></script>
+  <script src="../toggle/toggle.js"></script>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
 
-        participants.forEach((participant, index) => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-                <span class="rank">#${index + 1}</span>
-                <img src="${participant.logo}" alt="${participant.name}">
-                <div class="details">
-                    <span><strong>${participant.name}</strong></span>
-                    <span>${participant.title}</span>
-                    <span class="email">${participant.email}</span>
-                </div>
-            `;
-            leaderboardList.appendChild(li);
-        });
-    </script>
+  <script src="../lib/wow/customcursor.js"></script>
+
+  <script src="../card/card.js"></script>
+  <script>
+    document.getElementById('home-link').href = window.localStorage.getItem('home');
+    document.getElementById('about-link').href = window.localStorage.getItem('about');
+    //  document.getElementById('project-link').href = window.localStorage.getItem('project');
+    document.getElementById('feedback-link').href = window.localStorage.getItem('feedback');
+    document.getElementById('faq-link').href = window.localStorage.getItem('faq');
+
+  </script>
 </body>
 
 </html>
