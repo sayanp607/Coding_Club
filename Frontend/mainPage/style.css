@@ -27,7 +27,7 @@
 
 @media (prefers-color-scheme: dark) {
   .why-text {
-      color: #ddd; /* Dark mode adjustment */
+    color: #ddd; /* Dark mode adjustment */
   }
 }
 
@@ -41,17 +41,17 @@ body {
   overflow-x: hidden;
 }
 /* loading screen */
-#loader{
+#loader {
   width: 100%;
   height: 1024px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#content{
+#content {
   display: none;
 }
-#loader img{
+#loader img {
   height: 6rem;
 }
 /* Dark Mode Styles */
@@ -111,12 +111,10 @@ body {
   box-shadow: (0 4px 15px rgba(255, 255, 255, 0.1));
   border: 1px solid black;
 }
-.dark-mode #about .intro{
+.dark-mode #about .intro {
   background-color: #333;
   color: rgb(214, 208, 208);
-  
 }
-
 
 /* Dark mode for form elements */
 .dark-mode form input,
@@ -462,7 +460,7 @@ form textarea:focus {
   align-items: center;
 }
 
-@media(max-width:400px) {
+@media (max-width: 400px) {
   .icons-btn {
     display: flex;
     flex-direction: column;
@@ -475,7 +473,7 @@ form textarea:focus {
     margin-right: 20px;
   }
 }
-.icons-btn i{
+.icons-btn i {
   margin-right: 20px;
   margin-top: 20px;
 }
@@ -845,7 +843,6 @@ button:hover {
 }
 
 @media (max-width: 100px) {
-
   .newsletter input,
   .newsletter button {
     width: 300px;
@@ -880,7 +877,6 @@ button:hover {
 
 .social-sharing {
   margin-right: 40px;
-  
 }
 
 .social-sharing a {
@@ -926,7 +922,7 @@ button:hover {
   .social-sharing,
   .quick-contact,
   .privacy,
-  .copyright{
+  .copyright {
     margin: 1rem auto !important;
   }
 }
@@ -1036,11 +1032,9 @@ button:hover {
     right: 5%;
   }
 }
-<<<<<<< HEAD:Frontend/style.css
 #profile-pic{
   height: 30px;
   width: 30px;
-=======
 
 * {
   margin: 0;
@@ -1092,7 +1086,7 @@ body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 800px;
   margin: 20px auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   transition: transform 0.3s ease-in-out;
 }
@@ -1102,7 +1096,6 @@ body {
 .dark-mode h3 {
   color: #ffcc00 !important;
 }
-
 
 .intro:hover {
   transform: scale(1.02);
@@ -1159,9 +1152,9 @@ h1 {
   border: 2px solid #2fa5f4 !important;
   border-radius: 5px;
 }
-.more-event-btn{
+.more-event-btn {
   margin-top: 20px;
-  display: inline-block ;
+  display: inline-block;
   background-color: #00c8ff !important;
   color: white;
   padding: 12px 24px;
@@ -1227,5 +1220,4 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
->>>>>>> 8d24ab48845cd08e0a5c0ce6bb1690af43fdfb8d:Frontend/mainPage/style.css
 }
