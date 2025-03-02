@@ -103,18 +103,21 @@ body {
     margin: 30px auto;
     padding: 20px;
     width: 80%;
+    /* height: 580px; */
 }
 
 .hackathon-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 1rem;
     gap: 20px;
 }
 
 .hackathon-card {
     background: white;
     padding: 15px;
+    /* margin: 1rem; */
     width: 300px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -130,6 +133,20 @@ body {
     font-weight: bold;
     color: #555;
 }
+.more-event-btn{
+    display: inline-block ;
+    background-color: #00c8ff !important;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none !important;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+  }
+.more-event-btn:hover {
+    background-color: #054e9b !important;
+    transform: scale(1.05) !important;
+  }
 
 .event-desc {
     margin: 10px 0;
