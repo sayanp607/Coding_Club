@@ -142,6 +142,8 @@
               timeLeft--;
               timerEl.textContent = timeLeft;
               if (timeLeft <= 0) {
+                alert("Time's up! Ending the quiz.");
+
                 clearInterval(timerInterval);
                 endQuiz();
               }
