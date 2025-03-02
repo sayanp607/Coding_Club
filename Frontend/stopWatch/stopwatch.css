@@ -48,3 +48,24 @@ button {
 .reset:hover {
   background-color: #007bb5;
 }
+.lap {
+  background-color: #ff9800;
+  color: white;
+}
+.lap:hover {
+  background-color: #e68900;
+}
+.laps {
+  margin-top: 20px;
+  text-align: left;
+}
+.laps ul {
+  list-style-type: none;
+  padding: 0;
+}
+.laps li {
+  background: #ddd;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
