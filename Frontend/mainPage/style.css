@@ -793,6 +793,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0.5rem auto;
   }
 
   .footer {
@@ -879,6 +880,7 @@ button:hover {
 
 .social-sharing {
   margin-right: 40px;
+  
 }
 
 .social-sharing a {
@@ -920,6 +922,12 @@ button:hover {
   .social-icons .icon {
     font-size: 1.2rem;
     margin: 0 8px;
+  }
+  .social-sharing,
+  .quick-contact,
+  .privacy,
+  .copyright{
+    margin: 1rem auto !important;
   }
 }
 
