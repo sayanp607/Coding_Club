@@ -13,3 +13,9 @@ function calculateResult() {
     document.getElementById("display").value = "Error";
   }
 }
+function addToHistory(entry) {
+  let historyList = document.getElementById("history-list");
+  let newEntry = document.createElement("p");
+  newEntry.textContent = entry;
+  historyList.prepend(newEntry);
+}
