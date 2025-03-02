@@ -793,6 +793,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0.5rem auto;
   }
 
   .footer {
@@ -879,6 +880,7 @@ button:hover {
 
 .social-sharing {
   margin-right: 40px;
+  
 }
 
 .social-sharing a {
@@ -920,6 +922,12 @@ button:hover {
   .social-icons .icon {
     font-size: 1.2rem;
     margin: 0 8px;
+  }
+  .social-sharing,
+  .quick-contact,
+  .privacy,
+  .copyright{
+    margin: 1rem auto !important;
   }
 }
 
@@ -1148,8 +1156,19 @@ h1 {
   font-size: 16px;
   margin: 10px auto;
   display: block;
-  border: 2px solid #2fa5f4;
+  border: 2px solid #2fa5f4 !important;
   border-radius: 5px;
+}
+.more-event-btn{
+  margin-top: 20px;
+  display: inline-block ;
+  background-color: #00c8ff !important;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn {
