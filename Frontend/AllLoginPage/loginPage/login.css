@@ -168,3 +168,73 @@ input::placeholder{
 #togglePassword:hover {
     color: black;
 }
+
+body.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+/* Dark mode for header */
+.dark-mode nav {
+    background: linear-gradient(135deg, #1e1e1e, #333);
+}
+
+.dark-mode .login-wrapper{
+    background: #444;
+    color: #fff;
+}
+.dark-mode .login-wrapper h2,
+.dark-mode .login-wrapper p.login-text {
+    color: #fff;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+  
+    /* Centering the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Toggle theme style */
+  #toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Click animation (subtle scaling effect) */
+  #toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  
+  /* Dark mode effect */
+  .dark-mode #toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Click animation in dark mode */
+  .dark-mode #toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  
+  .toggle-btn:hover {
+    background: #0056b3;
+  }
