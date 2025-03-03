@@ -6,9 +6,10 @@ function clearDisplay() {
 }
 function calculateResult() {
   try {
-    document.getElementById("display").value = eval(
-      document.getElementById("display").value
-    );
+    let expression = document.getElementById("display").value;
+    let result = eval(expression);
+    document.getElementById("display").value = result;
+    addToHistory(expression + " = " + result);
   } catch {
     document.getElementById("display").value = "Error";
   }
@@ -19,3 +20,17 @@ function addToHistory(entry) {
   newEntry.textContent = entry;
   historyList.prepend(newEntry);
 }
+<<<<<<< HEAD
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (!isNaN(key) || ["+", "-", "*", "/", "."].includes(key)) {
+    appendValue(key);
+  } else if (key === "Enter") {
+    calculateResult();
+  } else if (key === "Backspace") {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+  }
+});
+=======
+>>>>>>> upstream/main
