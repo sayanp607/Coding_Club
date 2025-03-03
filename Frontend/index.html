@@ -525,7 +525,7 @@
   <section id="faq" class="container">
 
     <h1 data-aos="fade-up">Frequently Asked Questions</h1>
-    <input data-aos="fade-up" type="text" class="search-box" placeholder="Search FAQ..." onkeyup="searchFAQ()">
+    <input data-aos="fade-up" type="text" id="searchBar" placeholder="Search FAQ..." onkeyup="searchFAQ()">
 
     <p id="no-results" style="display: none; text-align: center; color: red; font-weight: bold;">
       No results found.
@@ -605,31 +605,31 @@
   </section>
 </div>
 
-  <script>
-    function toggleAnswer(element) {
-      let answer = element.nextElementSibling;
-      answer.style.display = answer.style.display === "block" ? "none" : "block";
-    }
+<script>
+  function toggleAnswer(element) {
+    let answer = element.nextElementSibling;
+    answer.style.display = answer.style.display === "display" ? "none " : "block ";
+  }
 
-    function searchFAQ() {
-      let input = document.querySelector('.search-box').value.toLowerCase();
-      let questions = document.querySelectorAll('.faq-item');
-      let noResultsMessage = document.getElementById('no-results');
-      let hasResults = false;
+  function searchFAQ() {
+    let input = document.querySelector('.search-box').value.toLowerCase();
+    let questions = document.querySelectorAll('.faq-item');
+    let noResultsMessage = document.getElementById('no-results');
+    let hasResults = false;
 
-      questions.forEach(item => {
-        let text = item.textContent.toLowerCase();
-        if (text.includes(input)) {
-          item.style.display = "block";
-          hasResults = true;
-        } else {
-          item.style.display = "none";
-        }
-      });
+    questions.forEach(item => {
+      let text = item.textContent.toLowerCase();
+      if (text.includes(input)) {
+        item.style.display = "block";
+        hasResults = true;
+      } else {
+        item.style.display = "none";
+      }
+    });
 
-      noResultsMessage.style.display = hasResults ? "none" : "block";
-    }
-  </script>
+    noResultsMessage.style.display = hasResults ? "none" : "block";
+  }
+</script>
 
 
 
