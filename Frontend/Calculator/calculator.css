@@ -91,3 +91,21 @@ button:hover {
   margin: 5px 0;
   font-size: 1.2em;
 }
+
+.history {
+  width: 340px;
+  background: #2c2c2c;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.history h2 {
+  text-align: center;
+}
+.history p {
+  margin: 5px 0;
+  font-size: 1.2em;
+}

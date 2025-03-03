@@ -20,6 +20,7 @@ function addToHistory(entry) {
   newEntry.textContent = entry;
   historyList.prepend(newEntry);
 }
+<<<<<<< HEAD
 document.addEventListener("keydown", function (event) {
   const key = event.key;
   if (!isNaN(key) || ["+", "-", "*", "/", "."].includes(key)) {
@@ -31,3 +32,5 @@ document.addEventListener("keydown", function (event) {
     display.value = display.value.slice(0, -1);
   }
 });
+=======
+>>>>>>> upstream/main
