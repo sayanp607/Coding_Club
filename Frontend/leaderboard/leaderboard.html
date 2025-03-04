@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>leaderboard - Coding Club</title>
   <link rel="stylesheet" href="../toggle/toggle.css" />
+  <link rel="stylesheet" href="../mainPage/style.css" />
   <link rel="stylesheet" href="../projectPage/project.css">
   <link rel="stylesheet" href="./privacy.css">
   <link rel="stylesheet" href="../card/card.css">
@@ -33,7 +34,10 @@
       padding: 20px;
       color: black;
   }
-
+.dark-mode .leaderboard{
+  background: #444;
+  color: #ddd;
+}
   h2 {
       margin-bottom: 20px;
       color: #ff5f6d;
@@ -56,7 +60,9 @@
       margin: 5px 0;
       flex-wrap: wrap;
   }
-
+.dark-mode .leaderboard li{
+  background-color: #444;
+}
   .leaderboard li img {
       width: 50px;
       height: 50px;
@@ -179,7 +185,7 @@
 
     displayParticipants(participants);
 </script>
-dav
+
   <footer class="footer">
     <div class="wrapper">
       <div class="newsletter">
