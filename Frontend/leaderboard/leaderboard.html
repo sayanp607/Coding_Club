@@ -133,10 +133,11 @@
   </header>
   <div class="leaderboard">
     <h2>Top 10 participants of Quantum Code Quest</h2>
+    <input type="text" id="search-bar" placeholder="Search participants...">
     <ul id="leaderboard-list"></ul>
-  </div>
-  
-  <script>
+</div>
+
+<script>
     const participants = [
         { name: "Alice Johnson", title: "Software Engineer", email: "alice@example.com", logo: "https://randomuser.me/api/portraits/women/1.jpg" },
         { name: "Bob Smith", title: "Project Manager", email: "bob@example.com", logo: "https://randomuser.me/api/portraits/men/1.jpg" },
@@ -149,23 +150,36 @@
         { name: "Isaac King", title: "DevOps Engineer", email: "isaac@example.com", logo: "https://randomuser.me/api/portraits/men/5.jpg" },
         { name: "Jack Black", title: "Full Stack Developer", email: "jack@example.com", logo: "https://randomuser.me/api/portraits/men/6.jpg" }
     ];
-  
+
     const leaderboardList = document.getElementById("leaderboard-list");
-  
-    participants.forEach((participant, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <span class="rank">#${index + 1}</span>
-            <img src="${participant.logo}" alt="${participant.name}">
-            <div class="details">
-                <span><strong>${participant.name}</strong></span>
-                <span>${participant.title}</span>
-                <span class="email">${participant.email}</span>
-            </div>
-        `;
-        leaderboardList.appendChild(li);
+    const searchBar = document.getElementById("search-bar");
+
+    function displayParticipants(filteredParticipants) {
+        leaderboardList.innerHTML = "";
+        filteredParticipants.forEach((participant, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span class="rank">#${index + 1}</span>
+                <img src="${participant.logo}" alt="${participant.name}">
+                <div class="details">
+                    <span><strong>${participant.name}</strong></span>
+                    <span>${participant.title}</span>
+                    <span class="email">${participant.email}</span>
+                </div>
+            `;
+            leaderboardList.appendChild(li);
+        });
+    }
+
+    searchBar.addEventListener("input", () => {
+        const searchTerm = searchBar.value.toLowerCase();
+        const filteredParticipants = participants.filter(p => p.name.toLowerCase().includes(searchTerm));
+        displayParticipants(filteredParticipants);
     });
-  </script>
+
+    displayParticipants(participants);
+</script>
+dav
   <footer class="footer">
     <div class="wrapper">
       <div class="newsletter">
