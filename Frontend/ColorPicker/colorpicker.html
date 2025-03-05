@@ -18,9 +18,7 @@
     <div class="grid grid-cols-5 gap-1 w-full h-screen"></div>
 
     <div class="mt-4 p-4 w-full max-w-lg text-center">
-      <h1>
-        Please Click on up to 4 Colors from the above to generate Gradient
-      </h1>
+      <h1>Click on up to 4 colors to generate a gradient</h1>
       <h2 class="text-lg font-bold mb-2">Gradient Preview</h2>
       <div
         id="gradientPreview"
@@ -43,15 +41,35 @@
       >
         Copy CSS
       </button>
+      <button
+        id="saveToHistoryBtn"
+        class="mt-2 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded hidden"
+      >
+        Save to History
+      </button>
     </div>
+
+    <h2 class="text-lg font-bold mt-4">Favorites</h2>
+    <div
+      id="favorites"
+      class="grid grid-cols-5 gap-2 w-full max-w-lg mt-2"
+    ></div>
+
+    <h2 class="text-lg font-bold mt-4">Gradient History</h2>
+    <div id="history" class="grid grid-cols-3 gap-2 w-full max-w-lg mt-2"></div>
 
     <script>
       const container = document.querySelector(".grid");
       const regenerateBtn = document.getElementById("regenerateBtn");
       const gradientPreview = document.getElementById("gradientPreview");
       const copyGradientBtn = document.getElementById("copyGradientBtn");
+      const saveToHistoryBtn = document.getElementById("saveToHistoryBtn");
       const gradientDirection = document.getElementById("gradientDirection");
+      const favoritesContainer = document.getElementById("favorites");
+      const historyContainer = document.getElementById("history");
       let selectedColors = [];
+      let favoriteColors = [];
+      let gradientHistory = [];
 
       function getRandomColor() {
         return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -83,12 +101,20 @@
             navigator.clipboard.writeText(color);
             alert(`Copied: ${color}`);
           });
-
+          const favButton = document.createElement("button");
+          favButton.innerText = "★";
+          favButton.className =
+            "px-2 py-1 bg-yellow-400 text-black rounded opacity-80 hover:opacity-100";
+          favButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            addToFavorites(color);
+          });
           colorBox.addEventListener("click", () =>
             selectColorForGradient(color)
           );
 
           overlay.appendChild(copyButton);
+          overlay.appendChild(favButton);
           colorBox.appendChild(overlay);
           container.appendChild(colorBox);
         }
@@ -102,6 +128,22 @@
         }
         updateGradientPreview();
       }
+      function updateFavorites() {
+        favoritesContainer.innerHTML = "";
+        favoriteColors.forEach((color) => {
+          const favBox = document.createElement("div");
+          favBox.style.backgroundColor = color;
+          favBox.className = "w-10 h-10 border border-gray-500 cursor-pointer";
+          favBox.addEventListener("click", () => selectColorForGradient(color));
+          favoritesContainer.appendChild(favBox);
+        });
+      }
+      function addToFavorites(color) {
+        if (!favoriteColors.includes(color)) {
+          favoriteColors.push(color);
+          updateFavorites();
+        }
+      }
 
       function updateGradientPreview() {
         if (selectedColors.length >= 2) {
@@ -109,17 +151,14 @@
             gradientDirection.value === "diagonal"
               ? "45deg"
               : gradientDirection.value;
-          const gradientCSS = `${
+          const gradientCSS =
             gradientDirection.value === "radial"
-              ? "radial-gradient"
-              : "linear-gradient(" +
-                direction +
-                "," +
-                selectedColors.join(", ") +
-                ")"
-          }`;
+              ? `radial-gradient(${selectedColors.join(", ")})`
+              : `linear-gradient(${direction}, ${selectedColors.join(", ")})`;
+
           gradientPreview.style.background = gradientCSS;
           copyGradientBtn.classList.remove("hidden");
+          saveToHistoryBtn.classList.remove("hidden");
           copyGradientBtn.onclick = () => {
             navigator.clipboard.writeText(`background: ${gradientCSS};`);
             alert("Gradient CSS copied!");
@@ -127,11 +166,43 @@
         } else {
           gradientPreview.style.background = "";
           copyGradientBtn.classList.add("hidden");
+          saveToHistoryBtn.classList.add("hidden");
         }
+      }
+
+      function saveGradientToHistory() {
+        if (selectedColors.length >= 2) {
+          const direction =
+            gradientDirection.value === "diagonal"
+              ? "45deg"
+              : gradientDirection.value;
+          const gradientCSS =
+            gradientDirection.value === "radial"
+              ? `radial-gradient(${selectedColors.join(", ")})`
+              : `linear-gradient(${direction}, ${selectedColors.join(", ")})`;
+
+          gradientHistory.push(gradientCSS);
+          updateHistory();
+        }
+      }
+
+      function updateHistory() {
+        historyContainer.innerHTML = "";
+        gradientHistory.forEach((gradient) => {
+          const historyBox = document.createElement("div");
+          historyBox.style.background = gradient;
+          historyBox.className =
+            "w-full h-16 border border-gray-500 cursor-pointer";
+          historyBox.addEventListener("click", () => {
+            gradientPreview.style.background = gradient;
+          });
+          historyContainer.appendChild(historyBox);
+        });
       }
 
       gradientDirection.addEventListener("change", updateGradientPreview);
       regenerateBtn.addEventListener("click", createColorGrid);
+      saveToHistoryBtn.addEventListener("click", saveGradientToHistory);
       createColorGrid();
     </script>
   </body>
