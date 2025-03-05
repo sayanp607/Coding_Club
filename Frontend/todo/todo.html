@@ -18,32 +18,47 @@
           class="flex-1 p-2 rounded-l bg-gray-700 text-white outline-none"
           placeholder="Add a new task"
         />
-        <button onclick="addTask()" class="bg-blue-500 p-2 rounded-r">
-          Add
+        <button onclick="addTask()" class="bg-blue-500 p-2">Add</button>
+        <button onclick="startListening()" class="bg-green-500 p-2 ml-2">
+          🎤
         </button>
+      </div>
+      <div class="mb-4">
+        <div class="w-full bg-gray-700 rounded-full h-4">
+          <div
+            id="progressBar"
+            class="bg-green-400 h-4 rounded-full"
+            style="width: 0%"
+          ></div>
+        </div>
+        <p class="text-center text-sm mt-2">
+          <span id="progressText">0</span>% completed
+        </p>
       </div>
       <ul id="taskList" class="space-y-2"></ul>
     </div>
 
     <script>
-      let tasks = [];
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
       function renderTasks() {
         const taskList = document.getElementById("taskList");
         taskList.innerHTML = "";
         tasks.forEach((task, index) => {
           taskList.innerHTML += `
-                    <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
-                        <span class="${task.completed ? "line-through" : ""}">${
+                <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
+                    <span class="${task.completed ? "line-through" : ""}">${
             task.text
           }</span>
-                        <div>
-                            <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
-                            <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
-                            <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
-                        </div>
-                    </li>`;
+                    <div>
+                        <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
+                        <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
+                        <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
+                    </div>
+                </li>`;
         });
+        updateProgress();
+        localStorage.setItem("tasks", JSON.stringify(tasks));
       }
 
       function addTask() {
@@ -72,6 +87,36 @@
           renderTasks();
         }
       }
+
+      function updateProgress() {
+        const completedTasks = tasks.filter((task) => task.completed).length;
+        const totalTasks = tasks.length;
+        const progressPercentage = totalTasks
+          ? (completedTasks / totalTasks) * 100
+          : 0;
+        document.getElementById("progressBar").style.width =
+          progressPercentage + "%";
+        document.getElementById("progressText").textContent =
+          Math.round(progressPercentage);
+      }
+
+      function startListening() {
+        if (!("webkitSpeechRecognition" in window)) {
+          alert("Your browser does not support voice input.");
+          return;
+        }
+
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-US";
+        recognition.onresult = function (event) {
+          const spokenText = event.results[0][0].transcript;
+          document.getElementById("taskInput").value = spokenText;
+        };
+
+        recognition.start();
+      }
+
+      window.onload = renderTasks;
     </script>
   </body>
 </html>
