@@ -14,11 +14,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* Full height of viewport */
+        height: 100vh; 
+        overflow-x: hidden;
       }
       /* Navbar */
       .navbar {
-        width: 100%;
+        width: 98.2%;
         position: absolute;
         top: 0;
         left: 0;
@@ -33,7 +34,7 @@
         background: #2867f0;
         color: white;
         border: none;
-        padding: 10px 20px;
+        padding: 1.2rem 20px;
         font-size: 16px;
         border-radius: 6px;
         cursor: pointer;
@@ -180,7 +181,7 @@
     <nav class="navbar">
       <button
         class="back-button"
-        onclick="window.location.href = '../../index.html'"
+        onclick="window.location.href = '../index.html'"
       >
         <i class="fa-solid fa-arrow-left fa-xl"></i>
       </button>
