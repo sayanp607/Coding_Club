@@ -41,7 +41,7 @@ if (toggleTheme) {
   }
 }
 
-<<<<<<< HEADdocument.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", function (event) {
   const key = event.key;
   if (!isNaN(key) || ["+", "-", "*", "/", "."].includes(key)) {
     appendValue(key);
@@ -52,7 +52,6 @@ if (toggleTheme) {
     display.value = display.value.slice(0, -1);
   }
 });
-=======
->>>>>>> upstream/main
+
 
 
