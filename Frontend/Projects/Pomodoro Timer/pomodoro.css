@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #BA4949;
+}
+
+.promodoro-container {
+    max-width: 400px;
+    margin: 5rem auto;
+    background: #C15C5C;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.promodoro-container:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promodoro-container h2 {
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 8px 8px 4px #BA4949;
+}
+
+.timer {
+    font-size: 5rem;
+    color: #FFFFFF;
+    margin: 20px 0;
+    text-shadow: 8px 8px 4px #BA4949;
+}
+
+button {
+    padding: 1rem 2rem;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #BA4949;
+    box-shadow: 0px 4px 0px #EBEBEB;
+    font-size: 1.2rem;
+    font-weight: 800;
+    width: 80%;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #BA4949;
+    color: #FFFFFF;
+    border-top: 2px solid #fff;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    border: none;
+}
