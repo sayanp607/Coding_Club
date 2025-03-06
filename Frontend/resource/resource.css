@@ -40,9 +40,10 @@ header {
   transform: scale(1.02);
 }
 
-h1, h2 {
-  color: #333;
+h2 {
+  color: #0680c7 !important;
 }
+
 
 ul {
   list-style-type: none;
