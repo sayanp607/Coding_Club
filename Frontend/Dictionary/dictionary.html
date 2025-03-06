@@ -79,7 +79,33 @@
         const word = document.getElementById("wordInput").value;
         if (!word) return alert("Please enter a word");
 
-        try {
+        if (!history.includes(word)) {
+          history.push(word);
+          updateHistoryList();
+        }
+
+        if (thesaurusMode) {
+          const synUrl = `https://api.datamuse.com/words?rel_syn=${word}`;
+          const antUrl = `https://api.datamuse.com/words?rel_ant=${word}`;
+
+          const [synRes, antRes] = await Promise.all([
+            fetch(synUrl),
+            fetch(antUrl),
+          ]);
+          const synData = await synRes.json();
+          const antData = await antRes.json();
+
+          const synonyms =
+            synData.map((item) => item.word).join(", ") || "No synonyms found";
+          const antonyms =
+            antData.map((item) => item.word).join(", ") || "No antonyms found";
+
+          document.getElementById("result").innerHTML = `
+            <h3>Synonyms for ${word}</h3>
+            <p>${synonyms}</p>
+          
+          `;
+        } else {
           const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
           const response = await fetch(url);
           const data = await response.json();
@@ -96,14 +122,10 @@
             "No example available";
 
           document.getElementById("result").innerHTML = `
-            <h3>${word}</h3>
-            <p><strong>Meaning:</strong> ${meaning}</p>
-            <p><strong>Example:</strong> ${example}</p>
+              <h3>${word}</h3>
+              <p><strong>Meaning:</strong> ${meaning}</p>
+              <p><strong>Example:</strong> ${example}</p>
           `;
-        } catch (error) {
-          console.error("Error fetching data:", error);
-          document.getElementById("result").innerHTML =
-            "<p>Could not retrieve word data</p>";
         }
       }
 
