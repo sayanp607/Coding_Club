@@ -20,6 +20,7 @@
       <button onclick="startGame()" class="bg-blue-500 px-4 py-2 rounded mb-4">
         Start Game
       </button>
+      <div id="timer" class="text-lg font-bold mb-2">Time Left: 30s</div>
       <div id="wordContainer" class="flex justify-center gap-2 mb-4"></div>
       <input
         type="text"
@@ -33,17 +34,21 @@
       </button>
       <p id="message" class="mt-4"></p>
       <p id="attempts" class="text-sm mt-2"></p>
+      <h2 class="text-xl font-bold mt-4">Scoreboard</h2>
+      <ul id="scoreboard" class="text-sm mt-2"></ul>
     </div>
 
     <script>
-      let word, attemptsLeft, guessedWord;
+      let word, attemptsLeft, guessedWord, timer, timeLeft;
       const words = { easy: "CAT", medium: "HOUSE", hard: "PLANET" };
+      const scoreboard = [];
 
       function startGame() {
         const difficulty = document.getElementById("difficulty").value;
         word = words[difficulty].toUpperCase();
         attemptsLeft =
           difficulty === "easy" ? 3 : difficulty === "medium" ? 5 : 7;
+        timeLeft = 30;
         guessedWord = Array(word.length).fill("_");
         document.getElementById("wordContainer").innerHTML = guessedWord
           .map(
@@ -56,6 +61,25 @@
         document.getElementById(
           "attempts"
         ).textContent = `Attempts left: ${attemptsLeft}`;
+        document.getElementById(
+          "timer"
+        ).textContent = `Time Left: ${timeLeft}s`;
+        clearInterval(timer);
+        timer = setInterval(updateTimer, 1000);
+      }
+
+      function updateTimer() {
+        if (timeLeft > 0) {
+          timeLeft--;
+          document.getElementById(
+            "timer"
+          ).textContent = `Time Left: ${timeLeft}s`;
+        } else {
+          clearInterval(timer);
+          document.getElementById(
+            "message"
+          ).textContent = `💀 Time's up! The word was ${word}`;
+        }
       }
 
       function checkGuess() {
@@ -80,9 +104,12 @@
           .join("");
         if (!correct) attemptsLeft--;
         if (guessedWord.join("") === word) {
+          clearInterval(timer);
           document.getElementById("message").textContent =
             "🎉 Correct! You won!";
+          updateScoreboard(timeLeft);
         } else if (attemptsLeft === 0) {
+          clearInterval(timer);
           document.getElementById(
             "message"
           ).textContent = `💀 Game Over! The word was ${word}`;
@@ -94,6 +121,16 @@
         document.getElementById(
           "attempts"
         ).textContent = `Attempts left: ${attemptsLeft}`;
+      }
+
+      function updateScoreboard(score) {
+        scoreboard.push(`Score: ${score}s`);
+        scoreboard.sort(
+          (a, b) => parseInt(b.split(" ")[1]) - parseInt(a.split(" ")[1])
+        );
+        document.getElementById("scoreboard").innerHTML = scoreboard
+          .map((entry) => `<li>${entry}</li>`)
+          .join("");
       }
     </script>
   </body>
