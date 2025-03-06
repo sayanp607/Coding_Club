@@ -20,7 +20,6 @@ function addToHistory(entry) {
   newEntry.textContent = entry;
   historyList.prepend(newEntry);
 }
-
 // Theme Toggle
 if (toggleTheme) {
   toggleTheme.addEventListener("click", function () {
