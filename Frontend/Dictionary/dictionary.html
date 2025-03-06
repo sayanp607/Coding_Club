@@ -48,17 +48,6 @@
         margin-top: 20px;
         text-align: left;
       }
-      .history-container {
-        display: none;
-        position: absolute;
-        right: 10px;
-        top: 50px;
-        width: 200px;
-        background: #444;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      }
     </style>
   </head>
   <body>
@@ -77,24 +66,17 @@
       <button onclick="searchWord()">Search</button>
       <button onclick="toggleThesaurusMode()">Thesaurus Mode</button>
       <button onclick="addToFavorites()">Add to Favorites</button>
-      <button onclick="toggleHistory()">History</button>
+      <button onclick="speakText()">Speak</button>
       <div id="result" class="result"></div>
       <h3>Favorites</h3>
       <ul id="favoritesList" class="favorites"></ul>
     </div>
-    <div id="historyContainer" class="history-container">
-      <h3>Search History</h3>
-      <ul id="historyList"></ul>
-    </div>
+
     <script>
-      let favorites = [];
-      let history = [];
       let thesaurusMode = false;
 
       async function searchWord() {
         const word = document.getElementById("wordInput").value;
-        const language = document.getElementById("languageSelect").value;
-
         if (!word) return alert("Please enter a word");
 
         if (!history.includes(word)) {
@@ -149,40 +131,39 @@
 
       function addToFavorites() {
         const word = document.getElementById("wordInput").value;
-        if (!word || favorites.includes(word)) return;
-        favorites.push(word);
-        updateFavoritesList();
-      }
-
-      function updateFavoritesList() {
+        if (!word) return;
         const list = document.getElementById("favoritesList");
-        list.innerHTML = "";
-        favorites.forEach((word) => {
-          const li = document.createElement("li");
-          li.textContent = word;
-          list.appendChild(li);
-        });
-      }
-
-      function updateHistoryList() {
-        const list = document.getElementById("historyList");
-        list.innerHTML = "";
-        history.forEach((word) => {
-          const li = document.createElement("li");
-          li.textContent = word;
-          list.appendChild(li);
-        });
-      }
-
-      function toggleHistory() {
-        const historyContainer = document.getElementById("historyContainer");
-        historyContainer.style.display =
-          historyContainer.style.display === "none" ? "block" : "none";
+        const li = document.createElement("li");
+        li.textContent = word;
+        list.appendChild(li);
       }
 
       function toggleThesaurusMode() {
         thesaurusMode = !thesaurusMode;
         alert(`Thesaurus Mode: ${thesaurusMode ? "ON" : "OFF"}`);
+      }
+
+      function speakText() {
+        const word = document.getElementById("wordInput").value;
+        const resultElement = document.getElementById("result");
+        if (!word || !resultElement.innerHTML) return;
+
+        let text = `${word}. `;
+        const meaningElement = resultElement.querySelector("p strong");
+        if (meaningElement) {
+          text += meaningElement.nextSibling.textContent.trim() + ". ";
+        }
+
+        const exampleElement = resultElement.querySelector("p:nth-of-type(2)");
+        if (exampleElement) {
+          text += exampleElement.textContent.trim();
+        }
+
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
       }
 
       async function getWordOfTheDay() {
@@ -199,3 +180,4 @@
     </script>
   </body>
 </html>
+<!-- this is acommment -->
