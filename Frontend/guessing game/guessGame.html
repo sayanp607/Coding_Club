@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Word Guessing Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
   </head>
   <body
-    class="flex items-center justify-center h-screen bg-gray-900 text-white"
+    class="flex items-center justify-center h-screen bg-gray-900 text-white dark:bg-white dark:text-black"
   >
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center w-96">
+    <div class="absolute top-4 right-4">
+      <button
+        id="themeToggle"
+        onclick="toggleTheme()"
+        class="bg-gray-600 dark:bg-gray-300 px-4 py-2 rounded"
+      >
+        🌙
+      </button>
+    </div>
+    <div
+      class="bg-gray-800 dark:bg-gray-200 p-6 rounded-lg shadow-lg text-center w-96"
+    >
       <h1 class="text-2xl font-bold mb-4">Guess the Word!</h1>
       <label class="block mb-2">Select Difficulty:</label>
-      <select id="difficulty" class="p-2 bg-gray-700 rounded w-full mb-4">
+      <select
+        id="difficulty"
+        class="p-2 bg-gray-700 dark:bg-gray-300 rounded w-full mb-4"
+      >
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
@@ -26,7 +45,7 @@
         type="text"
         id="guess"
         maxlength="1"
-        class="p-2 bg-gray-700 rounded w-12 text-center text-xl"
+        class="p-2 bg-gray-700 dark:bg-gray-300 rounded w-12 text-center text-xl"
         placeholder="A"
       />
       <button onclick="checkGuess()" class="bg-green-500 px-4 py-2 rounded">
@@ -37,7 +56,6 @@
       <h2 class="text-xl font-bold mt-4">Scoreboard</h2>
       <ul id="scoreboard" class="text-sm mt-2"></ul>
     </div>
-
     <script>
       let word, attemptsLeft, guessedWord, timer, timeLeft;
       const words = { easy: "CAT", medium: "HOUSE", hard: "PLANET" };
@@ -53,7 +71,7 @@
         document.getElementById("wordContainer").innerHTML = guessedWord
           .map(
             (letter) =>
-              `<span class='w-12 h-12 bg-gray-700 text-xl flex items-center justify-center rounded'>${letter}</span>`
+              `<span class='w-12 h-12 bg-gray-700 dark:bg-gray-300 text-xl flex items-center justify-center rounded'>${letter}</span>`
           )
           .join("");
         document.getElementById("message").textContent =
@@ -99,7 +117,7 @@
         document.getElementById("wordContainer").innerHTML = guessedWord
           .map(
             (letter) =>
-              `<span class='w-12 h-12 bg-gray-700 text-xl flex items-center justify-center rounded'>${letter}</span>`
+              `<span class='w-12 h-12 bg-gray-700 dark:bg-gray-300 text-xl flex items-center justify-center rounded'>${letter}</span>`
           )
           .join("");
         if (!correct) attemptsLeft--;
@@ -131,6 +149,12 @@
         document.getElementById("scoreboard").innerHTML = scoreboard
           .map((entry) => `<li>${entry}</li>`)
           .join("");
+      }
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+        const button = document.getElementById("themeToggle");
+        button.textContent = button.textContent === "🌙" ? "☀️" : "🌙";
       }
     </script>
   </body>
