@@ -7,24 +7,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="flex items-center justify-center min-h-screen bg-gray-900 text-white"
+    class="flex flex-col items-center justify-center min-h-screen bg-gray-700 text-white"
   >
+    <button
+      id="regenerateBtn"
+      class="mb-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
+    >
+      Regenerate Colors
+    </button>
     <div class="grid grid-cols-5 gap-1 w-full h-screen"></div>
 
     <script>
       const container = document.querySelector(".grid");
+      const regenerateBtn = document.getElementById("regenerateBtn");
 
       function getRandomColor() {
         return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
       }
 
       function createColorGrid() {
+        container.innerHTML = "";
         for (let i = 0; i < 25; i++) {
           const colorBox = document.createElement("div");
           const color = getRandomColor();
           colorBox.style.backgroundColor = color;
           colorBox.className =
-            "relative w-full h-full flex items-center justify-center text-xs font-bold cursor-pointer";
+            "relative w-full h-full flex items-center justify-center text-xs font-bold cursor-pointer border border-gray-600";
 
           const overlay = document.createElement("div");
           overlay.className =
@@ -47,6 +55,7 @@
         }
       }
 
+      regenerateBtn.addEventListener("click", createColorGrid);
       createColorGrid();
     </script>
   </body>
