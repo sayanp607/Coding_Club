@@ -21,7 +21,8 @@
         border-radius: 8px;
         margin: auto;
       }
-      input {
+      input,
+      select {
         width: 80%;
         padding: 10px;
         margin-bottom: 10px;
@@ -64,6 +65,14 @@
     <div class="container">
       <h2>Dictionary App</h2>
       <p id="wordOfTheDay"></p>
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="hi">Hindi</option>
+        <option value="de">German</option>
+      </select>
+
       <input type="text" id="wordInput" placeholder="Enter a word" />
       <button onclick="searchWord()">Search</button>
       <button onclick="toggleThesaurusMode()">Thesaurus Mode</button>
@@ -84,6 +93,8 @@
 
       async function searchWord() {
         const word = document.getElementById("wordInput").value;
+        const language = document.getElementById("languageSelect").value;
+
         if (!word) return alert("Please enter a word");
 
         if (!history.includes(word)) {
