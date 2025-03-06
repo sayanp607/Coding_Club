@@ -21,9 +21,12 @@ function addToHistory(entry) {
   historyList.prepend(newEntry);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
+=======
+>>>>>>> upstream/main
 // Theme Toggle
 if (toggleTheme) {
   toggleTheme.addEventListener("click", function () {
@@ -35,7 +38,6 @@ if (toggleTheme) {
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   });
 
-
   // Load theme preference on page load
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
@@ -43,6 +45,9 @@ if (toggleTheme) {
   }
 }
 
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
 document.addEventListener("keydown", function (event) {
   const key = event.key;
@@ -56,8 +61,11 @@ document.addEventListener("keydown", function (event) {
   }
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
