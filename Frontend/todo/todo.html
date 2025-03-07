@@ -18,8 +18,9 @@
           class="flex-1 p-2 rounded-l bg-gray-700 text-white outline-none"
           placeholder="Add a new task"
         />
-        <button onclick="addTask()" class="bg-blue-500 p-2 rounded-r">
-          Add
+        <button onclick="addTask()" class="bg-blue-500 p-2">Add</button>
+        <button onclick="startListening()" class="bg-green-500 p-2 ml-2">
+          🎤
         </button>
       </div>
       <div class="mb-4">
@@ -97,6 +98,22 @@
           progressPercentage + "%";
         document.getElementById("progressText").textContent =
           Math.round(progressPercentage);
+      }
+
+      function startListening() {
+        if (!("webkitSpeechRecognition" in window)) {
+          alert("Your browser does not support voice input.");
+          return;
+        }
+
+        const recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-US";
+        recognition.onresult = function (event) {
+          const spokenText = event.results[0][0].transcript;
+          document.getElementById("taskInput").value = spokenText;
+        };
+
+        recognition.start();
       }
 
       window.onload = renderTasks;
