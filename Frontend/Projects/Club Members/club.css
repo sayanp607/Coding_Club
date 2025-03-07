@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+}
+
+
+.club-container {
+    max-width: 600px;
+    margin: 5rem auto;
+    background: #6b6a6a62;
+    color: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #444;
+    color: white;
+}
+
+.form-container input,
+select {
+    background: white;
+    color: black;
+}
+
+.club-container .add-member {
+    padding: 12px 18px;
+    border: none;
+    font-size: 16px;
+    background: #E100FF;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.club-container .add-member:hover {
+    background: #B200E0;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.members-container {
+    margin-top: 20px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #8d2de28e;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.light-mode .member {
+    background: #f0f0f0;
+    color: black;
+}
+
+.member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.member-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.member-links a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    margin: 0 5px;
+}
+
+.github {
+    background: #24292E;
+}
+
+.linkedin {
+    background: #0077b5;
+}
+
+.member-links a:hover {
+    opacity: 0.8;
+}
+
+.delete-btn {
+    background: red;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+}
+
+.sort-options {
+    margin-top: 20px;
+}
+
+.sort-options select {
+    width: 50%;
+    margin-left: 10px;
+}
