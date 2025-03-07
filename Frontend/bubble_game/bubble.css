@@ -15,6 +15,28 @@ html,body{
     align-items: center;
     background-color: rgb(184, 216, 184);
 }
+.dark-mode #main{
+    background-color: rgb(77, 76, 74);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+#toggleTheme{
+    font-size: 40px;
+    cursor: pointer;
+}
+#back-btn{
+    font-size: 40px;
+    cursor: pointer;
+}
+#top{
+    height: 10%;
+}
+.dark-mode #top{
+    color: rgb(131, 213, 8);
+    background-color: rgb(54, 51, 44);
+}
 #start{
     display: flex;
     justify-content: center;
