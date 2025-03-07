@@ -221,16 +221,14 @@ body.dark-mode {
     background: linear-gradient(135deg, #1e1e1e, #333);
 }
 
-.dark-mode .simon-container {
+.dark-mode .simon-container{
     background: #2A2A2A;
 }
-
 .dark-mode .simon-container h2,
-.dark-mode .timer {
+.dark-mode .timer{
     text-shadow: none;
 }
-
-.dark-mode .simon-container button:hover {
+.dark-mode .simon-container button:hover{
     background-color: #121212;
     color: #fff;
 }
