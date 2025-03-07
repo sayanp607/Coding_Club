@@ -1,22 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 10px;
-    background-color: #EBEBEB;
+    background-color: #9bf2e8;
 }
 
 ::-webkit-scrollbar:hover {
-    background-color: #EBEBEB;
+    background-color: #9bf2e8;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, #0084C8, #072766);
+    background: linear-gradient(to top, #1086ec, #02a9b2);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #0084C8, #072766);
+    background: linear-gradient(to bottom, #1086ec, #02a9b2);
 }
 
 * {
@@ -28,107 +27,65 @@
 body {
     font-family: "Poppins", sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #0084C8, #072766);
-    color: white;
+    background: linear-gradient(to right, #2f9cfa, #00f2fe);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
 }
 
-.simon-container {
-    width: 400px;
-    background: #0C2049;
-    padding: 1rem;
+.bubble-container {
+    max-width: 900px;
+    margin: 6rem auto;
+    background: rgba(255, 255, 255, 0.763);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.bars-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 280px;
+    margin: 20px auto;
+    gap: 6px;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    background: #f0f8ff;
 }
 
-.grid {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(2, 120px);
-    grid-template-rows: repeat(2, 120px);
-    gap: 15px;
-    margin: 20px;
-}
-
-.square {
-    width: 120px;
-    height: 120px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.1s ease-in-out;
-}
-
-.square.green {
-    border-top-left-radius: 80%;
-}
-
-.square.red {
-    border-top-right-radius: 80%;
-}
-
-.square.blue {
-    border-bottom-left-radius: 80%;
-}
-
-.square.yellow {
-    border-bottom-right-radius: 80%;
-}
-
-.square:active {
-    transform: scale(0.9);
-}
-
-.green {
-    background: #28a746;
-    opacity: 0.6;
-}
-
-.red {
-    background: #dc3545;
-    opacity: 0.6;
-}
-
-.blue {
-    background: #007bff;
-    opacity: 0.6;
-}
-
-.yellow {
-    background: #ffc107;
-    opacity: 0.6;
-}
-
-.active {
-    opacity: 1;
-}
-
-.simon-container button {
-    padding: 12px 18px;
-    margin-top: 15px;
-    border: none;
+.bar {
+    width: 35px;
+    background: #5100ff;
     border-radius: 5px;
-    background: linear-gradient(to right, #0084C8, #072766);
-    color: white;
+    transition: height 0.3s, background-color 0.3s;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bubble-container button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
     font-size: 16px;
+    background: linear-gradient(to right, #2f9cfa, #00f2fe);
+    color: #333;
     cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: 600;
 }
 
-button:hover {
-    background: linear-gradient(to left, #0084C8, #072766);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-}
-
-#status {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
+.bubble-container button:hover {
+    background: linear-gradient(to left, #2f9cfa, #00f2fe);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Navbar */
@@ -221,16 +178,16 @@ body.dark-mode {
     background: linear-gradient(135deg, #1e1e1e, #333);
 }
 
-.dark-mode .simon-container {
+.dark-mode .bubble-container{
     background: #2A2A2A;
 }
-
-.dark-mode .simon-container h2,
-.dark-mode .timer {
+.dark-mode .bubble-container h2{
     text-shadow: none;
-}
-
-.dark-mode .simon-container button:hover {
-    background-color: #121212;
     color: #fff;
+}
+.dark-mode .bars-container{
+    background: rgba(0, 0, 0, 0.2);
+}
+.dark-mode .bubble-container button:hover{
+    background-color: #121212;
 }

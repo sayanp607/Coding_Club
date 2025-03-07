@@ -1,134 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 10px;
-    background-color: #EBEBEB;
+    background-color: #6D88C2;
 }
 
 ::-webkit-scrollbar:hover {
-    background-color: #EBEBEB;
+    background-color: #6D88C2;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, #0084C8, #072766);
+    background: linear-gradient(to top, #A469C7, #2F349E);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #0084C8, #072766);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background: linear-gradient(to bottom, #A469C7, #2F349E);
 }
 
 body {
     font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #896EA8, #6D88C2);
     text-align: center;
-    background: linear-gradient(to bottom, #0084C8, #072766);
-    color: white;
+    background-repeat:no-repeat;
+    overflow-x: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
-.simon-container {
-    width: 400px;
-    background: #0C2049;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+.snippet-container {
+    max-width: 600px;
+    margin: 6rem auto;
+    background: linear-gradient(to bottom, #A469C7, #2F349E);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
-.grid {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(2, 120px);
-    grid-template-rows: repeat(2, 120px);
-    gap: 15px;
-    margin: 20px;
+.snippet-container h2{
+    margin: 1rem 0.5rem;
+    font-size: 1.6rem;
+    text-shadow: 4px 4px 0px #586AC5;
 }
-
-.square {
-    width: 120px;
-    height: 120px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.1s ease-in-out;
-}
-
-.square.green {
-    border-top-left-radius: 80%;
-}
-
-.square.red {
-    border-top-right-radius: 80%;
-}
-
-.square.blue {
-    border-bottom-left-radius: 80%;
-}
-
-.square.yellow {
-    border-bottom-right-radius: 80%;
-}
-
-.square:active {
-    transform: scale(0.9);
-}
-
-.green {
-    background: #28a746;
-    opacity: 0.6;
-}
-
-.red {
-    background: #dc3545;
-    opacity: 0.6;
-}
-
-.blue {
-    background: #007bff;
-    opacity: 0.6;
-}
-
-.yellow {
-    background: #ffc107;
-    opacity: 0.6;
-}
-
-.active {
-    opacity: 1;
-}
-
-.simon-container button {
-    padding: 12px 18px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(to right, #0084C8, #072766);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: linear-gradient(to left, #0084C8, #072766);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-}
-
-#status {
+textarea {
+    width: 90%;
+    height: 100px;
     margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 12px;
+    border-radius: 2px;
+    font-family: monospace;
+    color: #2F349E;
+    font-size: 0.8rem;
+}
+textarea::placeholder {
+    color: #2F349E;
+}
+textarea:focus {
+    outline: 2px solid #586AC5;
+}
+.snippet-container button {
+    background: linear-gradient(to right, #896EA8, #6D88C2);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.snippet-container .add-snippet{
+    padding: 0.6rem 1.2rem;
+}
+.snippet-container button:hover {
+    background: linear-gradient(to right, #6D88C2, #896EA8);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.snippet-container button:active {
+    transform: translateY(2px);
+}
+.snippet {
+    background: #eee;
+    color: #2F349E;
+    text-align: left;
+    font-size: 0.8rem;
+    padding: 10px;
+    margin: 1rem 0;
+    border-radius: 5px;
+    position: relative;
+}
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.copy-btn:hover {
+    background: #0056b3;
+}
+
+#snippetContainer{
+    width: 95%;
+    margin: 0.5rem auto;
 }
 
 /* Navbar */
@@ -165,7 +142,7 @@ button:hover {
 .toggle-btn {
     position: fixed;
     top: 0;
-    right: 20px;
+    right: 30px;
     color: white;
     border: none;
     border-radius: 50%;
@@ -221,16 +198,15 @@ body.dark-mode {
     background: linear-gradient(135deg, #1e1e1e, #333);
 }
 
-.dark-mode .simon-container {
+.dark-mode .snippet-container{
     background: #2A2A2A;
 }
-
-.dark-mode .simon-container h2,
-.dark-mode .timer {
+.dark-mode .snippet-container h2,
+.dark-mode .timer{
     text-shadow: none;
 }
 
-.dark-mode .simon-container button:hover {
+.dark-mode .snippet-container button:hover{
     background-color: #121212;
     color: #fff;
 }
