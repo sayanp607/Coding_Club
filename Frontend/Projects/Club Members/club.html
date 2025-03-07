@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Members</title>
+    <link rel="stylesheet" href="club.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <button class="back-button" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left fa-xl"></i>
+        </button>
+        <button id="toggleTheme" class="toggle-btn">🌙</button>
+    </nav>
+    <div class="club-container">
+        <h2>Club Members</h2>
+        <div class="form-container">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="skills" placeholder="Skills (comma separated)">
+            <input type="text" id="github" placeholder="GitHub URL">
+            <input type="text" id="linkedin" placeholder="LinkedIn URL">
+            <select id="role">
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Data Scientist">Data Scientist</option>
+            </select>
+            <input type="file" id="profilePic">
+        </div>
+        <button class="add-member" onclick="addMember()">Add Member</button>
+
+        <div class="sort-options">
+            <label for="sort">Sort By:</label>
+            <select id="sort" onchange="sortMembers()">
+                <option value="name">Name</option>
+                <option value="role">Role</option>
+                <option value="skills">Skills</option>
+            </select>
+        </div>
+
+        <div class="members-container" id="membersList"></div>
+    </div>
+    </div>
+
+    <script src="club.js"></script>
+</body>
+
+</html>
