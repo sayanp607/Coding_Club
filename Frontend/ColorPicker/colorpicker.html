@@ -18,12 +18,25 @@
     <div class="grid grid-cols-5 gap-1 w-full h-screen"></div>
 
     <div class="mt-4 p-4 w-full max-w-lg text-center">
-      <h1>Please Click on two Color from the above to generate Gradient</h1>
+      <h1>
+        Please Click on up to 4 Colors from the above to generate Gradient
+      </h1>
       <h2 class="text-lg font-bold mb-2">Gradient Preview</h2>
       <div
         id="gradientPreview"
         class="w-full h-32 rounded border border-gray-500"
       ></div>
+      <select
+        id="gradientDirection"
+        class="mt-2 px-4 py-2 bg-gray-500 text-white font-bold rounded"
+      >
+        <option value="to right">Left to Right</option>
+        <option value="to left">Right to Left</option>
+        <option value="to bottom">Top to Bottom</option>
+        <option value="to top">Bottom to Top</option>
+        <option value="diagonal">Diagonal</option>
+        <option value="radial">Radial</option>
+      </select>
       <button
         id="copyGradientBtn"
         class="mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded hidden"
@@ -37,6 +50,7 @@
       const regenerateBtn = document.getElementById("regenerateBtn");
       const gradientPreview = document.getElementById("gradientPreview");
       const copyGradientBtn = document.getElementById("copyGradientBtn");
+      const gradientDirection = document.getElementById("gradientDirection");
       let selectedColors = [];
 
       function getRandomColor() {
@@ -81,17 +95,29 @@
       }
 
       function selectColorForGradient(color) {
-        if (selectedColors.length < 2) {
+        if (selectedColors.length < 4) {
           selectedColors.push(color);
         } else {
-          selectedColors = [selectedColors[1], color];
+          selectedColors = [...selectedColors.slice(1), color];
         }
         updateGradientPreview();
       }
 
       function updateGradientPreview() {
-        if (selectedColors.length === 2) {
-          const gradientCSS = `linear-gradient(to right, ${selectedColors[0]}, ${selectedColors[1]})`;
+        if (selectedColors.length >= 2) {
+          const direction =
+            gradientDirection.value === "diagonal"
+              ? "45deg"
+              : gradientDirection.value;
+          const gradientCSS = `${
+            gradientDirection.value === "radial"
+              ? "radial-gradient"
+              : "linear-gradient(" +
+                direction +
+                "," +
+                selectedColors.join(", ") +
+                ")"
+          }`;
           gradientPreview.style.background = gradientCSS;
           copyGradientBtn.classList.remove("hidden");
           copyGradientBtn.onclick = () => {
@@ -104,6 +130,7 @@
         }
       }
 
+      gradientDirection.addEventListener("change", updateGradientPreview);
       regenerateBtn.addEventListener("click", createColorGrid);
       createColorGrid();
     </script>
