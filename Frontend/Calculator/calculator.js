@@ -20,8 +20,6 @@ function addToHistory(entry) {
   newEntry.textContent = entry;
   historyList.prepend(newEntry);
 }
-
-
 // Theme Toggle
 if (toggleTheme) {
   toggleTheme.addEventListener("click", function () {
@@ -32,7 +30,6 @@ if (toggleTheme) {
     toggleTheme.textContent = isDarkMode ? "☀️" : "🌙";
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   });
-
 
   // Load theme preference on page load
   if (localStorage.getItem("theme") === "dark") {
@@ -52,6 +49,3 @@ document.addEventListener("keydown", function (event) {
     display.value = display.value.slice(0, -1);
   }
 });
-
-
-
