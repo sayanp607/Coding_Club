@@ -1,321 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dictionary App</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #0782ab;
-      color: #ffffff;
-      overflow-x: hidden;
-      /* position: relative; */
-    }
-
-    .container {
-      max-width: 500px;
-      background: #1694b382;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      border-radius: 8px;
-      margin: 6rem auto;
-    }
-
-    input,
-    select {
-      width: 80%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #555;
-      border-radius: 5px;
-      background: #1e414e82;
-      color: #fff;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      margin: 5px;
-    }
-
-    .result {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .favorites {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    /* Navbar */
-    .navbar {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 15px;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    /* Back Button */
-    .back-button {
-      background: #2867f0;
-      color: white;
-      border: none;
-      padding: 0.8rem 20px;
-      width: 4rem;
-      height: 2.5rem;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .back-button:hover {
-      background: #0190f6;
-      transform: scale(1.05);
-    }
-
-    .toggle-btn {
-      position: fixed;
-      top: 0;
-      right: 30px;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Toggle theme style */
-    #toggleTheme {
-      background: transparent;
-      box-shadow: none;
-      position: absolute;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    /* Click animation (subtle scaling effect) */
-    #toggleTheme:active {
-      transform: scale(0.9);
-      opacity: 0.7;
-    }
-
-    /* Dark mode effect */
-    .dark-mode #toggleTheme {
-      background: transparent;
-      box-shadow: none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    /* Click animation in dark mode */
-    .dark-mode #toggleTheme:active {
-      transform: scale(0.9);
-      opacity: 0.7;
-    }
-
-    .toggle-btn:hover {
-      background: #0056b3;
-    }
-
-    body.dark-mode {
-      background: #121212;
-      color: #fff;
-    }
-
-    /* Dark mode for header */
-    .dark-mode nav {
-      background: linear-gradient(135deg, #1e1e1e, #333);
-    }
-
-    .dark-mode .container {
-      background: #2A2A2A;
-    }
-
-    .dark-mode input,
-    .dark-mode select {
-      background: #333;
-      color: #fff;
-      border: 1px solid #ccc;
-    }
-  </style>
-</head>
-
-<body>
-  <nav class="navbar">
-    <button class="back-button" onclick="history.back()">
-      <i class="fa-solid fa-arrow-left fa-xl"></i>
-    </button>
-    <button id="toggleTheme" class="toggle-btn">🌙</button>
-  </nav>
-  <div class="container">
-    <h2>Dictionary App</h2>
-    <p id="wordOfTheDay"></p>
-    <select id="languageSelect">
-      <option value="en">English</option>
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="hi">Hindi</option>
-      <option value="de">German</option>
-    </select>
-
-    <input type="text" id="wordInput" placeholder="Enter a word" />
-    <button onclick="searchWord()">Search</button>
-    <button onclick="toggleThesaurusMode()">Thesaurus Mode</button>
-    <button onclick="addToFavorites()">Add to Favorites</button>
-    <button onclick="speakText()">Speak</button>
-    <div id="result" class="result"></div>
-    <h3>Favorites</h3>
-    <ul id="favoritesList" class="favorites"></ul>
-  </div>
-
-  <script>
-    let thesaurusMode = false;
-
-    async function searchWord() {
-      const word = document.getElementById("wordInput").value;
-      if (!word) return alert("Please enter a word");
-
-      if (!history.includes(word)) {
-        history.push(word);
-        updateHistoryList();
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        padding: 20px;
+        position: relative;
       }
+      .container {
+        max-width: 500px;
+        background: #333;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        margin: auto;
+      }
+      input,
+      select {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background: #444;
+        color: #fff;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px;
+      }
+      .result {
+        margin-top: 20px;
+        text-align: left;
+      }
+      .favorites {
+        margin-top: 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Dictionary App</h2>
+      <p id="wordOfTheDay"></p>
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="hi">Hindi</option>
+        <option value="de">German</option>
+      </select>
 
-      if (thesaurusMode) {
-        const synUrl = `https://api.datamuse.com/words?rel_syn=${word}`;
-        const antUrl = `https://api.datamuse.com/words?rel_ant=${word}`;
+      <input type="text" id="wordInput" placeholder="Enter a word" />
+      <button onclick="searchWord()">Search</button>
+      <button onclick="toggleThesaurusMode()">Thesaurus Mode</button>
+      <button onclick="addToFavorites()">Add to Favorites</button>
+      <button onclick="speakText()">Speak</button>
+      <div id="result" class="result"></div>
+      <h3>Favorites</h3>
+      <ul id="favoritesList" class="favorites"></ul>
+    </div>
 
-        const [synRes, antRes] = await Promise.all([
-          fetch(synUrl),
-          fetch(antUrl),
-        ]);
-        const synData = await synRes.json();
-        const antData = await antRes.json();
+    <script>
+      let thesaurusMode = false;
 
-        const synonyms =
-          synData.map((item) => item.word).join(", ") || "No synonyms found";
-        const antonyms =
-          antData.map((item) => item.word).join(", ") || "No antonyms found";
+      async function searchWord() {
+        const word = document.getElementById("wordInput").value;
+        if (!word) return alert("Please enter a word");
 
-        document.getElementById("result").innerHTML = `
+        if (!history.includes(word)) {
+          history.push(word);
+          updateHistoryList();
+        }
+
+        if (thesaurusMode) {
+          const synUrl = `https://api.datamuse.com/words?rel_syn=${word}`;
+          const antUrl = `https://api.datamuse.com/words?rel_ant=${word}`;
+
+          const [synRes, antRes] = await Promise.all([
+            fetch(synUrl),
+            fetch(antUrl),
+          ]);
+          const synData = await synRes.json();
+          const antData = await antRes.json();
+
+          const synonyms =
+            synData.map((item) => item.word).join(", ") || "No synonyms found";
+          const antonyms =
+            antData.map((item) => item.word).join(", ") || "No antonyms found";
+
+          document.getElementById("result").innerHTML = `
             <h3>Synonyms for ${word}</h3>
             <p>${synonyms}</p>
           
           `;
-      } else {
-        const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-        const response = await fetch(url);
-        const data = await response.json();
+        } else {
+          const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+          const response = await fetch(url);
+          const data = await response.json();
 
-        if (data.title || data.length === 0) {
-          document.getElementById("result").innerHTML =
-            "<p>Word not found</p>";
-          return;
-        }
+          if (data.title || data.length === 0) {
+            document.getElementById("result").innerHTML =
+              "<p>Word not found</p>";
+            return;
+          }
 
-        const meaning = data[0].meanings[0].definitions[0].definition;
-        const example =
-          data[0].meanings[0].definitions[0].example ||
-          "No example available";
+          const meaning = data[0].meanings[0].definitions[0].definition;
+          const example =
+            data[0].meanings[0].definitions[0].example ||
+            "No example available";
 
-        document.getElementById("result").innerHTML = `
+          document.getElementById("result").innerHTML = `
               <h3>${word}</h3>
               <p><strong>Meaning:</strong> ${meaning}</p>
               <p><strong>Example:</strong> ${example}</p>
           `;
-      }
-    }
-
-    function addToFavorites() {
-      const word = document.getElementById("wordInput").value;
-      if (!word) return;
-      const list = document.getElementById("favoritesList");
-      const li = document.createElement("li");
-      li.textContent = word;
-      list.appendChild(li);
-    }
-
-    function toggleThesaurusMode() {
-      thesaurusMode = !thesaurusMode;
-      alert(`Thesaurus Mode: ${thesaurusMode ? "ON" : "OFF"}`);
-    }
-
-    function speakText() {
-      const word = document.getElementById("wordInput").value;
-      const resultElement = document.getElementById("result");
-      if (!word || !resultElement.innerHTML) return;
-
-      let text = `${word}. `;
-      const meaningElement = resultElement.querySelector("p strong");
-      if (meaningElement) {
-        text += meaningElement.nextSibling.textContent.trim() + ". ";
+        }
       }
 
-      const exampleElement = resultElement.querySelector("p:nth-of-type(2)");
-      if (exampleElement) {
-        text += exampleElement.textContent.trim();
+      function addToFavorites() {
+        const word = document.getElementById("wordInput").value;
+        if (!word) return;
+        const list = document.getElementById("favoritesList");
+        const li = document.createElement("li");
+        li.textContent = word;
+        list.appendChild(li);
       }
 
-      const speech = new SpeechSynthesisUtterance(text);
-      speech.lang = "en-US";
-      speech.rate = 1;
-      speech.pitch = 1;
-      window.speechSynthesis.speak(speech);
-    }
-
-    async function getWordOfTheDay() {
-      const response = await fetch(
-        "https://random-word-api.herokuapp.com/word"
-      );
-      const data = await response.json();
-      document.getElementById(
-        "wordOfTheDay"
-      ).innerHTML = `<strong>Word of the Day:</strong> ${data[0]}`;
-    }
-
-    getWordOfTheDay();
-    // Theme Toggle
-    if (toggleTheme) {
-      toggleTheme.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-
-        // Save theme preference
-        const isDarkMode = document.body.classList.contains("dark-mode");
-        toggleTheme.textContent = isDarkMode ? "☀️" : "🌙";
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-      });
-
-      // Load theme preference on page load
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        toggleTheme.textContent = "☀️";
+      function toggleThesaurusMode() {
+        thesaurusMode = !thesaurusMode;
+        alert(`Thesaurus Mode: ${thesaurusMode ? "ON" : "OFF"}`);
       }
-    }
-  </script>
-</body>
 
+      function speakText() {
+        const word = document.getElementById("wordInput").value;
+        const resultElement = document.getElementById("result");
+        if (!word || !resultElement.innerHTML) return;
+
+        let text = `${word}. `;
+        const meaningElement = resultElement.querySelector("p strong");
+        if (meaningElement) {
+          text += meaningElement.nextSibling.textContent.trim() + ". ";
+        }
+
+        const exampleElement = resultElement.querySelector("p:nth-of-type(2)");
+        if (exampleElement) {
+          text += exampleElement.textContent.trim();
+        }
+
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
+      }
+
+      async function getWordOfTheDay() {
+        const response = await fetch(
+          "https://random-word-api.herokuapp.com/word"
+        );
+        const data = await response.json();
+        document.getElementById(
+          "wordOfTheDay"
+        ).innerHTML = `<strong>Word of the Day:</strong> ${data[0]}`;
+      }
+
+      getWordOfTheDay();
+    </script>
+  </body>
 </html>
-
-<!-- this is acommment -->
-
 <!-- this is acommment -->
 <!-- voice added -->
-
