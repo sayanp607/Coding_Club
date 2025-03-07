@@ -18,14 +18,21 @@
           class="w-full p-2 mb-2 rounded bg-gray-700 text-white outline-none"
           placeholder="Add a new task"
         />
-        <input
-          id="dueDateInput"
-          type="datetime-local"
-          class="w-full p-2 mb-2 rounded bg-gray-700 text-white outline-none"
-        />
-        <button onclick="addTask()" class="bg-blue-500 w-full p-2 rounded">
-          Add Task
+        <button onclick="addTask()" class="bg-blue-500 p-2 rounded-r">
+          Add
         </button>
+      </div>
+      <div class="mb-4">
+        <div class="w-full bg-gray-700 rounded-full h-4">
+          <div
+            id="progressBar"
+            class="bg-green-400 h-4 rounded-full"
+            style="width: 0%"
+          ></div>
+        </div>
+        <p class="text-center text-sm mt-2">
+          <span id="progressText">0</span>% completed
+        </p>
       </div>
       <ul id="taskList" class="space-y-2"></ul>
     </div>
@@ -38,25 +45,17 @@
         taskList.innerHTML = "";
         tasks.forEach((task, index) => {
           taskList.innerHTML += `
-                <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
-                    <div>
+                    <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
                         <span class="${task.completed ? "line-through" : ""}">${
             task.text
           }</span>
-                        <p class="text-sm text-gray-400">Due: ${
-                          task.dueDate
-                            ? new Date(task.dueDate).toLocaleString()
-                            : "No due date"
-                        }</p>
-                    </div>
-                    <div>
-                        <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
-                        <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
-                        <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
-                    </div>
-                </li>`;
+                        <div>
+                            <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
+                            <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
+                            <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
+                        </div>
+                    </li>`;
         });
-        localStorage.setItem("tasks", JSON.stringify(tasks));
       }
 
       function addTask() {
@@ -92,27 +91,6 @@
           renderTasks();
         }
       }
-
-      function checkReminders() {
-        tasks.forEach((task, index) => {
-          if (task.dueDate && !task.completed) {
-            const taskTime = new Date(task.dueDate).getTime();
-            const now = new Date().getTime();
-            const timeUntilDue = taskTime - now;
-
-            if (timeUntilDue > 0) {
-              setTimeout(() => {
-                alert(`Reminder: "${task.text}" is due now!`);
-              }, timeUntilDue);
-            }
-          }
-        });
-      }
-
-      window.onload = () => {
-        renderTasks();
-        checkReminders();
-      };
     </script>
   </body>
 </html>
