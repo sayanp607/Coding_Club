@@ -11,16 +11,15 @@
   >
     <div class="w-96 bg-gray-800 p-6 rounded-lg shadow-lg">
       <h1 class="text-2xl font-bold text-center mb-4">To-Do List</h1>
-      <div class="flex mb-4">
+      <div class="mb-4">
         <input
           id="taskInput"
           type="text"
-          class="flex-1 p-2 rounded-l bg-gray-700 text-white outline-none"
+          class="w-full p-2 mb-2 rounded bg-gray-700 text-white outline-none"
           placeholder="Add a new task"
         />
-        <button onclick="addTask()" class="bg-blue-500 p-2">Add</button>
-        <button onclick="startListening()" class="bg-green-500 p-2 ml-2">
-          🎤
+        <button onclick="addTask()" class="bg-blue-500 p-2 rounded-r">
+          Add
         </button>
       </div>
       <div class="mb-4">
@@ -46,27 +45,32 @@
         taskList.innerHTML = "";
         tasks.forEach((task, index) => {
           taskList.innerHTML += `
-                <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
-                    <span class="${task.completed ? "line-through" : ""}">${
+                    <li class="flex justify-between items-center p-2 bg-gray-700 rounded">
+                        <span class="${task.completed ? "line-through" : ""}">${
             task.text
           }</span>
-                    <div>
-                        <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
-                        <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
-                        <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
-                    </div>
-                </li>`;
+                        <div>
+                            <button onclick="toggleComplete(${index})" class="text-green-400 mx-1">✔</button>
+                            <button onclick="editTask(${index})" class="text-yellow-400 mx-1">✎</button>
+                            <button onclick="deleteTask(${index})" class="text-red-400 mx-1">✖</button>
+                        </div>
+                    </li>`;
         });
-        updateProgress();
-        localStorage.setItem("tasks", JSON.stringify(tasks));
       }
 
       function addTask() {
         const taskInput = document.getElementById("taskInput");
+        const dueDateInput = document.getElementById("dueDateInput");
         if (taskInput.value.trim() !== "") {
-          tasks.push({ text: taskInput.value, completed: false });
+          tasks.push({
+            text: taskInput.value,
+            completed: false,
+            dueDate: dueDateInput.value || null,
+          });
           taskInput.value = "";
+          dueDateInput.value = "";
           renderTasks();
+          checkReminders();
         }
       }
 
@@ -87,36 +91,6 @@
           renderTasks();
         }
       }
-
-      function updateProgress() {
-        const completedTasks = tasks.filter((task) => task.completed).length;
-        const totalTasks = tasks.length;
-        const progressPercentage = totalTasks
-          ? (completedTasks / totalTasks) * 100
-          : 0;
-        document.getElementById("progressBar").style.width =
-          progressPercentage + "%";
-        document.getElementById("progressText").textContent =
-          Math.round(progressPercentage);
-      }
-
-      function startListening() {
-        if (!("webkitSpeechRecognition" in window)) {
-          alert("Your browser does not support voice input.");
-          return;
-        }
-
-        const recognition = new webkitSpeechRecognition();
-        recognition.lang = "en-US";
-        recognition.onresult = function (event) {
-          const spokenText = event.results[0][0].transcript;
-          document.getElementById("taskInput").value = spokenText;
-        };
-
-        recognition.start();
-      }
-
-      window.onload = renderTasks;
     </script>
   </body>
 </html>
