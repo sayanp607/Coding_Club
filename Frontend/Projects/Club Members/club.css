@@ -1,22 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 10px;
-    background-color: #EBEBEB;
+    background-color: #6533B4;
 }
 
 ::-webkit-scrollbar:hover {
-    background-color: #EBEBEB;
+    background-color: #6533B4;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, #0084C8, #072766);
+    background: linear-gradient(to top, #8E2DE2, #4A00E0);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #0084C8, #072766);
+    background: linear-gradient(to bottom, #8E2DE2, #4A00E0);
 }
 
 * {
@@ -28,107 +27,143 @@
 body {
     font-family: "Poppins", sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #0084C8, #072766);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
 }
 
-.simon-container {
-    width: 400px;
-    background: #0C2049;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-}
 
-.grid {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(2, 120px);
-    grid-template-rows: repeat(2, 120px);
-    gap: 15px;
-    margin: 20px;
-}
-
-.square {
-    width: 120px;
-    height: 120px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.1s ease-in-out;
-}
-
-.square.green {
-    border-top-left-radius: 80%;
-}
-
-.square.red {
-    border-top-right-radius: 80%;
-}
-
-.square.blue {
-    border-bottom-left-radius: 80%;
-}
-
-.square.yellow {
-    border-bottom-right-radius: 80%;
-}
-
-.square:active {
-    transform: scale(0.9);
-}
-
-.green {
-    background: #28a746;
-    opacity: 0.6;
-}
-
-.red {
-    background: #dc3545;
-    opacity: 0.6;
-}
-
-.blue {
-    background: #007bff;
-    opacity: 0.6;
-}
-
-.yellow {
-    background: #ffc107;
-    opacity: 0.6;
-}
-
-.active {
-    opacity: 1;
-}
-
-.simon-container button {
-    padding: 12px 18px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(to right, #0084C8, #072766);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+.club-container {
+    max-width: 600px;
+    margin: 5rem auto;
+    background: #6b6a6a62;
+    color: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: background 0.3s;
 }
 
-button:hover {
-    background: linear-gradient(to left, #0084C8, #072766);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
+
+h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-#status {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #444;
+    color: white;
+}
+
+.form-container input,
+select {
+    background: white;
+    color: black;
+}
+
+.club-container .add-member {
+    padding: 12px 18px;
+    border: none;
+    font-size: 16px;
+    background: #E100FF;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.club-container .add-member:hover {
+    background: #B200E0;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.members-container {
+    margin-top: 20px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #8d2de28e;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.light-mode .member {
+    background: #f0f0f0;
+    color: black;
+}
+
+.member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.member-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.member-links a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    margin: 0 5px;
+}
+
+.github {
+    background: #24292E;
+}
+
+.linkedin {
+    background: #0077b5;
+}
+
+.member-links a:hover {
+    opacity: 0.8;
+}
+
+.delete-btn {
+    background: red;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+}
+
+.sort-options {
+    margin-top: 20px;
+}
+
+.sort-options select {
+    width: 50%;
+    margin-left: 10px;
 }
 
 /* Navbar */
@@ -219,18 +254,4 @@ body.dark-mode {
 /* Dark mode for header */
 .dark-mode nav {
     background: linear-gradient(135deg, #1e1e1e, #333);
-}
-
-.dark-mode .simon-container {
-    background: #2A2A2A;
-}
-
-.dark-mode .simon-container h2,
-.dark-mode .timer {
-    text-shadow: none;
-}
-
-.dark-mode .simon-container button:hover {
-    background-color: #121212;
-    color: #fff;
 }

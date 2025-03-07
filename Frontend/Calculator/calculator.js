@@ -20,13 +20,6 @@ function addToHistory(entry) {
   newEntry.textContent = entry;
   historyList.prepend(newEntry);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-=======
->>>>>>> upstream/main
 // Theme Toggle
 if (toggleTheme) {
   toggleTheme.addEventListener("click", function () {
@@ -45,10 +38,6 @@ if (toggleTheme) {
   }
 }
 
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
 document.addEventListener("keydown", function (event) {
   const key = event.key;
   if (!isNaN(key) || ["+", "-", "*", "/", "."].includes(key)) {
@@ -60,12 +49,3 @@ document.addEventListener("keydown", function (event) {
     display.value = display.value.slice(0, -1);
   }
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
