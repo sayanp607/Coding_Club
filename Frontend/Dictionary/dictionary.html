@@ -48,17 +48,6 @@
         margin-top: 20px;
         text-align: left;
       }
-      .history-container {
-        display: none;
-        position: absolute;
-        right: 10px;
-        top: 50px;
-        width: 200px;
-        background: #444;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      }
     </style>
   </head>
   <body>
@@ -77,171 +66,104 @@
       <button onclick="searchWord()">Search</button>
       <button onclick="toggleThesaurusMode()">Thesaurus Mode</button>
       <button onclick="addToFavorites()">Add to Favorites</button>
-      <button onclick="toggleHistory()">History</button>
+      <button onclick="speakText()">Speak</button>
       <div id="result" class="result"></div>
       <h3>Favorites</h3>
       <ul id="favoritesList" class="favorites"></ul>
     </div>
-    <div id="historyContainer" class="history-container">
-      <h3>Search History</h3>
-      <ul id="historyList"></ul>
-    </div>
+
     <script>
-      let favorites = [];
-      let history = [];
       let thesaurusMode = false;
 
       async function searchWord() {
         const word = document.getElementById("wordInput").value;
-        const language = document.getElementById("languageSelect").value;
-
         if (!word) return alert("Please enter a word");
 
-        let url, response, data, translatedWord;
+        if (!history.includes(word)) {
+          history.push(word);
+          updateHistoryList();
+        }
 
-        try {
-          if (language === "en") {
-            // Fetch meaning for English words
-            url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-            response = await fetch(url);
-            data = await response.json();
+        if (thesaurusMode) {
+          const synUrl = `https://api.datamuse.com/words?rel_syn=${word}`;
+          const antUrl = `https://api.datamuse.com/words?rel_ant=${word}`;
 
-            if (data.title || data.length === 0) {
-              document.getElementById("result").innerHTML =
-                "<p>Word not found</p>";
-              return;
-            }
+          const [synRes, antRes] = await Promise.all([
+            fetch(synUrl),
+            fetch(antUrl),
+          ]);
+          const synData = await synRes.json();
+          const antData = await antRes.json();
 
-            const meaning = data[0].meanings[0].definitions[0].definition;
-            const example =
-              data[0].meanings[0].definitions[0].example ||
-              "No example available";
+          const synonyms =
+            synData.map((item) => item.word).join(", ") || "No synonyms found";
+          const antonyms =
+            antData.map((item) => item.word).join(", ") || "No antonyms found";
 
-            let thesaurusData = "";
-            if (thesaurusMode) {
-              const [synRes, antRes] = await Promise.all([
-                fetch(`https://api.datamuse.com/words?rel_syn=${word}`),
-                fetch(`https://api.datamuse.com/words?rel_ant=${word}`),
-              ]);
-              const synonyms =
-                (await synRes.json()).map((item) => item.word).join(", ") ||
-                "No synonyms found";
-              const antonyms =
-                (await antRes.json()).map((item) => item.word).join(", ") ||
-                "No antonyms found";
-              thesaurusData = `
-          <h3>Thesaurus Mode</h3>
-          <p><strong>Synonyms:</strong> ${synonyms}</p>
-         
-        `;
-            }
+          document.getElementById("result").innerHTML = `
+            <h3>Synonyms for ${word}</h3>
+            <p>${synonyms}</p>
+          
+          `;
+        } else {
+          const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+          const response = await fetch(url);
+          const data = await response.json();
 
-            document.getElementById("result").innerHTML = `
-        <h3>${word}</h3>
-        <p><strong>Meaning:</strong> ${meaning}</p>
-        <p><strong>Example:</strong> ${example}</p>
-        ${thesaurusData}
-      `;
-          } else {
-            // Step 1: Translate the word to English
-            url = `https://api.mymemory.translated.net/get?q=${word}&langpair=${language}|en`;
-            response = await fetch(url);
-            data = await response.json();
-            translatedWord = data.responseData.translatedText;
-
-            // Step 2: Fetch meaning of the translated word
-            url = `https://api.dictionaryapi.dev/api/v2/entries/en/${translatedWord}`;
-            response = await fetch(url);
-            data = await response.json();
-
-            if (data.title || data.length === 0) {
-              document.getElementById("result").innerHTML = `
-          <h3>${word} (${translatedWord})</h3>
-          <p><strong>Translation:</strong> ${translatedWord}</p>
-          <p><strong>Meaning:</strong> No meaning found</p>
-        `;
-              return;
-            }
-
-            const meaning = data[0].meanings[0].definitions[0].definition;
-            const example =
-              data[0].meanings[0].definitions[0].example ||
-              "No example available";
-
-            let thesaurusData = "";
-            if (thesaurusMode) {
-              const [synRes, antRes] = await Promise.all([
-                fetch(
-                  `https://api.datamuse.com/words?rel_syn=${translatedWord}`
-                ),
-                fetch(
-                  `https://api.datamuse.com/words?rel_ant=${translatedWord}`
-                ),
-              ]);
-              const synonyms =
-                (await synRes.json()).map((item) => item.word).join(", ") ||
-                "No synonyms found";
-              const antonyms =
-                (await antRes.json()).map((item) => item.word).join(", ") ||
-                "No antonyms found";
-              thesaurusData = `
-          <h3>Thesaurus Mode</h3>
-          <p><strong>Synonyms:</strong> ${synonyms}</p>
-     
-        `;
-            }
-
-            document.getElementById("result").innerHTML = `
-        <h3>${word} (${translatedWord})</h3>
-        <p><strong>Translation:</strong> ${translatedWord}</p>
-        <p><strong>Meaning:</strong> ${meaning}</p>
-        <p><strong>Example:</strong> ${example}</p>
-        ${thesaurusData}
-      `;
+          if (data.title || data.length === 0) {
+            document.getElementById("result").innerHTML =
+              "<p>Word not found</p>";
+            return;
           }
-        } catch (error) {
-          console.error("Error fetching data:", error);
-          document.getElementById("result").innerHTML =
-            "<p>Could not retrieve word data</p>";
+
+          const meaning = data[0].meanings[0].definitions[0].definition;
+          const example =
+            data[0].meanings[0].definitions[0].example ||
+            "No example available";
+
+          document.getElementById("result").innerHTML = `
+              <h3>${word}</h3>
+              <p><strong>Meaning:</strong> ${meaning}</p>
+              <p><strong>Example:</strong> ${example}</p>
+          `;
         }
       }
 
       function addToFavorites() {
         const word = document.getElementById("wordInput").value;
-        if (!word || favorites.includes(word)) return;
-        favorites.push(word);
-        updateFavoritesList();
-      }
-
-      function updateFavoritesList() {
+        if (!word) return;
         const list = document.getElementById("favoritesList");
-        list.innerHTML = "";
-        favorites.forEach((word) => {
-          const li = document.createElement("li");
-          li.textContent = word;
-          list.appendChild(li);
-        });
-      }
-
-      function updateHistoryList() {
-        const list = document.getElementById("historyList");
-        list.innerHTML = "";
-        history.forEach((word) => {
-          const li = document.createElement("li");
-          li.textContent = word;
-          list.appendChild(li);
-        });
-      }
-
-      function toggleHistory() {
-        const historyContainer = document.getElementById("historyContainer");
-        historyContainer.style.display =
-          historyContainer.style.display === "none" ? "block" : "none";
+        const li = document.createElement("li");
+        li.textContent = word;
+        list.appendChild(li);
       }
 
       function toggleThesaurusMode() {
         thesaurusMode = !thesaurusMode;
         alert(`Thesaurus Mode: ${thesaurusMode ? "ON" : "OFF"}`);
+      }
+
+      function speakText() {
+        const word = document.getElementById("wordInput").value;
+        const resultElement = document.getElementById("result");
+        if (!word || !resultElement.innerHTML) return;
+
+        let text = `${word}. `;
+        const meaningElement = resultElement.querySelector("p strong");
+        if (meaningElement) {
+          text += meaningElement.nextSibling.textContent.trim() + ". ";
+        }
+
+        const exampleElement = resultElement.querySelector("p:nth-of-type(2)");
+        if (exampleElement) {
+          text += exampleElement.textContent.trim();
+        }
+
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
       }
 
       async function getWordOfTheDay() {
@@ -258,3 +180,5 @@
     </script>
   </body>
 </html>
+<!-- this is acommment -->
+<!-- voice added -->
