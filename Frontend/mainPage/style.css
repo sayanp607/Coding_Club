@@ -654,7 +654,9 @@ button:hover {
 .eventbttn button {
   margin-right: 10px;
 }
-
+.demo-hackathons{
+  max-width: 90%;
+}
 .demo-hackathons h2 {
   margin-bottom: 20px;
 }
@@ -1215,7 +1217,8 @@ button:hover {
 
   .search-container {
     text-align: center;
-    margin-bottom: 20px;
+    width: 90%;
+    margin-left: 40px !important;
   }
 
   #searchBar {
@@ -1234,7 +1237,6 @@ button:hover {
     gap: 20px;
     justify-content: center;
   }
-}
 
 #faq {
   padding: 50px;
