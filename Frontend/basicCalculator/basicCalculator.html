@@ -9,7 +9,13 @@
 
 </head>
 <body>
+    <nav class="navbar">
+        <button class="back-button" onclick="history.back()">
+            <i id="back-btn" class="fa-solid fa-arrow-left fa-xl"></i>
+        </button>
     <h1 class="h1">Wellcome to Soumik's Calculator</h1>
+        <button id="toggleTheme" class="toggle-btn">🌙</button>
+    </nav>
     <div class="container">
         <div class="calculator">
             <form action="">
@@ -49,5 +55,23 @@
         </div>
     </div>
     <script src="app.js"></script>
+    <script>
+        if (toggleTheme) {
+    toggleTheme.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        // Save theme preference
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        toggleTheme.textContent = isDarkMode ? "☀️" : "🌙";
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    });
+
+    // Load theme preference on page load
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleTheme.textContent = "☀️";
+    }
+}
+    </script>
 </body>
 </html>
