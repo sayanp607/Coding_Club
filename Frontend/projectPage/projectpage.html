@@ -59,6 +59,18 @@
     .dark-mode .projectLevel{
       background-color: rgb(223, 231, 229);
     }
+    .bookmark-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 10px;
+        position: absolute !important;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .bookmark-icon:hover {
+        transform: scale(1.2);
+    }
   </style>
 </head>
 
@@ -135,71 +147,7 @@
       </nav>
     </nav>
   </header>
-  <section id="projects">
-    <h2 data-aos="fade-up">More Projects</h2>
-    <p data-aos="fade-up">
-      Check out the amazing projects built by our club members.
-    </p>
 
-        <nav id="navbar">
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="../eventPage/event.html">Events</a></li>
-            <li><a href="../projectPage/projectpage.html">Projects</a></li>
-            <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
-            <li>
-              <a href="../contributorPage/contributor.html">Contributors</a>
-            </li>
-            <li><a href="../reviewPage/review.html">Reviews</a></li>
-            <li><a href="../index.html#feedback">Feedback</a></li>
-            <li>
-              <a href="../User/user.html">
-                <div class="profile">
-                  <img
-                    id="profile-pic"
-                    class="profile-pic"
-                    alt="Profile Picture"
-                  />Account
-                </div>
-              </a>
-            </li>
-            <button id="toggleTheme" class="toggle-btn">🌙</button>
-          </ul>
-        </nav>
-
-        <nav>
-          <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-          </div>
-          <ul class="nav-links" id="navLinks">
-            <span id="closeMenu"><i class="fas fa-times"></i></span>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="../eventPage/event.html">Events</a></li>
-            <li><a href="../projectPage/projectpage.html">Projects</a></li>
-            <li><a href="../AllLoginPage/loginPage/login.html">Login</a></li>
-            <li>
-              <a href="../contributorPage/contributor.html">Contributors</a>
-            </li>
-            <li><a href="../reviewPage/review.html">Reviews</a></li>
-            <li><a href="../index.html#feedback">Feedback</a></li>
-            <li>
-              <a href="../User/user.html">
-                <div class="profile">
-                  <img
-                    id="profile-pic"
-                    class="profile-pic"
-                    alt="Profile Picture"
-                  />Account
-                </div>
-              </a>
-            </li>
-            <button id="toggleTheme-mobile" class="menu-toggle-btn">🌙</button>
-          </ul>
-        </nav>
-      </nav>
-    </header>
     <section id="projects">
       <h2 data-aos="fade-up">More Projects</h2>
       <p data-aos="fade-up">
@@ -233,16 +181,23 @@
       </div>
 
 
-      <div data-aos="fade-up" class="projects-container">
-        <div data-aos="fade-up" class="project-card" data-level="beginner">
+    
+    </div>
+    <div data-aos="fade-up" class="projects-container">
+      <div data-aos="fade-up" class="project-card" data-level="beginner">
+        <span class="bookmark-icon" onclick="bookmarkProject('Weather App', '../WeatherApp/weather.html')">🔖</span>
           <img src="https://tse1.mm.bing.net/th?id=OIP.NXuyZrgL1obgCPMawBsdagHaFj&pid=Api&P=0&h=180"
-            alt="Weather App" />
+              alt="Weather App" />
           <h3>Weather App</h3>
           <p>Get real-time weather updates using an API with JavaScript.</p>
           <a href="../WeatherApp/weather.html" class="view-demo">View Demo</a>
-        </div>
+        
+      </div>
+   
+    
 
         <div data-aos="fade-up" class="project-card" data-level="beginner">
+          <span class="bookmark-icon" onclick="bookmarkProject('Weather App', '../WeatherApp/weather.html')">🔖</span>
           <img src="https://tse2.mm.bing.net/th?id=OIP.ZDHGb4WYPBoc0UHpTpqHEQHaHa&pid=Api&P=0&h=180" alt="Stopwatch" />
           <h3>Stopwatch</h3>
           <p>
@@ -263,6 +218,7 @@
         </div>
 
         <div data-aos="fade-up" class="project-card" data-level="beginner">
+          <span class="bookmark-icon" onclick="bookmarkProject('Weather App', '../WeatherApp/weather.html')">🔖</span>
           <img src="https://tse2.mm.bing.net/th?id=OIP.ZDHGb4WYPBoc0UHpTpqHEQHaHa&pid=Api&P=0&h=180" alt="Stopwatch" />
           <h3>Stopwatch</h3>
           <p>
@@ -407,7 +363,24 @@
       </div>
     </section>
   </section>
+  <script>
+    function bookmarkProject(title, link) {
+        let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
+        // Check if project is already bookmarked
+        if (bookmarks.some(bookmark => bookmark.title === title)) {
+            alert("This project is already bookmarked!");
+            return;
+        }
+
+        // Add project to bookmarks
+        bookmarks.push({ title, link });
+        localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+        // Show notification
+        alert("Project bookmarked successfully!");
+    }
+</script>
   <script>
     function filterProjects() {
       const level = document.getElementById("projectLevel").value;
@@ -670,65 +643,7 @@
     }
   </script>
 
-  <footer class="footer">
-    <div class="wrapper">
-      <div class="newsletter">
-        <h3>Subscribe to our Newsletter</h3>
-        <form id="subscribeForm">
-          <input type="email" id="emailInput" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
 
-      <div class="quick-contact">
-        <h3>Quick Links</h3>
-        <ul>
-          <li class="sec-nav"><a href="../index.html">Home</a></li>
-          <li class="sec-nav">
-            <a href="../index.html#about">About</a>
-          </li>
-          <li class="sec-nav">
-            <a href="../eventPage/event.html">Events</a>
-          </li>
-          <li class="sec-nav">
-            <a href="../projectPage/projectpage.html">Projects</a>
-          </li>
-          <li class="sec-nav">
-            <a href="../index.html#contact">Contact</a>
-          </li>
-          <li class="sec-nav">
-            <a href="../index.html#faq">FAQ</a>
-          </li>
-          <li class="sec-nav">
-            <a href="../index.html#feedback">Feedback</a>
-          </li>
-        </ul>
-      </div>
-      <div class="quick-contact">
-        <h3>Contact Us</h3>
-        <p>📍 123 Street, City, Country</p>
-        <p>
-          <i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;&nbsp;yourwebsite.com
-        </p>
-        <p>📞 +123 456 7890</p>
-      </div>
-
-      <div class="social-sharing">
-        <h3>Share Our Blog</h3>
-        <a href="#" id="facebookShare" class="social-icon">Facebook</a>
-        <a href="#" id="twitterShare" class="social-icon">Twitter</a>
-        <a href="#" id="linkedinShare" class="social-icon">LinkedIn</a>
-        <a href="#" id="whatsappShare" class="social-icon">Instagram</a>
-      </div>
-    </div>
-
-    <div class="privacy">
-      <a href="../privacyPage/privacy.html">Privacy Policy</a> |
-      <a href="../termsPage/terms.html">Terms & Conditions</a>
-    </div>
-
-    <div class="copyright">© 2025 Coding Club. All rights reserved.</div>
-  </footer>
   <script>
     const text = "Coding Club";
     let index = 0;
