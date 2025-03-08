@@ -61,7 +61,7 @@
   </div>
 
 
-  <!-- scroll button -->
+  <!-- scroll button added -->
   <button id="scrollToTop" class="scroll-btn">
     <i class="fas fa-arrow-up fa-xl"></i>
   </button>
@@ -96,6 +96,15 @@
 
 
 
+    <!-- scroll button -->
+    <button id="scrollToTop" class="scroll-btn">
+      <i class="fas fa-arrow-up fa-xl"></i>
+    </button>
+    <header>
+      <div class="logo-container">
+        <img src="../images/codingclub.svg" alt="Logo" />
+      </div>
+      <h1 id="typingText"></h1>
       <nav>
 
         <div class="hamburger" id="hamburger">
@@ -631,6 +640,23 @@
             >
           </div>
 
+          <!-- Project 11 (Currency converter app) -->
+          <div data-aos="fade-up" class="project-card" data-level="medium">
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.2qWcE_EQWeXu0wvvgRxL3gHaD4&pid=Api&P=0&h=180"
+              alt="Project 11"
+            />
+            <h3>Currency Converter</h3>
+            <p>
+              A currency converter, where you can change one currency to another
+              currencies
+            </p>
+            <a href="../currencyConverter/index.html" class="view-demo"
+              >View Demo</a
+            >
+          </div>
+
+         
         <!-- Project 13 (BMI Calculator) -->
         <div data-aos="fade-up" class="project-card" data-level="beginner">
           <img src="../images/bmi.png" alt="Project 13" />
@@ -650,6 +676,30 @@
       const level = document.getElementById("projectLevel").value;
       const projects = document.querySelectorAll(".project-card");
 
+     
+        <div class="quick-contact">
+          <h3>Quick Links</h3>
+          <ul>
+            <li class="sec-nav"><a href="#home">Home</a></li>
+            <li class="sec-nav"><a href="#about">About</a></li>
+            <li class="sec-nav"><a href="#events">Events</a></li>
+            <li class="sec-nav"><a href="#projects">Projects</a></li>
+            <li class="sec-nav"><a href="blogPage/blog.html">Blogs</a></li>
+            <li class="sec-nav"><a href="#contact">Contact</a></li>
+            <li class="sec-nav"><a href="resource/resource.html">Resources</a></li>
+            <li class="sec-nav"><a href="#faq">FAQ</a></li>
+            <li class="sec-nav"><a href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="quick-contact">
+          <h3>Contact Us</h3>
+          <p>📍 123 Street, City, Country</p>
+          <p>
+            <i class="fa-solid fa-earth-americas"></i
+            >&nbsp;&nbsp;&nbsp;yourwebsite.com
+          </p>
+          <p>📞 +123 456 7890</p>
+        </div>
       projects.forEach((project) => {
         if (level === "all" || project.getAttribute("data-level") === level) {
           project.style.display = "block";
