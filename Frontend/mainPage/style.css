@@ -1,3 +1,8 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   border-radius: 10px;
@@ -125,6 +130,12 @@
   }
 }
 
+.navItems{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
 body {
   font-family: "Poppins", Arial, sans-serif;
@@ -345,6 +356,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   z-index: 1000;
+  margin: 0px;
 
   /* Centering the icon */
   display: flex;
@@ -1046,6 +1058,9 @@ button:hover {
   transform: translateX(100%);
   z-index: 1001;
   transition: transform 0.3s ease-in-out;
+  flex-wrap: wrap;
+  gap: 8px; /* Reduce spacing */
+  font-size: 14px; /* Smaller font to fit */
 }
 
 .dark-mode .nav-links {
@@ -1127,9 +1142,6 @@ button:hover {
     right: 5%;
   }
 }
-#profile-pic {
-  height: 30px;
-  width: 30px;
 
   * {
     margin: 0;
@@ -1318,9 +1330,9 @@ button:hover {
   }
 }
 
-#faq{
+#faq {
   padding: 50px;
-  background: #f8f9fa;
+  /* background: #f8f9fa; */
   border-radius: 10px;
   margin: 20px auto;
   width: 100%;
@@ -1328,13 +1340,12 @@ button:hover {
   box-sizing: border-box;
 }
 
-.faq-container{
+.faq-container {
   width: 80%;
   padding: 20px;
-  background: #F8F9FA;
+  /* background: #F8F9FA; */
   border-radius: 10px;
   margin: 20px auto;
   box-sizing: border-box;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
-
