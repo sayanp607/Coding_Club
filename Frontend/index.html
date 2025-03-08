@@ -626,24 +626,30 @@ function toggleAnswer(element) {
 }
 
 
-  function searchFAQ() {
-    let input = document.querySelector('.search-box').value.toLowerCase();
-    let questions = document.querySelectorAll('.faq-item');
-    let noResultsMessage = document.getElementById('no-results');
+function searchFAQ() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let questions = document.querySelectorAll(".faq-item");
+    let noResultsMessage = document.getElementById("no-results");
     let hasResults = false;
 
     questions.forEach(item => {
-      let text = item.textContent.toLowerCase();
-      if (text.includes(input)) {
-        item.style.display = "block";
-        hasResults = true;
-      } else {
-        item.style.display = "none";
-      }
+        let questionElement = item.querySelector(".question");
+        if (questionElement) {
+            let questionText = questionElement.textContent.toLowerCase();
+            if (questionText.includes(input)) {
+                item.style.display = "flex"; // Use "flex" to match existing layout
+                hasResults = true;
+            } else {
+                item.style.display = "none";
+            }
+        }
     });
 
+    // Show/hide the "No results found" message
     noResultsMessage.style.display = hasResults ? "none" : "block";
-  }
+}
+
+
 </script>
 
 
