@@ -233,14 +233,16 @@
     </div>
     <div data-aos="fade-up" class="projects-container">
       <div data-aos="fade-up" class="project-card" data-level="beginner">
-        <span class="bookmark-icon" onclick="bookmarkProject('Weather App', '../WeatherApp/weather.html')">🔖</span>
+          <span class="bookmark-icon" onclick="bookmarkProject('Weather App', '../WeatherApp/weather.html')">🔖</span>
           <img src="https://tse1.mm.bing.net/th?id=OIP.NXuyZrgL1obgCPMawBsdagHaFj&pid=Api&P=0&h=180"
               alt="Weather App" />
           <h3>Weather App</h3>
           <p>Get real-time weather updates using an API with JavaScript.</p>
           <a href="../WeatherApp/weather.html" class="view-demo">View Demo</a>
-        
+          <p id="view-counter">Views: 0</p>
       </div>
+  
+ 
    
     
 
@@ -464,6 +466,14 @@
   
       showBookmarks(); // Call this function to display bookmarks on page load
   </script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      let viewCount = localStorage.getItem("projectViews") || 0;
+      viewCount++;
+      localStorage.setItem("projectViews", viewCount);
+      document.getElementById("view-counter").innerText = "Views: " + viewCount;
+  });
+</script>
 
   <footer class="footer">
     <div class="wrapper">
