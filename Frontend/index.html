@@ -23,18 +23,44 @@
 
 
 </head>
+<style>
+  .demo-hackathons{
+    max-width: 90% !important;
+  }
+  .answer {
+    display: none;
+}
 
+</style>
 <body>
 
   <div id="loader">
     <img src="./infinite-spinner.svg" alt="">
   </div>
   <div id="content">
+
     <div class="overlay" id="overlay">
       <div class="card">
         <button class="close-btn" onclick="closeCard()">X</button>
         <h1 id="greeting"></h1>
       </div>
+
+  <div class="overlay" id="overlay">
+    <div class="card">
+      <button class="close-btn" onclick="closeCard()">X</button>
+      <h1 id="greeting"></h1>
+    </div>
+  </div>
+
+  <!-- scroll button -->
+  <button id="scrollToTop" class="scroll-btn">
+    <i class="fas fa-arrow-up fa-xl"></i>
+  </button>
+
+  <header>
+    <div class="logo-container">
+      <img src="images/codingclub.svg" alt="logo">
+
     </div>
 
     <!-- scroll button -->
@@ -187,6 +213,15 @@
       <h2 class="section-heading">Why Choose Us?</h2>
 
       <div class="why-text">
+
+    </div>
+  </section>
+<!--why choose us-->>
+  <section class="why-choose-us">
+    <h2 class="section-heading">Why Choose Us?</h2>
+    
+    <div class="why-text">
+
         <p>
           In a rapidly evolving tech landscape, staying ahead is crucial. At Coding Club, we provide an ecosystem where
           innovation meets expertise. Whether you're a beginner or an experienced developer, our community, mentorship,
@@ -337,6 +372,20 @@
       </section>
     </section>
 
+
+
+        <div data-aos="fade-up" class="project-card" data-title="Password Generator">
+          <img src="./images/bubble_game.jpg" alt="Project 6">
+          <h3>Bubble game</h3>
+          <p>Capture the bubble, and get points-> using HTML, CSS, and JavaScript.</p>
+          <a href="./bubble_game/bubble.html" class="view-demo">View Demo</a>
+        </div>
+        <div data-aos="fade-up" class="project-card" data-title="Password Generator">
+          <img src="images/password.jpeg" alt="Project 6">
+          <h3>Password Generator</h3>
+          <p>A simple and interactive Password Generator using HTML, CSS, and JavaScript.</p>
+          <a href="password generator/passgen.html" class="view-demo">View Demo</a>
+        </div>
 
 
 
@@ -510,6 +559,7 @@
         </section>
 
 
+
       </div>
 
 
@@ -546,6 +596,49 @@
       noResultsMessage.style.display = hasResults ? "none" : "block";
     }
   </script>
+
+    </div>
+  <!-- </section> -->
+  </section>
+</div>
+
+<script>
+function toggleAnswer(element) {
+    let answer = element.nextElementSibling;
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+
+
+function searchFAQ() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let questions = document.querySelectorAll(".faq-item");
+    let noResultsMessage = document.getElementById("no-results");
+    let hasResults = false;
+
+    questions.forEach(item => {
+        let questionElement = item.querySelector(".question");
+        if (questionElement) {
+            let questionText = questionElement.textContent.toLowerCase();
+            if (questionText.includes(input)) {
+                item.style.display = "flex"; // Use "flex" to match existing layout
+                hasResults = true;
+            } else {
+                item.style.display = "none";
+            }
+        }
+    });
+
+    // Show/hide the "No results found" message
+    noResultsMessage.style.display = hasResults ? "none" : "block";
+}
+
+
+</script>
+
 
 
 
@@ -837,6 +930,13 @@
       document.getElementById('content').style.display = 'block';
     }, 3000);
   </script>
+  <script>
+    document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        alert("Thank you for subscribing to our newsletter!");
+        this.reset();
+    });
+    </script>
 </body>
 
 </html>
