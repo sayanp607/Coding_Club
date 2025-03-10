@@ -107,7 +107,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(18, 0, 63, 0.8);
     z-index: 30;
 }
 
@@ -162,4 +162,26 @@ button:hover {
     box-shadow: 0 0 10px #ff00ff;
     transform: translate(-50%, -50%);
     z-index: 5;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+}
+
+.dark-mode #game-over,
+.dark-mode #start-screen{
+    background-color: rgba(0, 0, 0, 0.8);
 }
