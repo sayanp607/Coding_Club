@@ -295,7 +295,6 @@
           </div>
 
 
-
             <img src="https://tse1.mm.bing.net/th?id=OIP.BmhluxQYLRxghM9SnmsizwHaHa&pid=Api&P=0&h=180" alt="Quiz App" />
             <h3>Quiz App</h3>
             <p>A dynamic quiz application with multiple-choice questions.</p>
@@ -361,7 +360,6 @@
         <!-- Project 7 -->
         <div data-aos="fade-up" class="project-card" data-level="advanced"
         data-project="typingSpeed">
-
         <div data-aos="fade-up" class="project-card" data-level="advanced">
           <span class="bookmark-icon" onclick="bookmarkProject('typing spped','../typingSpeed/typingSpeed.html')">🔖</span>
           <img src="https://tse1.mm.bing.net/th?id=OIP.h1AIt1jWm7WDY-nzneN5NwHaEO&pid=Api&P=0&h=180" alt="Project 7" />
@@ -381,6 +379,11 @@
           <p>A budget tracker to monitor income and expenses.</p>
           <a href="../ExpenseTracker/expenseTracker.html" class="view-demo">View Demo</a>
           <p class="view-counter">Views: 0</p>
+        </div>
+
+        <!-- Project 9 -->
+        <div data-aos="fade-up" class="project-card" data-level="advanced"
+        data-project="dictionary">
 
         </div>
 
@@ -391,6 +394,8 @@
           <h3>Dictionary App</h3>
           <p>Search words and get meanings using a dictionary API.</p>
           <a href="../Dictionary/dictionary.html" class="view-demo">View Demo</a>
+          <p class="view-counter">Views: 0</p>
+
         </div>
 
         <!-- Project 10 -->
@@ -617,6 +622,8 @@
 
         <!-- Project 25 (Age Calculator) -->
         <div data-aos="fade-up" class="project-card" data-level="beginner">
+          <span class="bookmark-icon" onclick="bookmarkProject('guess the game','../Projects/Guess the Number/guess.html')">🔖</span>
+
           <img src="../images/guess.png" alt="Project 14" />
           <h3>Guess the Number Game</h3>
           <p>Random number guessing with hints</p>
@@ -801,6 +808,12 @@
   <script>
     function bookmarkProject(title, link) {
         let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+        // Check if project is already bookmarked
+        if (bookmarks.some(bookmark => bookmark.title === title)) {
+            alert("This project is already bookmarked!");
+            return;
+        }
+
 
         // Check if project is already bookmarked
         if (bookmarks.some(bookmark => bookmark.title === title)) {
@@ -961,6 +974,45 @@
       // const projects = document.querySelectorAll(".project-card");
 
     // }
+  </script>
+
+
+    function filterProjects() {
+      const level = document.getElementById("projectLevel").value;
+      const projects = document.querySelectorAll(".project-card");
+
+     
+        <div class="quick-contact">
+          <h3>Quick Links</h3>
+          <ul>
+            <li class="sec-nav"><a href="#home">Home</a></li>
+            <li class="sec-nav"><a href="#about">About</a></li>
+            <li class="sec-nav"><a href="#events">Events</a></li>
+            <li class="sec-nav"><a href="#projects">Projects</a></li>
+            <li class="sec-nav"><a href="blogPage/blog.html">Blogs</a></li>
+            <li class="sec-nav"><a href="#contact">Contact</a></li>
+            <li class="sec-nav"><a href="resource/resource.html">Resources</a></li>
+            <li class="sec-nav"><a href="#faq">FAQ</a></li>
+            <li class="sec-nav"><a href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="quick-contact">
+          <h3>Contact Us</h3>
+          <p>📍 123 Street, City, Country</p>
+          <p>
+            <i class="fa-solid fa-earth-americas"></i
+            >&nbsp;&nbsp;&nbsp;yourwebsite.com
+          </p>
+          <p>📞 +123 456 7890</p>
+        </div>
+      projects.forEach((project) => {
+        if (level === "all" || project.getAttribute("data-level") === level) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+        }
+      });
+    }
   </script>
 
 
