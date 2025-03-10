@@ -231,7 +231,7 @@ button:hover {
         display: flex;
     }
 }
-.navbar{
+.dark-mode .navbar{
     background: rgba(255, 255, 255, 0.2);
 }
 
