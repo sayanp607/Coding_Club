@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Pong Game</title>
+    <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="game-board">
+            <div class="center-line"></div>
+            <div class="paddle" id="paddle-left"></div>
+            <div class="paddle" id="paddle-right"></div>
+            <div id="ball"></div>
+            <div class="score" id="score-left">0</div>
+            <div class="score" id="score-right">0</div>
+            <div class="game-message" id="game-message">Press Start to Play</div>
+            
+            <div class="difficulty-controls">
+                <button class="difficulty-btn active" data-difficulty="normal">Normal</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+            
+            <div class="mobile-controls">
+                <div class="mobile-button" id="left-up">↑</div>
+                <div class="mobile-button" id="left-down">↓</div>
+                <div class="mobile-button" id="right-up">↑</div>
+                <div class="mobile-button" id="right-down">↓</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <script src="pong.js"></script>
+</body>
+</html>
