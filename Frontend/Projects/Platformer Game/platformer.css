@@ -10,7 +10,7 @@ body {
     position: relative;
     width: 800px;
     height: 500px;
-    margin: 50px auto;
+    margin: 5rem auto;
     border: 3px solid #333;
     overflow: hidden;
     background: linear-gradient(to bottom, #87CEEB 0%, #e0f7ff 100%);
@@ -138,9 +138,101 @@ body {
 
 #instructions {
     position: absolute;
-    bottom: 10px;
+    bottom: 18px;
     left: 10px;
     color: white;
     font-size: 14px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Back Button */
+.back-button {
+    background: #2867f0;
+    color: white;
+    border: none;
+    padding: 0.8rem 20px;
+    width: 4rem;
+    height: 2.5rem;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #0190f6;
+    transform: scale(1.05);
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 0;
+    right: 30px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Toggle theme style */
+#toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Click animation (subtle scaling effect) */
+#toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* Dark mode effect */
+.dark-mode #toggleTheme {
+    background: transparent;
+    box-shadow: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Click animation in dark mode */
+.dark-mode #toggleTheme:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.toggle-btn:hover {
+    background: #0056b3;
+}
+
+body.dark-mode {
+    background: #001b37;
+    color: #fff;
+}
+
+
+
+.dark-mode #game-container{
+    background: linear-gradient(to bottom, #02245a, #525151);
+}
+
